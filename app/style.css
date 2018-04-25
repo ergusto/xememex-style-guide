@@ -32,7 +32,7 @@ We use OOCSS (Object Oriented CSS) to structure our CSS components.
 	* https://github.com/stubbornella/oocss/wiki
 
 This means:
-	We structure CSS into tight and lean, easy to conceptualise patterns.
+	We structure CSS into tight, lean and easy to conceptualise patterns.
 
 	A CSS “object” is a repeating visual pattern, that can be abstracted 
 	into an independent snippet of HTML, CSS, and possibly JavaScript. 
@@ -92,6 +92,9 @@ General principles:
 
 red: #c73434;
 green: #393;
+lighest-grey: #fcfcfc;
+grey: #ccc;
+purple: #f7f7f9;
 
 
 
@@ -99,13 +102,13 @@ green: #393;
 
 ***********/
 
-/***********
-------------
-------------
-	Generic & reset
-------------
-------------
-***********/
+/***********************
+------------------------
+------------------------
+	Generic and Reset
+------------------------
+------------------------
+***********************/
 
 /* https://www.padding-allulirish.com/2012/box-sizing-border-box-ftw/ */
 
@@ -127,13 +130,13 @@ body {
 	line-height: 1.5rem;
 }
 
-/***********
-------------
-------------
+/***********************
+------------------------
+------------------------
 	Elements
-------------
-------------
-***********/
+------------------------
+------------------------
+***********************/
 
 ul {
 	list-style-type: none;
@@ -144,13 +147,13 @@ blockquote {
 	border-left: .25rem solid #777;
 }
 
-/***********
-------------
-------------
+/***********************
+------------------------
+------------------------
 	Objects
-------------
-------------
-***********/
+------------------------
+------------------------
+***********************/
 
 /***********
 	Lists
@@ -172,53 +175,137 @@ blockquote {
 	display: inline-block;
 }
 
-/***********
-------------
-------------
+/***********************
+------------------------
+------------------------
 	Components
-------------
-------------
-***********/
+------------------------
+------------------------
+***********************/
 
-/***********
-------------
-------------
+/***********************
+------------------------
+------------------------
 	Trumps and tools
-------------
-------------
-***********/
+------------------------
+------------------------
+***********************/
 
 /***********
 	Colors
 ***********/
-
 /* Green used for success */
-.green {
+.color-green {
 	color: #393;
 }
 
 /* Red used for error */
-.red {
+.color-red {
 	color: #c73434;
 }
 
-.grey {
+.color-grey {
 	color: #777;
 }
 
-.light-grey {
+.color-light-grey {
 	color: #ddd;
 }
 
 /***********
 	Backgrounds
 ***********/
-.bg-green {
+.background-white {
+	background-color: white;
+}
+
+.background-green {
 	background-color: #393;
 }
 
-.bg-red {
+.background-red {
 	background-color: #c73434;
+}
+
+.background-grey {
+	background-color: #ccc;
+}
+
+.background-lightest-grey {
+	background-color: #fcfcfc;
+}
+
+.background-purple {
+	background-color: #f7f7f9;
+}
+
+/***********
+	Borders
+***********/
+
+.border-all {
+	border: 1px solid;
+}
+
+.border-left {
+	border-left: 1px solid;
+}
+
+.border-bottom {
+	border-bottom: 1px solid;
+}
+
+.border-right {
+	border-right: 1px solid;
+}
+
+.border-top {
+	border-top: 1px solid;
+}
+
+/***********
+	Border colors
+***********/
+.border-green {
+	border-color: #393;
+}
+
+.border-red {
+	border-color: #c73434;
+}
+
+.border-grey {
+	border-color: #ccc;
+}
+
+/***********
+	Border radius
+***********/
+.border-radius-all {
+	border-radius: .25rem;
+}
+
+.border-radius-bottom-left {
+	border-bottom-left-radius: .25rem;
+}
+
+.border-radius-bottom-right {
+	border-bottom-right-radius: .25rem;
+}
+
+.border-radius-top-right {
+	border-top-right-radius: .25rem;
+}
+
+.border-radius-top-left {
+	border-top-left-radius: .25rem;
+}
+
+/***********
+	Box shadow
+***********/
+.box-shadow {
+	box-shadow: 0 1px 3px rgba(0,0,0,.075);
 }
 
 /***********
@@ -253,6 +340,67 @@ blockquote {
 
 .invisible {
 	visibility: hidden;
+}
+
+/***********
+	Layout
+***********/
+
+.centred {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/***********
+	Widths
+***********/
+
+.width-1 {
+	width: 4rem;
+}
+
+.width-2 {
+	width: 8rem;
+}
+
+.width-3 {
+	width: 16rem;
+}
+
+.width-4 {
+	width: 32rem;
+}
+
+.width-5 {
+	width: 64rem;
+}
+
+.width-6 {
+	width: 128rem;
+}
+
+.max-width-1 {
+	max-width: 4rem;
+}
+
+.max-width-2 {
+	max-width: 8rem;
+}
+
+.max-width-3 {
+	max-width: 16rem;
+}
+
+.max-width-4 {
+	max-width: 32rem;
+}
+
+.max-width-5 {
+	max-width: 64rem;
+}
+
+.max-width-6 {
+	max-width: 128rem;
 }
 
 /***********

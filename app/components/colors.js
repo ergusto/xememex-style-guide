@@ -18,7 +18,7 @@ Colors.prototype.render = function() {
 		colors = div({
 			children: colorNames.map(function(color) {
 				return div({
-					class: "padding-all-3 margin-all-2 inline-block bg-" + color,
+					class: "padding-all-3 margin-all-2 inline-block background-" + color,
 				});
 			})
 		});

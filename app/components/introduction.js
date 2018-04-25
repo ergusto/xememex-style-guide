@@ -5,6 +5,7 @@ var div = templater.div,
 	h1 = templater.h1,
 	h2 = templater.h2,
 	h3 = templater.h3,
+	h4 = templater.h4,
 	ul = templater.ul,
 	li = templater.li,
 	anchor = templater.a,
@@ -32,76 +33,35 @@ Introduction.prototype.render = function() {
 		methodology = this.methodology();
 
 	return div({
-		class: "padding-all-2",
+		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-white border-all border-grey box-shadow border-radius-all",
 		children: [intro,methodology]
 	});
 };
 
 Introduction.prototype.intro = function() {
 	return fragment([
-		h1({ class: "margin-bottom", text: "Introduction" }),
+		h1({ class: "margin-bottom padding-bottom border-bottom border-grey", text: "Introduction" }),
 		paragraph({
 			class: "margin-vertical",
-			text: "This is the xememex style guide and UI kit. It's the single source of truth for all CSS patterns, components and UI design."
+			text: "This is the xememex style guide and UI kit. It is the single source of truth for all CSS patterns, components and UI design."
 		})
 	]);
 };
 
 Introduction.prototype.methodology = function() {
-	var invertedTriangle = this.invertedTriangle(),
-		oocss = this.oocss();
-
 	return fragment([
 		h2({ class: "margin-bottom", text: "Methodolgy" }),
 		paragraph({
 			class: "margin-vertical",
 			text: "We use ITCSS to structure our CSS. We use OOCSS and BEM naming methodology for our component CSS classes."
 		}),
-		invertedTriangle,
-		oocss
+		this.itcss(),
+		this.oocss(),
+		this.bem()
 	]);
 };
 
-Introduction.prototype.oocss = function() {
-	return fragment([
-		h3({ class: "margin-bottom", text: "OOCSS" }),
-		paragraph({
-			class: "margin-vertical",
-			text: "We use OOCSS (Object Oriented CSS) to structure our CSS components."
-		}),
-		blockquote({
-			class: "margin-all",
-			content: anchor({
-				href: "https://github.com/stubbornella/oocss/wiki",
-				text: "https://github.com/stubbornella/oocss/wiki"
-			})
-		}),
-		paragraph({
-			class: "margin-vertical",
-			text: "Overview:"
-		}),
-		ul({
-			class: "bulleted-list padding-left-2",
-			children: [
-				li(paragraph({
-						class: "margin-vertical",
-						text: "We structure CSS into tight, lean and easy to conceptualise patterns."
-				})),
-				li(paragraph({
-					class: "margin-vertical",
-					text: "A CSS “object” is a repeating visual pattern, that can be abstracted into an independent snippet of HTML, CSS, and possibly JavaScript. That object can then be reused throughout a site."
-				})),
-			]
-		}),
-		paragraph({
-			class: "margin-vertical",
-			text: "Main principles:"
-		}),
-		ul()
-	]);
-};
-
-Introduction.prototype.invertedTriangle = function() {
+Introduction.prototype.itcss = function() {
 	return fragment([
 		h3({ class: "margin-bottom", text: "ITCSS" }),
 		paragraph({
@@ -115,23 +75,28 @@ Introduction.prototype.invertedTriangle = function() {
 				text: "https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528"
 			})
 		}),
-		paragraph({
+		h4({
+			class: "margin-vertical",
+			text: "Main principles:"
+		}),
+		paragraph({ text: "We start at the widest, most generic level and increase in specificity and explicitness." }),
+		ul({
+			class: "bulleted-list padding-left-2 margin-vertical",
+			children: [
+				li({ class: "margin-left-2", text: "Generic -> Explicit" }),
+				li({ class: "margin-left-2", text: "Low Specificity -> High Specificity" }),
+				li({ class: "margin-left-2", text: "Far-Reaching -> Localised" })
+			]
+		}),
+		h4({
 			class: "margin-vertical",
 			text: "Overview:"
 		}),
 		ul({
-			class: "bulleted-list padding-left-2",
+			class: "bulleted-list padding-left-2 margin-vertical",
 			children: [
 				li([
-					paragraph({ text: "We start at the widest, most generic level and increase in specificity and explicitness." }),
-					ul([
-						li({ class: "margin-left-2", text: "Generic -> Explicit" }),
-						li({ class: "margin-left-2", text: "Low Specificity -> High Specificity" }),
-						li({ class: "margin-left-2", text: "Far-Reaching -> Localised" })
-					])
-				]),
-				li([
-					paragraph({ text: "The codebase is structured in the following hierarchy:" }),
+					paragraph({ text: "The CSS codebase is structured in the following hierarchy:" }),
 					ul([
 						li({
 							class: "margin-left-2",
@@ -171,6 +136,85 @@ Introduction.prototype.invertedTriangle = function() {
 					])
 				])
 			],
+		})
+	]);
+};
+
+Introduction.prototype.oocss = function() {
+	return fragment([
+		h3({ class: "margin-bottom", text: "OOCSS" }),
+		paragraph({
+			class: "margin-vertical",
+			text: "We use OOCSS (Object Oriented CSS) to structure our CSS components."
+		}),
+		blockquote({
+			class: "margin-all",
+			content: anchor({
+				href: "https://github.com/stubbornella/oocss/wiki",
+				text: "https://github.com/stubbornella/oocss/wiki"
+			})
+		}),
+		h4({
+			class: "margin-vertical",
+			text: "Main principles:"
+		}),
+		ul({
+			class: "bulleted-list padding-left-2 margin-vertical",
+			children: [
+				li(paragraph({
+					class: "margin-vertical",
+					text: "Separate structure and skin"
+				})),
+				li(paragraph({
+					class: "margin-vertical",
+					text: "Separate container and content"
+				}))
+			]
+		}),
+		h4({
+			class: "margin-vertical",
+			text: "Overview:"
+		}),
+		ul({
+			class: "bulleted-list padding-left-2 margin-vertical",
+			children: [
+				li(paragraph({
+						class: "margin-vertical",
+						text: "We structure CSS into tight, lean and easy to conceptualise patterns."
+				})),
+				li(paragraph({
+					class: "margin-vertical",
+					text: "A CSS “object” is a repeating visual pattern, that can be abstracted into an independent snippet of HTML, CSS, and possibly JavaScript. That object can then be reused throughout the site."
+				})),
+			]
+		}),
+		paragraph({
+			class: "margin-vertical",
+			text: "Objects are primarily structural in nature."
+		})
+	]);
+};
+
+Introduction.prototype.bem = function() {
+	return fragment([
+		h3({ class: "margin-bottom", text: "BEM" }),
+		paragraph({
+			class: "margin-vertical",
+			text: "We use the BEM naming pattern to increase predictability, maintainability and organisation of CSS component classes."
+		}),
+		blockquote({
+			class: "margin-all",
+			content: anchor({
+				href: "http://getbem.com/introduction/",
+				text: "http://getbem.com/introduction/"
+			})
+		}),
+		h4({
+			class: "margin-vertical",
+			text: "Main principles:"
+		}),
+		ul({
+
 		})
 	]);
 };
