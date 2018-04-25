@@ -1,7 +1,7 @@
-var utils = require("./index.js"),
+var utils = require("../utils"),
 	isObject = utils.isObject,
 	isArray = utils.isArray,
-	isElement = utils.isElement,
+	isDOMNode = utils.isDOMNode,
 	isString = utils.isString;
 
 function templater(config) {
@@ -12,6 +12,7 @@ function templater(config) {
 		content = config.content,
 		text = config.text,
 		parent = config.parent,
+		children = config.children,
 		click = config.click,
 		submit = config.submit,
 		keyup = config.keyup,
@@ -26,6 +27,7 @@ function templater(config) {
 	delete config['content'];
 	delete config['text'];
 	delete config['parent'];
+	delete config['children'];
 
 	delete config['click'];
 	delete config['submit'];
@@ -45,42 +47,44 @@ function templater(config) {
 	if(focus) events['focus'] = keydown;
 	if(blur) events['blur'] = blur;
 
-	for(var prop in events) {
+	for(prop in events) {
 		if(Object.prototype.hasOwnProperty.call(events,prop)) {
 			element.addEventListener(prop,events[prop]);
 		}
 	}
 
-	for(var prop in config) {
+	for(prop in config) {
 		if(Object.prototype.hasOwnProperty.call(config, prop)) {
 			element.setAttribute(prop,config[prop]);
 		}
 	}
 
 	if(content) {
-		if(isElement(content)) {
+		if(isDOMNode(content)) {
 			element.appendChild(content);
 		} else if(isObject(content)) {
 			element.appendChild(templater(content));
-		} else if(isArray(content)) {
-			content.forEach(function(child) {
-				if(child) {
-					if(isObject(child)) {
-						element.appendChild(templater(child));
-					} else if(isElement(child)) {
-						element.appendChild(child);
-					}
-				}
-			});
 		}
 	}
 
-	if(text) {
+	if(children && isArray(children)) {
+		children.forEach(function(child) {
+			if(child) {
+				if(isObject(child)) {
+					element.appendChild(templater(child));
+				} else if(isDOMNode(child)) {
+					element.appendChild(child);
+				}
+			}
+		});
+	}
+
+	if(text && isString(text)) {
 		textNode = document.createTextNode(text);
 		element.appendChild(textNode);
 	}
 
-	if(parent) {
+	if(parent && isDOMNode(parent)) {
 		parent.appendChild(element);
 	}
 
@@ -90,14 +94,27 @@ function templater(config) {
 function makeTemplateFunction(type) {
 	return function(template) {
 		if(!template) template = {};
+		if(isDOMNode(template)) {
+			var element = template;
+			template = {};
+			template.content = element;
+		}
+		if(isArray(template)) {
+			var children = template;
+			template = {};
+			template.children = children;
+		}
 		template.type = type;
 		return templater(template);
 	};
 }
 
-function fragment(/* nodes */) {
-	var children = Array.prototype.slice.call(arguments),
-		fragment = document.createDocumentFragment();
+function fragment(children) {
+	var fragment = document.createDocumentFragment();
+	
+	if(!isArray(children)) {
+		children = Array.prototype.slice.call(arguments);
+	}
 
 	children.forEach(function(child) {
 		if(child) {
@@ -109,6 +126,10 @@ function fragment(/* nodes */) {
 	});
 
 	return fragment;
+}
+
+function text(content) {
+	return document.createTextNode(content);
 }
 
 function Templater(types) {
@@ -123,6 +144,7 @@ function Templater(types) {
 	}
 
 	templater.fragment = fragment;
+	templater.text = text;
 	
 	types.forEach(function(type) {
 		templater[type] = makeTemplateFunction(type);

@@ -1,0 +1,608 @@
+/***********
+------------
+	Introduction
+------------
+
+We use ITCSS (Inverted Triangle CSS) to structure our CSS. 
+
+	* https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+
+This means:
+	We start at the widest, most generic level and increase in specificity and explicitness.
+		Generic -> Explicit
+		Low Specificity -> High Specificity
+		Far-Reaching -> Localised
+	Structure:
+		Generic & reset
+			Global (* selector) rules and resets.
+		Elements
+			Bare, unclassed HTML elements
+		Objects
+			Non-cosmetic design patterns. i.e. the Media Object.
+		Components
+			Opinionated, styled pieces of the DOM.
+		Trumps and tools
+			Highest specificity layer. Most explicit and narrowest focus. Includes utility and helper classes, hacks and overrides. 
+			A lot of the declarations in this layer will carry !important.
+
+------------------------------------------------------------------------
+
+We use OOCSS (Object Oriented CSS) to structure our CSS components.
+
+	* https://github.com/stubbornella/oocss/wiki
+
+This means:
+	We structure CSS into tight and lean, easy to conceptualise patterns.
+
+	A CSS “object” is a repeating visual pattern, that can be abstracted 
+	into an independent snippet of HTML, CSS, and possibly JavaScript. 
+	That object can then be reused throughout a site.
+
+	Main principles:
+		* Separate structure and skin
+		* Separate container and content
+
+	Objects are primarily structural in nature. 
+
+------------------------------------------------------------------------
+
+We use the BEM naming pattern to increase predictability, readability and organisation of CSS component classes.
+
+	* http://getbem.com/introduction/
+
+This:
+	
+	* Avoids inheritance and provides some sort of scope by using unique CSS classes per element (like .my-component__list-item).
+	* Reduces style conflicts by keeping CSS specificity to a minimum level.
+
+In short:
+
+	* Block - Encapsulates a standalone entity that is meaningful on its own. 
+	* Element - Parts of a block and have no standalone meaning. Every element is semantically tied to its block.
+	* Modifier - Flags on blocks or elements. Use them to change appearance, behavior or state.
+
+This is tied together into the following class naming pattern:
+
+	.Block
+		- This might be an object, such as the Media Object.
+			- e.g., .Media-Object
+	.Block__element
+		- This will be a styled section of the block
+			- e.g., .Media-Object__title
+	.Block--modifier
+		- Modifiers can modify blocks or elements
+		- This allows for variation and theming.
+			- .Media-Object--large
+
+------------------------------------------------------------------------
+
+General principles:
+
+	* Write CSS in specificity order.
+	* CSS should never overwrite or undo previous styles.
+	* Class names should describe the styling’s function rather than the content’s function.
+
+------------
+	Constants
+------------
+
+***********
+	Colors
+***********
+
+red: #c73434;
+green: #393;
+
+
+
+
+
+***********/
+
+/***********
+------------
+------------
+	Generic & reset
+------------
+------------
+***********/
+
+/* https://www.padding-allulirish.com/2012/box-sizing-border-box-ftw/ */
+
+html {
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.5rem;
+}
+
+/***********
+------------
+------------
+	Elements
+------------
+------------
+***********/
+
+ul {
+	list-style-type: none;
+}
+
+blockquote {
+	padding-left: 1rem;
+	border-left: .25rem solid #777;
+}
+
+/***********
+------------
+------------
+	Objects
+------------
+------------
+***********/
+
+/***********
+	Lists
+***********/
+
+.bulleted-list {
+	list-style-type: disc;
+}
+
+.bulleted-list li li {
+	list-style-type: circle;
+}
+
+.bulleted-list li li li {
+	list-style-type: square;
+}
+
+.inline-list li {
+	display: inline-block;
+}
+
+/***********
+------------
+------------
+	Components
+------------
+------------
+***********/
+
+/***********
+------------
+------------
+	Trumps and tools
+------------
+------------
+***********/
+
+/***********
+	Colors
+***********/
+
+/* Green used for success */
+.green {
+	color: #393;
+}
+
+/* Red used for error */
+.red {
+	color: #c73434;
+}
+
+.grey {
+	color: #777;
+}
+
+.light-grey {
+	color: #ddd;
+}
+
+/***********
+	Backgrounds
+***********/
+.bg-green {
+	background-color: #393;
+}
+
+.bg-red {
+	background-color: #c73434;
+}
+
+/***********
+	Display
+***********/
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline {
+	display: inline;
+}
+
+.display-table {
+	display: table;
+}
+
+.hidden {
+	display: none;
+}
+
+/***********
+	Visibility
+***********/
+.visible {
+	visibility: visible;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+/***********
+	Spacing
+***********/
+
+/*
+	Spacing is based on base font size (16px).
+	It starts at 16px (1rem), and increments in powers of 2.
+	I.e., base spacing pa [=padding-all] would equal padding: 16px;
+	pa2 [=padding-all-2] would equal padding: 32px;
+	pa3 [=padding-all-3] would equal padding: 64px;
+	pa-small and pa-medium are special cases and have padding equal to .25rem (4px) and .5rem (8px) respectively.
+	Margin follows the same pattern.
+*/
+
+/***********
+	Padding
+***********/
+
+.padding-all-small {
+	padding-left: .25rem;
+	padding-bottom: .25rem;
+	padding-right: .25rem;
+	padding-top: .25rem;
+}
+
+.padding-left-small {
+	padding-left: .25rem;
+}
+
+.padding-bottom-small {
+	padding-bottom: .25rem;
+}
+
+.padding-right-small {
+	padding-right: .25rem;
+}
+
+.padding-top-small {
+	padding-top: .25rem;
+}
+
+.padding-vertical-small {
+	padding-bottom: .25rem;
+	padding-top: .25rem;
+}
+
+.padding-horizontal-small {
+	padding-left: .25rem;
+	padding-right: .25rem;
+}
+
+.padding-all-medium {
+	padding-left: .5rem;
+	padding-bottom: .5rem;
+	padding-right: .5rem;
+	padding-top: .5rem;
+}
+
+.padding-left-medium {
+	padding-left: .5rem;
+}
+
+.padding-bottom-medium {
+	padding-bottom: .5rem;
+}
+
+.padding-right-medium {
+	padding-right: .5rem;
+}
+
+.padding-top-medium {
+	padding-top: .5rem;
+}
+
+.padding-vertical-medium {
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+}
+
+.padding-horizontal-medium {
+	padding-left: .5rem;
+	padding-right: .5rem;
+}
+
+.padding-all {
+	padding-left: 1rem;
+	padding-bottom: 1rem;
+	padding-right: 1rem;
+	padding-top: 1rem;
+}
+
+.padding-vertical {
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+}
+
+.padding-horizontal {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.padding-left {
+	padding-left: 1rem;
+}
+
+.padding-bottom {
+	padding-bottom: 1rem;
+}
+
+.padding-right {
+	padding-right: 1rem;
+}
+
+.padding-top {
+	padding-top: 1rem;
+}
+
+.padding-all-2 {
+	padding-left: 2rem;
+	padding-bottom: 2rem;
+	padding-right: 2rem;
+	padding-top: 2rem;
+}
+
+.padding-left-2 {
+	padding-left: 2rem;
+}
+
+.padding-bottom-2 {
+	padding-bottom: 2rem;
+}
+
+.padding-right-2 {
+	padding-right: 2rem;
+}
+
+.padding-top-2 {
+	padding-top: 2rem;
+}
+
+.padding-vertical-2 {
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+}
+
+.padding-horizontal-2 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.padding-all-3 {
+	padding-left: 4rem;
+	padding-bottom: 4rem;
+	padding-right: 4rem;
+	padding-top: 4rem;
+}
+
+.padding-left-3 {
+	padding-left: 4rem;
+}
+
+.padding-bottom-3 {
+	padding-bottom: 4rem;
+}
+
+.padding-right-3 {
+	padding-right: 4rem;
+}
+
+.padding-top-3 {
+	padding-top: 4rem;
+}
+
+.padding-vertical-3 {
+	padding-bottom: 4rem;
+	padding-top: 4rem;
+}
+
+.padding-horizontal-3 {
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+
+/***********
+	Margin
+***********/
+
+.margin-all-small {
+	margin-left: .25rem;
+	margin-bottom: .25rem;
+	margin-right: .25rem;
+	margin-top: .25rem;
+}
+
+.margin-left-small {
+	margin-left: .25rem;
+}
+
+.margin-bottom-small {
+	margin-bottom: .25rem;
+}
+
+.margin-right-small {
+	margin-right: .25rem;
+}
+
+.margin-top-small {
+	margin-top: .25rem;
+}
+
+.margin-vertical-small {
+	margin-bottom: .25rem;
+	margin-top: .25rem;
+}
+
+.margin-horizontal-small {
+	margin-left: .25rem;
+	margin-right: .25rem;
+}
+
+.margin-all-medium {
+	margin-left: .5rem;
+	margin-bottom: .5rem;
+	margin-right: .5rem;
+	margin-top: .5rem;
+}
+
+.margin-left-medium {
+	margin-left: .5rem;
+}
+
+.margin-bottom-medium {
+	margin-bottom: .5rem;
+}
+
+.margin-right-medium {
+	margin-right: .5rem;
+}
+
+.margin-top-medium {
+	margin-top: .5rem;
+}
+
+.margin-vertical-medium {
+	margin-bottom: .5rem;
+	margin-top: .5rem;
+}
+
+.margin-horizontal-medium {
+	margin-left: .5rem;
+	margin-right: .5rem;
+}
+
+.margin-all {
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	margin-top: 1rem;
+}
+
+.margin-vertical {
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+.margin-horizontal {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.margin-left {
+	margin-left: 1rem;
+}
+
+.margin-bottom {
+	margin-bottom: 1rem;
+}
+
+.margin-right {
+	margin-right: 1rem;
+}
+
+.margin-top {
+	margin-top: 1rem;
+}
+
+.margin-all-2 {
+	margin-left: 2rem;
+	margin-bottom: 2rem;
+	margin-right: 2rem;
+	margin-top: 2rem;
+}
+
+.margin-left-2 {
+	margin-left: 2rem;
+}
+
+.margin-bottom-2 {
+	margin-bottom: 2rem;
+}
+
+.margin-right-2 {
+	margin-right: 2rem;
+}
+
+.margin-top-2 {
+	margin-top: 2rem;
+}
+
+.margin-vertical-2 {
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+
+.margin-horizontal-2 {
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+.margin-all-3 {
+	margin-left: 4rem;
+	margin-bottom: 4rem;
+	margin-right: 4rem;
+	margin-top: 4rem;
+}
+
+.margin-left-3 {
+	margin-left: 4rem;
+}
+
+.margin-bottom-3 {
+	margin-bottom: 4rem;
+}
+
+.margin-right-3 {
+	margin-right: 4rem;
+}
+
+.margin-top-3 {
+	margin-top: 4rem;
+}
+
+.margin-vertical-3 {
+	margin-bottom: 4rem;
+	margin-top: 4rem;
+}
+
+.margin-horizontal-3 {
+	margin-left: 4rem;
+	margin-right: 4rem;
+}

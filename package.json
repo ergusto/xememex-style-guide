@@ -16,11 +16,15 @@
         "url": "https://github.com/ergusto/xememex-style-guide/issues"
     },
     "homepage": "https://github.com/ergusto/xememex-style-guide#readme",
-    "devDependencies": {
+    "dependencies": {
         "css-loader": "^0.28.11",
         "file-loader": "^1.1.11",
-        "style-loader": "^0.21.0",
-        "webpack": "^4.6.0",
+        "style-loader": "^0.20.3",
+        "typeface-assistant": "0.0.54",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.5.0"
+    },
+    "devDependencies": {
         "webpack-cli": "^2.0.15"
     }
 }

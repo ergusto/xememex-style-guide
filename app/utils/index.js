@@ -34,6 +34,12 @@ function isElement(element) {
 
 module.exports.isElement = isElement;
 
+function isDOMNode(node) {
+	return node instanceof Node;
+}
+
+module.exports.isDOMNode = isDOMNode;
+
 function createElement(type,attributes,text,child) {
 	var element = document.createElement(type);
 	if(attributes) {
@@ -129,13 +135,13 @@ function isCaptureGroup(string) {
 module.exports.isCaptureGroup = isCaptureGroup;
 
 function addHashListener(listener) {
-	window.addEventListener('hashchange',listener,false);
+	window.addEventListener("hashchange",listener,false);
 }
 
 module.exports.addHashListener = addHashListener;
 
 function removeHashListener(listener) {
-	window.removeEventListener('hashchange',listener,false);
+	window.removeEventListener("hashchange",listener,false);
 }
 
 module.exports.removeHashListener = removeHashListener;
@@ -222,7 +228,7 @@ function dynamicSort(array, property) {
         property = property.substr(1);
     }
 
-    var properties = property.split('.'),
+    var properties = property.split("."),
     	len = properties.length;
 
     return function (a, b) {
@@ -284,3 +290,15 @@ function simpleObjectComparison(object1, object2) {
 }
 
 module.exports.simpleObjectComparison = simpleObjectComparison;
+
+function extend(source,properties) {
+	var property;
+	for(property in properties) {
+		if(properties.hasOwnProperty(property)) {
+			source[property] = properties[property];
+		}
+	}
+	return source;
+}
+
+module.exports.extend = extend;

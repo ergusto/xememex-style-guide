@@ -1,6 +1,10 @@
-var App = require("./application.js");
+var App = require("./components/application.js");
+
+require("typeface-assistant");
+require("./style.css");
+require("./style-guide.css");
 
 module.exports = function(parent) {
 	var app = new App();
-	if(app.element) parent.appendChild(app.element);
+	parent.appendChild(app.element);
 };
