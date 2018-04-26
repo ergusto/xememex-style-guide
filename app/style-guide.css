@@ -1,3 +1,29 @@
-html {
+body {
 	font-family: "Assistant";
+}
+
+.layout-sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 15rem;
+	overflow-y: scroll;
+}
+
+.layout-body {
+	margin-left: 15rem;
+}
+
+.sidebar-list-link {
+	border-left: 4px solid;
+	border-color: transparent;
+}
+
+.sidebar-list-link:hover {
+	font-weight: bold;
+}
+
+.sidebar-list-link--active {
+	border-color: #586069;
 }

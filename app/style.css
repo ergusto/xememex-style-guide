@@ -52,7 +52,7 @@ We use the BEM naming pattern to increase predictability, readability and organi
 
 This:
 	
-	* Avoids inheritance and provides some sort of scope by using unique CSS classes per element (like .my-component__list-item).
+	* Avoids inheritance and provides scope by using unique CSS classes per element (like .my-component__list-item).
 	* Reduces style conflicts by keeping CSS specificity to a minimum level.
 
 In short:
@@ -90,11 +90,16 @@ General principles:
 	Colors
 ***********
 
+blue: #408fec;
 red: #c73434;
 green: #393;
+light-grey: #ddd;
 lighest-grey: #fcfcfc;
-grey: #ccc;
-purple: #f7f7f9;
+grey: #777;
+dark-grey: #ccc;
+darker-grey: #586069;
+light-purple: #f7f7f9;
+silver: #e3e7ef;
 
 
 
@@ -114,6 +119,9 @@ purple: #f7f7f9;
 
 html {
 	box-sizing: border-box;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -126,8 +134,8 @@ html {
 }
 
 body {
-	font-size: 16px;
-	line-height: 1.5rem;
+	font-size: 1rem;
+	font-family: -apple-system,BlinkMacSystemFont,Arial,sans-serif;
 }
 
 /***********************
@@ -156,11 +164,32 @@ blockquote {
 ***********************/
 
 /***********
+	Code
+***********/
+
+.code {
+	font-size: 87.5%;
+	font-family: monospace;
+	word-break: break-word;
+}
+
+.preformatted {
+	display: block;
+}
+
+.preformatted .code {
+	font-size: inherit;
+	color: inherit;
+	word-break: normal;
+}
+
+/***********
 	Lists
 ***********/
 
 .bulleted-list {
 	list-style-type: disc;
+	line-height: 1.5;
 }
 
 .bulleted-list li li {
@@ -194,49 +223,103 @@ blockquote {
 /***********
 	Colors
 ***********/
-/* Green used for success */
-.color-green {
-	color: #393;
+.color-white {
+	color: white !important;
 }
 
-/* Red used for error */
+.color-green {
+	color: #393 !important;
+}
+
 .color-red {
-	color: #c73434;
+	color: #c73434 !important;
+}
+
+.color-blue {
+	color: #408fec !important;
 }
 
 .color-grey {
-	color: #777;
+	color: #777 !important;
 }
 
 .color-light-grey {
-	color: #ddd;
+	color: #ddd !important;
+}
+
+.color-lightest-grey {
+	color: #fcfcfc !important;
+}
+
+.color-dark-grey {
+	color: #ccc !important;
+}
+
+.color-darker-grey {
+	color: #586069 !important;
+}
+
+.color-light-purple {
+	color: #f7f7f9 !important;
+}
+
+.color-silver {
+	color: #e3e7ef !important;
+}
+
+.color-inherit {
+	color: inherit !important;
 }
 
 /***********
 	Backgrounds
 ***********/
-.background-white {
-	background-color: white;
+.background-color-white {
+	background-color: #fff !important;
 }
 
-.background-green {
-	background-color: #393;
+.background-color-green {
+	background-color: #393 !important;
 }
 
-.background-red {
-	background-color: #c73434;
+.background-color-red {
+	background-color: #c73434 !important;
 }
 
-.background-grey {
-	background-color: #ccc;
+.background-color-blue {
+	background-color: #408fec !important;
 }
 
-.background-lightest-grey {
-	background-color: #fcfcfc;
+.background-color-grey {
+	background-color: #777 !important;
 }
 
-.background-purple {
-	background-color: #f7f7f9;
+.background-color-light-grey {
+	background-color: #ddd !important;
+}
+
+.background-color-lightest-grey {
+	background-color: #fcfcfc !important;
+}
+
+.background-color-dark-grey {
+	background-color: #ccc !important;
+}
+
+.background-color-darker-grey {
+	background-color: #586069 !important;
+}
+
+.background-color-light-purple {
+	background-color: #f7f7f9 !important;
+}
+
+.background-color-silver {
+	background-color: #e3e7ef !important;
+}
+
+.background-color-inherit {
+	background: inherit !important;
 }
 
 /***********
@@ -266,16 +349,52 @@ blockquote {
 /***********
 	Border colors
 ***********/
-.border-green {
+.border-color-white {
+	border-color: #fff;
+}
+
+.border-color-green {
 	border-color: #393;
 }
 
-.border-red {
+.border-color-red {
 	border-color: #c73434;
 }
 
-.border-grey {
+.border-color-blue {
+	border-color: #408fec;
+}
+
+.border-color-grey {
+	border-color: #777;
+}
+
+.border-color-light-grey {
+	border-color: #ddd;
+}
+
+.border-color-lightest-grey {
+	border-color: #fcfcfc;
+}
+
+.border-color-dark-grey {
 	border-color: #ccc;
+}
+
+.border-color-darker-grey {
+	border-color: #586069;
+}
+
+.border-color-light-purple {
+	border-color: #f7f7f9;
+}
+
+.border-color-silver {
+	border-color: #e3e7ef;
+}
+
+.border-color-inherit {
+	border-color: inherit;
 }
 
 /***********
@@ -285,19 +404,39 @@ blockquote {
 	border-radius: .25rem;
 }
 
-.border-radius-bottom-left {
+.border-bottom-left-radius {
 	border-bottom-left-radius: .25rem;
 }
 
-.border-radius-bottom-right {
+.border-bottom-right-radius {
 	border-bottom-right-radius: .25rem;
 }
 
-.border-radius-top-right {
+.border-top-right-radius {
 	border-top-right-radius: .25rem;
 }
 
-.border-radius-top-left {
+.border-top-left-radius {
+	border-top-left-radius: .25rem;
+}
+
+.border-left-radius {
+	border-bottom-left-radius: .25rem;
+	border-top-left-radius: .25rem;
+}
+
+.border-bottom-radius {
+	border-bottom-left-radius: .25rem;
+	border-bottom-right-radius: .25rem;
+}
+
+.border-right-radius {
+	border-bottom-right-radius: .25rem;
+	border-top-right-radius: .25rem;
+}
+
+.border-top-radius {
+	border-top-right-radius: .25rem;
 	border-top-left-radius: .25rem;
 }
 
@@ -305,7 +444,34 @@ blockquote {
 	Box shadow
 ***********/
 .box-shadow {
+	box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1), 0 1px 3px 0 rgba(89, 105, 128, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.box-shadow-subtle {
 	box-shadow: 0 1px 3px rgba(0,0,0,.075);
+}
+
+/***********
+	Position
+***********/
+.fixed {
+	position: fixed;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
+
+.static {
+	position: static;
+}
+
+.sticky {
+	position: sticky;
 }
 
 /***********
@@ -340,6 +506,46 @@ blockquote {
 
 .invisible {
 	visibility: hidden;
+}
+
+/***********
+	Font weight
+***********/
+.bold {
+	font-weight: bold;
+}
+
+/***********
+	Font size
+***********/
+.small {
+	font-size: 85%;
+}
+
+/***********
+	Text decoration
+***********/
+.underline {
+	text-decoration: underline;
+}
+
+.no-decoration {
+	text-decoration: none;
+}
+
+/***********
+	Text transform
+***********/
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
 }
 
 /***********
@@ -401,6 +607,17 @@ blockquote {
 
 .max-width-6 {
 	max-width: 128rem;
+}
+
+/***********
+	Children
+***********/
+.first-child-flush-left .child:first-child {
+	margin-left: 0;
+}
+
+.first-child-flush-right .child:first-child {
+	margin-right: 0;
 }
 
 /***********
