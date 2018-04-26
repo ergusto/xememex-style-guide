@@ -1,6 +1,7 @@
 var utils = require("../utils"),
 	isObject = utils.isObject,
 	isArray = utils.isArray,
+	isFunction = utils.isFunction,
 	isDOMNode = utils.isDOMNode,
 	isString = utils.isString;
 
@@ -60,6 +61,10 @@ function templater(config) {
 	}
 
 	if(content) {
+		if(isFunction(content)) {
+			content = content();
+		}
+
 		if(isDOMNode(content)) {
 			element.appendChild(content);
 		} else if(isObject(content)) {

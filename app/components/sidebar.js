@@ -14,10 +14,16 @@ var activeRouteLinkClass = "sidebar-list-link--active";
 
 var items = [
 	{ text: "Introduction", url: "#/", routeName: "introduction" },
-	{ text: "Colours", url: "#/colours", routeName: "colours" }
+	{ text: "Colours", url: "#/colours", routeName: "colours" },
+	{ text: "Objects" },
+	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
+	{ text: "Components" },
+	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
 ];
 
 function Sidebar() {
+	this.header = this.renderHeader();
+	this.list = this.renderList();
 	this.element = this.render();
 	this.addRouteListener();
 }
@@ -42,7 +48,7 @@ Sidebar.prototype.addActiveRoute = function(name) {
 	}
 };
 
-Sidebar.prototype.list = function() {
+Sidebar.prototype.renderList = function() {
 	this.sidebarList = ul({
 		children: items.map(function(item) {
 			if(item.routeName) {
@@ -57,7 +63,7 @@ Sidebar.prototype.list = function() {
 				});
 			} else {
 				return h4({
-					class: "block padding-horizontal padding-bottom padding-top border-bottom border-color-dark-grey",
+					class: "block padding-horizontal padding-vertical-medium margin-top-small border-bottom border-color-dark-grey",
 					text: item.text
 				})
 			}
@@ -67,9 +73,9 @@ Sidebar.prototype.list = function() {
 	return this.sidebarList;
 };
 
-Sidebar.prototype.header = function() {
+Sidebar.prototype.renderHeader = function() {
 	return header({
-		content: h3({ text: "Xememex" }),
+		content: h3({ text: "Xememex style guide" }),
 		class: "border-bottom border-color-dark-grey padding-all background-color-white"
 	});
 }
@@ -77,7 +83,7 @@ Sidebar.prototype.header = function() {
 Sidebar.prototype.render = function() {
 	return div({
 		class: "layout-sidebar background-color-light-purple border-right border-color-dark-grey box-shadow",
-		children: [this.header(),this.list()]
+		children: [this.header,this.list]
 	});
 };
 

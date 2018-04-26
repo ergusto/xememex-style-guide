@@ -111,7 +111,6 @@ Colours.prototype.render = function() {
 		uses = this.uses();
 
 	return div({
-		id: "colours",
 		children: [intro,colours,uses],
 		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-dark-grey box-shadow border-radius-all"
 	});

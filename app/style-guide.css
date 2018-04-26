@@ -18,6 +18,8 @@ body {
 .sidebar-list-link {
 	border-left: 4px solid;
 	border-color: transparent;
+	font-weight: normal;
+	transition: font-weight .15s ease-in-out;
 }
 
 .sidebar-list-link:hover {
