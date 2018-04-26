@@ -25,7 +25,7 @@ Introduction.prototype.render = function() {
 		methodology = this.methodology();
 
 	return div({
-		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-white border-all border-color-dark-grey box-shadow border-radius-all",
+		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-dark-grey box-shadow border-radius-all",
 		children: [intro,principles,methodology]
 	});
 };
@@ -49,7 +49,7 @@ Introduction.prototype.intro = function() {
 	return fragment([
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Introduction" }),
 		paragraph({
-			class: "margin-vertical",
+			class: "margin-vertical line-height-1p5",
 			text: "This is the xememex style guide and UI kit. It is the single source of truth for all CSS patterns, components and UI design."
 		})
 	]);
@@ -68,8 +68,8 @@ Introduction.prototype.functional = function() {
 	return fragment([
 		h3({ class: "margin-bottom", text: "Functional CSS" }),
 		paragraph({
-			class: "margin-vertical",
-			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Elements are composed from a combination of these discrete classes. This encourages reusability and reduces redundancy, and helps to keep the codebase lean and focused. It results in a very fast iterative process. Most of these classes appear in the 'Trumps and Tools' section of the stylesheet."
+			class: "margin-vertical line-height-1p5",
+			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Elements are styled from a combination of these discrete classes wherever possible. This encourages reusability and reduces redundancy, and helps to keep the codebase lean and focused. It results in a very fast iterative process. Most of these classes appear in the 'Trumps and Tools' section of the stylesheet."
 		})
 	]);
 };
@@ -78,7 +78,7 @@ Introduction.prototype.oocss = function() {
 	return fragment([
 		h3({ class: "margin-bottom", text: "OOCSS" }),
 		paragraph({
-			class: "margin-vertical",
+			class: "margin-vertical line-height-1p5",
 			text: "Components are built and designed as repeated patterns we call 'objects', according to OOCSS principles. These objects are mostly structural in nature, and themed using functional helper classes.",
 		}),
 		h4({
@@ -100,14 +100,17 @@ Introduction.prototype.itcss = function() {
 	return fragment([
 		h3({ class: "margin-bottom", text: "ITCSS" }),
 		paragraph({
-			class: "margin-vertical",
+			class: "margin-vertical line-height-1p5",
 			text: "We use ITCSS (Inverted Triangle CSS) to give broad structure to our CSS."
 		}),
 		h4({
 			class: "margin-vertical",
 			text: "Main principles:"
 		}),
-		paragraph({ text: "The order of CSS declarations matters. Rules of equal specificity get overridden in the order that they're defined in CSS. We start at the widest, most generic level and increase in specificity and precision as we progress through the stylesheet." }),
+		paragraph({
+			class: "margin-vertical line-height-1p5",
+			text: "The order of CSS declarations matters. Rules of equal specificity get overridden in the order that they're defined. We start at the widest, most generic level and increase in specificity and precision as we progress through the stylesheet."
+		}),
 		ul({
 			class: "bulleted-list padding-left-2 margin-vertical",
 			children: [
@@ -158,12 +161,6 @@ Introduction.prototype.itcss = function() {
 					children: [
 						strong({ text: "Objects" }),
 						ul(li({ class: "margin-left-2", text: "Non-cosmetic design patterns. i.e. the Media Object." }))
-					]
-				}),
-				li({
-					children: [
-						strong({ text: "Components" }),
-						ul(li({ class: "margin-left-2", text: "Opinionated, styled pieces of the DOM." }))
 					]
 				}),
 				li({

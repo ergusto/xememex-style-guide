@@ -65,41 +65,41 @@ Colours.prototype.uses = function() {
 		}),
 		h3({ class: "margin-vertical", text: "Color"}),
 		pre({
-			class: "preformatted margin-vertical-small",
+			class: "preformatted margin-vertical-small padding-all-small",
 			content: code({ class: "code color-green", text: ".color-green" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small",
+			class: "preformatted margin-vertical-small padding-all-small",
 			content: code({ class: "code color-red", text: ".color-red" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small",
+			class: "preformatted margin-vertical-small padding-all-small",
 			content: code({ class: "code color-blue", text: ".color-blue" })
 		}),
 		h3({ class: "margin-vertical", text: "Background Color"}),
 		pre({
-			class: "preformatted margin-vertical-small background-color-green",
+			class: "preformatted margin-vertical-small padding-all-small background-color-green",
 			content: code({ class: "code color-white", text: ".background-color-green" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small background-color-red",
+			class: "preformatted margin-vertical-small padding-all-small background-color-red",
 			content: code({ class: "code color-white", text: ".background-color-red" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small background-color-blue",
+			class: "preformatted margin-vertical-small padding-all-small background-color-blue",
 			content: code({ class: "code color-white", text: ".background-color-blue" })
 		}),
 		h3({ class: "margin-vertical", text: "Border Color"}),
 		pre({
-			class: "preformatted margin-vertical-small border-all border-color-green",
+			class: "preformatted margin-vertical-small padding-all-small border-all border-color-green",
 			content: code({ class: "code", text: ".border-color-green" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small border-all border-color-red",
+			class: "preformatted margin-vertical-small padding-all-small border-all border-color-red",
 			content: code({ class: "code", text: ".border-color-red" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small border-all border-color-blue",
+			class: "preformatted margin-vertical-small padding-all-small border-all border-color-blue",
 			content: code({ class: "code", text: ".border-color-blue" })
 		}),
 	]);
@@ -113,7 +113,7 @@ Colours.prototype.render = function() {
 	return div({
 		id: "colours",
 		children: [intro,colours,uses],
-		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-white border-all border-color-dark-grey box-shadow border-radius-all"
+		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-dark-grey box-shadow border-radius-all"
 	});
 };
 

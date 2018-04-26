@@ -1,90 +1,4 @@
 /***********
-------------
-	Introduction
-------------
-
-We use ITCSS (Inverted Triangle CSS) to structure our CSS. 
-
-	* https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
-
-This means:
-	We start at the widest, most generic level and increase in specificity and explicitness.
-		Generic -> Explicit
-		Low Specificity -> High Specificity
-		Far-Reaching -> Localised
-	Structure:
-		Generic & reset
-			Global (* selector) rules and resets.
-		Elements
-			Bare, unclassed HTML elements
-		Objects
-			Non-cosmetic design patterns. i.e. the Media Object.
-		Components
-			Opinionated, styled pieces of the DOM.
-		Trumps and tools
-			Highest specificity layer. Most explicit and narrowest focus. Includes utility and helper classes, hacks and overrides. 
-			A lot of the declarations in this layer will carry !important.
-
-------------------------------------------------------------------------
-
-We use OOCSS (Object Oriented CSS) to structure our CSS components.
-
-	* https://github.com/stubbornella/oocss/wiki
-
-This means:
-	We structure CSS into tight, lean and easy to conceptualise patterns.
-
-	A CSS “object” is a repeating visual pattern, that can be abstracted 
-	into an independent snippet of HTML, CSS, and possibly JavaScript. 
-	That object can then be reused throughout a site.
-
-	Main principles:
-		* Separate structure and skin
-		* Separate container and content
-
-	Objects are primarily structural in nature. 
-
-------------------------------------------------------------------------
-
-We use the BEM naming pattern to increase predictability, readability and organisation of CSS component classes.
-
-	* http://getbem.com/introduction/
-
-This:
-	
-	* Avoids inheritance and provides scope by using unique CSS classes per element (like .my-component__list-item).
-	* Reduces style conflicts by keeping CSS specificity to a minimum level.
-
-In short:
-
-	* Block - Encapsulates a standalone entity that is meaningful on its own. 
-	* Element - Parts of a block and have no standalone meaning. Every element is semantically tied to its block.
-	* Modifier - Flags on blocks or elements. Use them to change appearance, behavior or state.
-
-This is tied together into the following class naming pattern:
-
-	.Block
-		- This might be an object, such as the Media Object.
-			- e.g., .Media-Object
-	.Block__element
-		- This will be a styled section of the block
-			- e.g., .Media-Object__title
-	.Block--modifier
-		- Modifiers can modify blocks or elements
-		- This allows for variation and theming.
-			- .Media-Object--large
-
-------------------------------------------------------------------------
-
-General principles:
-
-	* Write CSS in specificity order.
-	* CSS should never overwrite or undo previous styles.
-	* Class names should describe the styling’s function rather than the content’s function.
-
-------------
-	Constants
-------------
 
 ***********
 	Colors
@@ -100,9 +14,6 @@ dark-grey: #ccc;
 darker-grey: #586069;
 light-purple: #f7f7f9;
 silver: #e3e7ef;
-
-
-
 
 
 ***********/
@@ -124,13 +35,13 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 * {
 	padding: 0;
 	margin: 0;
-}
-
-*, *:before, *:after {
-	box-sizing: inherit;
 }
 
 body {
