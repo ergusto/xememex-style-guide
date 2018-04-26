@@ -23,7 +23,7 @@ function isString(obj) {
 module.exports.isString = isString;
 
 function isObject(object) {
-	return object instanceof Object && object.varructor === Object;
+	return object instanceof Object && object.constructor === Object;
 }
 
 module.exports.isObject = isObject;

@@ -115,6 +115,14 @@ blockquote {
 	display: inline-block;
 }
 
+/***********************
+------------------------
+------------------------
+	Components
+------------------------
+------------------------
+***********************/
+
 /***********
 	Buttons
 ***********/
@@ -123,15 +131,12 @@ blockquote {
 	padding: .5rem;
 	cursor: pointer;
 	background: white;
-	border: 1px solid #ccc;
+	border: 1px solid;
+	border-color: #ccc;
 	border-radius: .25rem;
 	color: inherit;
 	font-size: .85rem;
-}
-
-.button:hover {
-	color: #586069;
-	border-color: #586069;
+	display: inline-block;
 }
 
 .button--large {
@@ -139,13 +144,36 @@ blockquote {
 	font-size: 1rem;
 }
 
-/***********************
-------------------------
-------------------------
-	Components
-------------------------
-------------------------
-***********************/
+.button--small {
+	padding: .25rem;
+	font-size: .75rem;
+}
+
+.button--block {
+	display: block;
+	width: 100%;
+}
+
+/***********
+	Button Group
+***********/
+.button-group .button {
+	border-radius: 0;
+}
+
+.button-group .button:not(:first-child) {
+	border-left: none;
+}
+
+.button-group .button:first-child {
+	border-bottom-left-radius: .25rem;
+	border-top-left-radius: .25rem;
+}
+
+.button-group .button:last-child {
+	border-bottom-right-radius: .25rem;
+	border-top-right-radius: .25rem;
+}
 
 /***********************
 ------------------------
@@ -261,6 +289,10 @@ blockquote {
 	Borders
 ***********/
 
+.borderless {
+	border: none;
+}
+
 .border-all {
 	border: 1px solid;
 }
@@ -330,6 +362,10 @@ blockquote {
 
 .border-color-inherit {
 	border-color: inherit;
+}
+
+.border-color-transparent {
+	border-color: transparent;
 }
 
 /***********

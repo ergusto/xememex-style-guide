@@ -15,9 +15,8 @@ var activeRouteLinkClass = "sidebar-list-link--active";
 var items = [
 	{ text: "Introduction", url: "#/", routeName: "introduction" },
 	{ text: "Colours", url: "#/colours", routeName: "colours" },
-	{ text: "Objects" },
-	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Components" },
+	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
 ];
 
@@ -49,7 +48,8 @@ Sidebar.prototype.addActiveRoute = function(name) {
 };
 
 Sidebar.prototype.renderList = function() {
-	this.sidebarList = ul({
+	return ul({
+		ref: { name: "sidebarList", context: this },
 		children: items.map(function(item) {
 			if(item.routeName) {
 				return li({
@@ -69,8 +69,6 @@ Sidebar.prototype.renderList = function() {
 			}
 		})
 	});
-
-	return this.sidebarList;
 };
 
 Sidebar.prototype.renderHeader = function() {

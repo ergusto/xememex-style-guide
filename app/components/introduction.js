@@ -37,8 +37,7 @@ Introduction.prototype.principles = function() {
 			class: "bulleted-list padding-left-2 margin-vertical",
 			children: [
 				li({ text: "Write CSS in specificity order." }),
-				li({ text: "Keep specificity as flat as possible." }),
-				li({ text: "CSS should never overwrite or undo previous styles." })
+				li({ text: "Keep specificity as flat as possible." })
 			]
 		}),
 	])
@@ -79,7 +78,7 @@ Introduction.prototype.oocss = function() {
 		h3({ class: "margin-bottom", text: "OOCSS" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "Components are built and designed as repeated patterns we call 'objects', according to OOCSS principles. These objects are mostly structural in nature, and themed using functional helper classes.",
+			text: "Components are built and designed as repeated patterns according to OOCSS principles.",
 		}),
 		h4({
 			class: "margin-vertical",
@@ -161,6 +160,12 @@ Introduction.prototype.itcss = function() {
 					children: [
 						strong({ text: "Objects" }),
 						ul(li({ class: "margin-left-2", text: "Non-cosmetic design patterns. i.e. the Media Object." }))
+					]
+				}),
+				li({
+					children: [
+						strong({ text: "Components" }),
+						ul(li({ class: "margin-left-2", text: "Opionionated, styled repeated patterns. i.e. a Button or Comment." }))
 					]
 				}),
 				li({

@@ -8,6 +8,9 @@ var utils = require("../utils"),
 function templater(config) {
 	var prop,
 		textNode,
+		refName,
+		refContext,
+		ref = config.ref,
 		type = config.type,
 		events = config['events'],
 		content = config.content,
@@ -23,6 +26,7 @@ function templater(config) {
 		keypress = config.keypress,
 		element = document.createElement(type);
 
+	delete config['ref'];
 	delete config['type'];
 	delete config['events'];
 	delete config['content'];
@@ -91,6 +95,12 @@ function templater(config) {
 
 	if(parent && isDOMNode(parent)) {
 		parent.appendChild(element);
+	}
+	
+	if(ref && isObject(ref)) {
+		refName = ref.name;
+		refContext = ref.context;
+		refContext[refName] = element;
 	}
 
 	return element;
