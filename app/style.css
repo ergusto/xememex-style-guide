@@ -175,6 +175,27 @@ blockquote {
 	border-top-right-radius: .25rem;
 }
 
+/***********
+	Button Themes
+***********/
+.button--blue {
+	background-color: #408fec;
+	border-color: #408fec;
+	color: white;
+}
+
+.button--red {
+	background-color: #c73434;
+	border-color: #c73434;
+	color: white;
+}
+
+.button--green {
+	background-color: #393;
+	border-color: #393;
+	color: white;
+}
+
 /***********************
 ------------------------
 ------------------------

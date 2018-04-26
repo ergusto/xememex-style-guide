@@ -4,16 +4,20 @@ var templater = require("../templater"),
 var div = templater.div;
 
 function Layout() {
-	this.body = div({ class: "layout-body padding-horizontal" });
 	this.element = this.render();
 }
 
 Layout.prototype.render = function() {
 	var sidebar = new Sidebar();
 
+	var body = div({
+		class: "layout-body padding-horizontal",
+		ref: { name: "body", context: this }
+	});
+
 	return div({
 		class: "layout",
-		children: [sidebar.element,this.body]
+		children: [sidebar.element,body]
 	});
 };
 

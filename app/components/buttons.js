@@ -24,6 +24,20 @@ Buttons.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
+				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Small Button" }),
+				button({
+					class: "button button--small",
+					text: "Example button"
+				}),		
+				pre({
+					class: "preformatted margin-vertical-small padding-all-small",
+					content: code({ class: "code", text: ".button .button--small" })
+				})
+			]
+		}),
+		div({
+			class: "margin-vertical",
+			children: [
 				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Default Button" }),
 				button({
 					class: "button",
@@ -46,20 +60,6 @@ Buttons.prototype.intro = function() {
 				pre({
 					class: "preformatted margin-vertical-small padding-all-small",
 					content: code({ class: "code", text: ".button .button--large" })
-				})
-			]
-		}),
-		div({
-			class: "margin-vertical",
-			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Small Button" }),
-				button({
-					class: "button button--small",
-					text: "Example button"
-				}),		
-				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
-					content: code({ class: "code", text: ".button .button--small" })
 				})
 			]
 		}),
@@ -102,6 +102,36 @@ Buttons.prototype.intro = function() {
 					class: "preformatted margin-vertical-small padding-all-small",
 					content: code({ class: "code", text: ".button-group .button" })
 				})
+			]
+		}),
+		div({
+			class: "margin-vertical",
+			children: [
+				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Button Themes" }),
+				button({
+					class: "button button--green margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-small padding-all-small",
+					content: code({ class: "code", text: ".button .button--green" })
+				}),
+				button({
+					class: "button button--blue margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-small padding-all-small",
+					content: code({ class: "code", text: ".button .button--blue" })
+				}),
+				button({
+					class: "button button--red margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-small padding-all-small",
+					content: code({ class: "code", text: ".button .button--red" })
+				}),
 			]
 		}),
 	]);
