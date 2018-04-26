@@ -69,7 +69,7 @@ Introduction.prototype.functional = function() {
 		h3({ class: "margin-bottom", text: "Functional CSS" }),
 		paragraph({
 			class: "margin-vertical",
-			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Pages are composed from a combination of these discrete classes. This encourages reusability and reduces redundancy, and helps to keep the codebase lean and focused. It results in a very fast iterative process. Most of these classes appear in the 'Trumps and Tools' section of the stylesheet."
+			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Elements are composed from a combination of these discrete classes. This encourages reusability and reduces redundancy, and helps to keep the codebase lean and focused. It results in a very fast iterative process. Most of these classes appear in the 'Trumps and Tools' section of the stylesheet."
 		})
 	]);
 };
