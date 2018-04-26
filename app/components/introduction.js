@@ -117,7 +117,7 @@ Introduction.prototype.itcss = function() {
 			]
 		}),
 		blockquote({
-			class: "margin-all padding-vertical-medium",
+			class: "margin-all padding-vertical-medium line-height-1p5",
 			children: [
 				paragraph({
 					text: "Ordering our projects according to these key metrics has several benefits. We can begin to share global and far-reaching styles much more effectively and efficiently, we vastly reduce the likelihood of specificity issues, and we write CSS in a logical and progressive order. This means greater extensibility and less redundancy, which in turn means less waste and much smaller file sizes."
