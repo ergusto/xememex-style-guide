@@ -29,7 +29,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--small" })
 				})
 			]
@@ -43,7 +43,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),		
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button" })
 				})
 			]
@@ -57,7 +57,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),		
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--large" })
 				})
 			]
@@ -71,7 +71,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),		
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--block" })
 				})
 			]
@@ -98,7 +98,7 @@ Buttons.prototype.intro = function() {
 					]
 				}),		
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button-group .button" })
 				})
 			]
@@ -112,7 +112,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--outline" })
 				}),
 				button({
@@ -120,7 +120,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--green" })
 				}),
 				button({
@@ -128,7 +128,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--blue" })
 				}),
 				button({
@@ -136,7 +136,7 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .button--red" })
 				}),
 				button({
@@ -144,8 +144,17 @@ Buttons.prototype.intro = function() {
 					text: "Example button"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button .box-shadow" })
+				}),
+				button({
+					disabled: "",
+					class: "button button--red margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code", text: ".button:disabled" })
 				}),
 			]
 		}),

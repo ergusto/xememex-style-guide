@@ -73,7 +73,11 @@ Sidebar.prototype.renderList = function() {
 
 Sidebar.prototype.renderHeader = function() {
 	return header({
-		content: h3({ class: "site-title comfortaa", text: "xememex style guide" }),
+		content: anchor({
+			class: "no-decoration color-inherit",
+			href: "#/",
+			content: h3({ class: "site-title comfortaa text-align-center", text: "xememex style guide" })
+		}),
 		class: "border-bottom border-color-dark-grey padding-all background-color-white"
 	});
 }

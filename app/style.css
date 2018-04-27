@@ -193,6 +193,11 @@ blockquote {
 	width: 100%;
 }
 
+.button:disabled {
+	opacity: .65;
+	cursor: not-allowed;
+}
+
 /***********
 	Button Group
 ***********/
@@ -223,11 +228,11 @@ blockquote {
 	color: #586069;
 }
 
-.button--outline:hover {
+.button--outline:not(:disabled):hover {
 	box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.button--outline:active {
+.button--outline:not(:disabled):active {
 	box-shadow: 0 0 0 2px rgba(89, 105, 128, 0.2) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset;
 }
 
@@ -237,12 +242,12 @@ blockquote {
 	color: white;
 }
 
-.button--blue:hover {
+.button--blue:not(:disabled):hover {
 	background-color: #3270B9;
 	border-color: #3270B9;
 }
 
-.button--blue:active {
+.button--blue:not(:disabled):active {
 	background-color: #234E81;
 	border-color: #234E81;
 }
@@ -253,12 +258,12 @@ blockquote {
 	color: white;
 }
 
-.button--red:hover {
+.button--red:not(:disabled):hover {
 	background-color: #AB2D2D;
 	border-color: #AB2D2D;
 }
 
-.button--red:active {
+.button--red:not(:disabled):active {
 	background-color: #942727;
 	border-color: #942727;
 }
@@ -269,12 +274,12 @@ blockquote {
 	color: white;
 }
 
-.button--green:hover {
+.button--green:not(:disabled):hover {
 	background-color: #277527;
 	border-color: #277527;
 }
 
-.button--green:active {
+.button--green:not(:disabled):active {
 	background-color: #206120;
 	border-color: #206120;
 }
@@ -284,6 +289,12 @@ blockquote {
 ------------------------
 	Trumps and tools
 ------------------------
+------------------------
+***********************/
+
+/***********************
+------------------------
+	Aesthetic
 ------------------------
 ***********************/
 
@@ -602,6 +613,93 @@ blockquote {
 	box-shadow: 0 1px 3px rgba(0,0,0,.075);
 }
 
+/***********************
+------------------------
+	Typography
+------------------------
+***********************/
+
+/***********
+	Font weight
+***********/
+.bold {
+	font-weight: bold;
+}
+
+.font-weight-normal {
+	font-weight: normal;
+}
+
+/***********
+	Font size
+***********/
+.small {
+	font-size: 85%;
+}
+
+/***********
+	Text decoration
+***********/
+.underline {
+	text-decoration: underline;
+}
+
+.no-decoration {
+	text-decoration: none;
+}
+
+/***********
+	Text transform
+***********/
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+/***********
+	Line height
+***********/
+.line-height-normal {
+	line-height: normal;
+}
+
+.line-height-1p5 {
+	line-height: 1.5;
+}
+
+/***********
+	Text align
+***********/
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+/***********************
+------------------------
+	Layout
+------------------------
+***********************/
+
+.centred {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /***********
 	Position
 ***********/
@@ -660,70 +758,6 @@ blockquote {
 }
 
 /***********
-	Font weight
-***********/
-.bold {
-	font-weight: bold;
-}
-
-.font-weight-normal {
-	font-weight: normal;
-}
-
-/***********
-	Font size
-***********/
-.small {
-	font-size: 85%;
-}
-
-/***********
-	Text decoration
-***********/
-.underline {
-	text-decoration: underline;
-}
-
-.no-decoration {
-	text-decoration: none;
-}
-
-/***********
-	Text transform
-***********/
-.uppercase {
-	text-transform: uppercase;
-}
-
-.lowercase {
-	text-transform: lowercase;
-}
-
-.capitalize {
-	text-transform: capitalize;
-}
-
-/***********
-	Line height
-***********/
-.line-height-normal {
-	line-height: normal;
-}
-
-.line-height-1p5 {
-	line-height: 1.5;
-}
-
-/***********
-	Layout
-***********/
-
-.centred {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/***********
 	Widths
 ***********/
 
@@ -773,17 +807,6 @@ blockquote {
 
 .max-width-6 {
 	max-width: 128rem;
-}
-
-/***********
-	Children
-***********/
-.first-child-flush-left .child:first-child {
-	margin-left: 0;
-}
-
-.first-child-flush-right .child:first-child {
-	margin-right: 0;
 }
 
 /***********

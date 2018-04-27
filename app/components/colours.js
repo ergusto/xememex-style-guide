@@ -36,7 +36,7 @@ function Colours() {
 }
 
 Colours.prototype.colours = function() {
-	return div(colours.map(function(color) {
+	return fragment(colours.map(function(color) {
 		return div({
 			class: "margin-all-small inline-block",
 			children: [
@@ -69,45 +69,60 @@ Colours.prototype.uses = function() {
 		paragraph({
 			text: "These colours are used in a variety of different helper classes."
 		}),
-		h3({ class: "margin-vertical", text: "Color"}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-small",
-			content: code({ class: "code color-green", text: ".color-green" })
+		div({
+			class: "margin-vertical",
+			children: [
+				h3({ class: "margin-vertical padding-bottom-medium border-bottom border-color-dark-grey", text: "Color"}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code color-green", text: ".color-green" })
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code color-red", text: ".color-red" })
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code color-blue", text: ".color-blue" })
+				}),
+			]
 		}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-small",
-			content: code({ class: "code color-red", text: ".color-red" })
+		div({
+			class: "margin-vertical",
+			children: [
+				h3({ class: "margin-vertical padding-bottom-medium border-bottom border-color-dark-grey", text: "Background Color"}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-medium background-color-green",
+					content: code({ class: "code color-white", text: ".background-color-green" })
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-medium background-color-red",
+					content: code({ class: "code color-white", text: ".background-color-red" })
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-medium background-color-blue",
+					content: code({ class: "code color-white", text: ".background-color-blue" })
+				}),
+			]
 		}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-small",
-			content: code({ class: "code color-blue", text: ".color-blue" })
-		}),
-		h3({ class: "margin-vertical", text: "Background Color"}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-medium background-color-green",
-			content: code({ class: "code color-white", text: ".background-color-green" })
-		}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-medium background-color-red",
-			content: code({ class: "code color-white", text: ".background-color-red" })
-		}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-medium background-color-blue",
-			content: code({ class: "code color-white", text: ".background-color-blue" })
-		}),
-		h3({ class: "margin-vertical", text: "Border Color"}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-medium border-all border-color-green",
-			content: code({ class: "code", text: ".border-color-green" })
-		}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-medium border-all border-color-red",
-			content: code({ class: "code", text: ".border-color-red" })
-		}),
-		pre({
-			class: "preformatted margin-vertical-small padding-all-medium border-all border-color-blue",
-			content: code({ class: "code", text: ".border-color-blue" })
-		}),
+		div({
+			class: "margin-vertical",
+			children: [
+				h3({ class: "margin-vertical padding-bottom-medium border-bottom border-color-dark-grey", text: "Border Color"}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-medium border-all border-color-green",
+					content: code({ class: "code", text: ".border-color-green" })
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-medium border-all border-color-red",
+					content: code({ class: "code", text: ".border-color-red" })
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-medium border-all border-color-blue",
+					content: code({ class: "code", text: ".border-color-blue" })
+				})
+			]
+		})
 	]);
 };
 

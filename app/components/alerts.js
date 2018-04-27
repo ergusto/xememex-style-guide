@@ -29,7 +29,7 @@ Alerts.prototype.intro = function() {
 					text: "Example Alert!"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".alert" })
 				}),
 			]
@@ -43,7 +43,7 @@ Alerts.prototype.intro = function() {
 					text: "Example Alert!"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".alert .alert--green" })
 				}),
 			]
@@ -57,7 +57,7 @@ Alerts.prototype.intro = function() {
 					text: "Example Alert!"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".alert .alert--blue" })
 				}),
 			]
@@ -71,7 +71,7 @@ Alerts.prototype.intro = function() {
 					text: "Example Alert!"
 				}),
 				pre({
-					class: "preformatted margin-vertical-small padding-all-small",
+					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".alert .alert--red" })
 				}),
 			]
