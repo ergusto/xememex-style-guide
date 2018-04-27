@@ -13,9 +13,11 @@ var div = templater.div,
 var activeRouteLinkClass = "sidebar-list-link--active";
 
 var items = [
+	{ text: "Getting started" },
 	{ text: "Introduction", url: "#/", routeName: "introduction" },
 	{ text: "Colours", url: "#/colours", routeName: "colours" },
 	{ text: "Components" },
+	{ text: "Alerts", url: "#/alerts", routeName: "alerts" },
 	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
 ];
@@ -35,15 +37,13 @@ Sidebar.prototype.addRouteListener = function() {
 };
 
 Sidebar.prototype.addActiveRoute = function(name) {
-	if(this.sidebarList) {
-		var activeRoute = this.sidebarList.querySelector("." + activeRouteLinkClass),
-			nextActiveRoute = this.sidebarList.querySelector('a[data-route-name="' + name + '"]');
-		if(activeRoute) {
-			activeRoute.classList.remove(activeRouteLinkClass);
-		}
-		if(nextActiveRoute) {
-			nextActiveRoute.classList.add(activeRouteLinkClass);
-		}
+	var activeRoute = this.sidebarList.querySelector("." + activeRouteLinkClass),
+		nextActiveRoute = this.sidebarList.querySelector('a[data-route-name="' + name + '"]');
+	if(activeRoute) {
+		activeRoute.classList.remove(activeRouteLinkClass);
+	}
+	if(nextActiveRoute) {
+		nextActiveRoute.classList.add(activeRouteLinkClass);
 	}
 };
 
@@ -73,7 +73,7 @@ Sidebar.prototype.renderList = function() {
 
 Sidebar.prototype.renderHeader = function() {
 	return header({
-		content: h3({ text: "Xememex style guide" }),
+		content: h3({ class: "site-title", text: "Xememex style guide" }),
 		class: "border-bottom border-color-dark-grey padding-all background-color-white"
 	});
 }

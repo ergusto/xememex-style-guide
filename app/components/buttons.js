@@ -14,7 +14,6 @@ function Buttons() {
 }
 
 Buttons.prototype.intro = function() {
-	var self = this;
 	return fragment([
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Buttons" }),
 		paragraph({
@@ -28,7 +27,7 @@ Buttons.prototype.intro = function() {
 				button({
 					class: "button button--small",
 					text: "Example button"
-				}),		
+				}),
 				pre({
 					class: "preformatted margin-vertical-small padding-all-small",
 					content: code({ class: "code", text: ".button .button--small" })
@@ -109,6 +108,14 @@ Buttons.prototype.intro = function() {
 			children: [
 				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Button Themes" }),
 				button({
+					class: "button button--outline margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-small padding-all-small",
+					content: code({ class: "code", text: ".button .button--outline" })
+				}),
+				button({
 					class: "button button--green margin-top-medium",
 					text: "Example button"
 				}),
@@ -131,6 +138,14 @@ Buttons.prototype.intro = function() {
 				pre({
 					class: "preformatted margin-vertical-small padding-all-small",
 					content: code({ class: "code", text: ".button .button--red" })
+				}),
+				button({
+					class: "button box-shadow margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-small padding-all-small",
+					content: code({ class: "code", text: ".button .box-shadow" })
 				}),
 			]
 		}),

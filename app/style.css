@@ -5,8 +5,14 @@
 ***********
 
 blue: #408fec;
+dark-blue: #3270B9;
+darker-blue: #234E81;
 red: #c73434;
+dark-red: #AB2D2D;
+darker-red: #942727;
 green: #393;
+dark-green: #277527;
+darker-green: #206120;
 light-grey: #ddd;
 lighest-grey: #fcfcfc;
 grey: #777;
@@ -124,9 +130,38 @@ blockquote {
 ***********************/
 
 /***********
+	Alerts
+***********/
+.alert {
+	padding: 1rem;
+	border: 1px solid;
+	border-color: #ccc;
+	border-radius: .25rem;
+	color: inherit;
+	display: block;
+}
+
+.alert--green {
+	background-color: #393;
+	border-color: #393;
+	color: white;
+}
+
+.alert--blue {
+	background-color: #408fec;
+	border-color: #408fec;
+	color: white;
+}
+
+.alert--red {
+	background-color: #c73434;
+	border-color: #c73434;
+	color: white;
+}
+
+/***********
 	Buttons
 ***********/
-
 .button {
 	padding: .5rem;
 	cursor: pointer;
@@ -137,6 +172,10 @@ blockquote {
 	color: inherit;
 	font-size: .85rem;
 	display: inline-block;
+}
+
+.button:active, .button:focus {
+	outline: none;
 }
 
 .button--large {
@@ -178,10 +217,34 @@ blockquote {
 /***********
 	Button Themes
 ***********/
+.button--outline {
+	background-color: white;
+	border-color: #ccc;
+	color: #586069;
+}
+
+.button--outline:hover {
+	box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.button--outline:active {
+	box-shadow: 0 0 0 2px rgba(89, 105, 128, 0.2) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset;
+}
+
 .button--blue {
 	background-color: #408fec;
 	border-color: #408fec;
 	color: white;
+}
+
+.button--blue:hover {
+	background-color: #3270B9;
+	border-color: #3270B9;
+}
+
+.button--blue:active {
+	background-color: #234E81;
+	border-color: #234E81;
 }
 
 .button--red {
@@ -190,10 +253,30 @@ blockquote {
 	color: white;
 }
 
+.button--red:hover {
+	background-color: #AB2D2D;
+	border-color: #AB2D2D;
+}
+
+.button--red:active {
+	background-color: #942727;
+	border-color: #942727;
+}
+
 .button--green {
 	background-color: #393;
 	border-color: #393;
 	color: white;
+}
+
+.button--green:hover {
+	background-color: #277527;
+	border-color: #277527;
+}
+
+.button--green:active {
+	background-color: #206120;
+	border-color: #206120;
 }
 
 /***********************
@@ -215,12 +298,36 @@ blockquote {
 	color: #393 !important;
 }
 
+.color-dark-green {
+	color: #277527 !important;
+}
+
+.color-darker-green {
+	color: #206120 !important;
+}
+
 .color-red {
 	color: #c73434 !important;
 }
 
+.color-dark-red {
+	color: #AB2D2D !important;
+}
+
+.color-darker-red {
+	color: #942727 !important;
+}
+
 .color-blue {
 	color: #408fec !important;
+}
+
+.color-dark-blue {
+	color: #3270B9 !important;
+}
+
+.color-darker-blue {
+	color: #234E81 !important;
 }
 
 .color-grey {
@@ -266,12 +373,36 @@ blockquote {
 	background-color: #393 !important;
 }
 
+.background-color-dark-green {
+	background-color: #277527 !important;
+}
+
+.background-color-darker-green {
+	background-color: #206120 !important;
+}
+
 .background-color-red {
 	background-color: #c73434 !important;
 }
 
+.background-color-dark-red {
+	background-color: #AB2D2D !important;
+}
+
+.background-color-darker-red {
+	background-color: #942727 !important;
+}
+
 .background-color-blue {
 	background-color: #408fec !important;
+}
+
+.background-color-dark-blue {
+	background-color: #3270B9 !important;
+}
+
+.background-color-darker-blue {
+	background-color: #234E81 !important;
 }
 
 .background-color-grey {
@@ -345,12 +476,36 @@ blockquote {
 	border-color: #393;
 }
 
+.border-color-dark-green {
+	border-color: #277527;
+}
+
+.border-color-darker-green {
+	border-color: #206120;
+}
+
 .border-color-red {
 	border-color: #c73434;
 }
 
+.border-color-dark-red {
+	border-color: #AB2D2D;
+}
+
+.border-color-darker-red {
+	border-color: #942727;
+}
+
 .border-color-blue {
 	border-color: #408fec;
+}
+
+.border-color-dark-blue {
+	border-color: #3270B9;
+}
+
+.border-color-darker-blue {
+	border-color: #234E81;
 }
 
 .border-color-grey {
@@ -437,6 +592,10 @@ blockquote {
 ***********/
 .box-shadow {
 	box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1), 0 1px 3px 0 rgba(89, 105, 128, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.box-shadow-inset {
+	box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.05) inset;
 }
 
 .box-shadow-subtle {

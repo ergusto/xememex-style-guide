@@ -38,10 +38,10 @@ Router.prototype.handleHashChange = function() {
 
 Router.prototype.addRoutes = function(routes) {
 	var self = this;
-	Object.keys(routes).forEach(function(key) {
+	Object.keys(routes).forEach(function(route) {
 		self.routes.push({
-			name: routes[key],
-			route: key
+			name: routes[route],
+			route: route
 		});
 	});
 };

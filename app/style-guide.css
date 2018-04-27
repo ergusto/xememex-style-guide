@@ -1,5 +1,9 @@
-body {
+.assistant {
 	font-family: "Assistant";
+}
+
+.site-title {
+	text-shadow: 0 1px hsla(0,0%,100%,.25);
 }
 
 .layout-sidebar {
@@ -19,7 +23,7 @@ body {
 	border-left: 4px solid;
 	border-color: transparent;
 	font-weight: normal;
-	transition: font-weight .15s ease-in-out;
+	transition: font-weight .25s ease-in-out, border-color .25s ease-in-out;
 }
 
 .sidebar-list-link:hover {

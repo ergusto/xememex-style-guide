@@ -13,8 +13,14 @@ var div = templater.div,
 
 var colours = [
 	{ name: "green", code: "#393" },
+	{ name: "dark-green", code: "#277527" },
+	{ name: "darker-green", code: "#206120" },
 	{ name: "red", code: "#c73434" },
+	{ name: "dark-red", code: "#AB2D2D" },
+	{ name: "darker-red", code: "#942727" },
 	{ name: "blue", code: "#408fec" },
+	{ name: "dark-blue", code: "#3270B9" },
+	{ name: "darker-blue", code: "#234E81" },
 	{ name: "white", code: "#fff" },
 	{ name: "grey", code: "#777" },
 	{ name: "light-grey", code: "#ddd" },
@@ -59,7 +65,7 @@ Colours.prototype.intro = function() {
 
 Colours.prototype.uses = function() {
 	return fragment([
-		h2({ class: "margin-vertical", text: "Uses" }),
+		h2({ class: "margin-vertical padding-bottom border-bottom border-color-dark-grey", text: "Uses" }),
 		paragraph({
 			text: "These colours are used in a variety of different helper classes."
 		}),
@@ -78,28 +84,28 @@ Colours.prototype.uses = function() {
 		}),
 		h3({ class: "margin-vertical", text: "Background Color"}),
 		pre({
-			class: "preformatted margin-vertical-small padding-all-small background-color-green",
+			class: "preformatted margin-vertical-small padding-all-medium background-color-green",
 			content: code({ class: "code color-white", text: ".background-color-green" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small padding-all-small background-color-red",
+			class: "preformatted margin-vertical-small padding-all-medium background-color-red",
 			content: code({ class: "code color-white", text: ".background-color-red" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small padding-all-small background-color-blue",
+			class: "preformatted margin-vertical-small padding-all-medium background-color-blue",
 			content: code({ class: "code color-white", text: ".background-color-blue" })
 		}),
 		h3({ class: "margin-vertical", text: "Border Color"}),
 		pre({
-			class: "preformatted margin-vertical-small padding-all-small border-all border-color-green",
+			class: "preformatted margin-vertical-small padding-all-medium border-all border-color-green",
 			content: code({ class: "code", text: ".border-color-green" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small padding-all-small border-all border-color-red",
+			class: "preformatted margin-vertical-small padding-all-medium border-all border-color-red",
 			content: code({ class: "code", text: ".border-color-red" })
 		}),
 		pre({
-			class: "preformatted margin-vertical-small padding-all-small border-all border-color-blue",
+			class: "preformatted margin-vertical-small padding-all-medium border-all border-color-blue",
 			content: code({ class: "code", text: ".border-color-blue" })
 		}),
 	]);
