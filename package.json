@@ -21,6 +21,7 @@
         "file-loader": "^1.1.11",
         "style-loader": "^0.20.3",
         "typeface-assistant": "0.0.54",
+        "typeface-comfortaa": "0.0.54",
         "url-loader": "^1.0.1",
         "webpack": "^4.5.0"
     },

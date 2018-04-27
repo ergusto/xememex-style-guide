@@ -73,7 +73,7 @@ Sidebar.prototype.renderList = function() {
 
 Sidebar.prototype.renderHeader = function() {
 	return header({
-		content: h3({ class: "site-title", text: "Xememex style guide" }),
+		content: h3({ class: "site-title comfortaa", text: "xememex style guide" }),
 		class: "border-bottom border-color-dark-grey padding-all background-color-white"
 	});
 }

@@ -4,6 +4,7 @@ var Layout = require("./components/layout.js"),
 	router = require("./router.js");
 
 require("typeface-assistant");
+require("typeface-comfortaa");
 require("./style.css");
 require("./style-guide.css");
 
