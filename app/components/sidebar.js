@@ -20,6 +20,12 @@ var items = [
 	{ text: "Alerts", url: "#/alerts", routeName: "alerts" },
 	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
+	{ text: "Layout" },
+	{ text: "Widths", url: "#/widths", routeName: "widths" },
+	{ text: "Typography" },
+	{ text: "Font family", url: "#/font-family", routeName: "font-family" },
+	{ text: "Theming" },
+	{ text: "Borders", url: "#/borders", routeName: "borders" },
 ];
 
 function Sidebar() {
@@ -53,7 +59,7 @@ Sidebar.prototype.renderList = function() {
 		children: items.map(function(item) {
 			if(item.routeName) {
 				return li({
-					class: "block border-bottom border-color-dark-grey background-color-white",
+					class: "block border-bottom border-color-light-grey background-color-white",
 					content: anchor({
 						class: "sidebar-list-link block no-decoration color-inherit padding-horizontal padding-vertical-medium",
 						href: item.url,
@@ -63,9 +69,9 @@ Sidebar.prototype.renderList = function() {
 				});
 			} else {
 				return h4({
-					class: "block padding-horizontal padding-vertical-medium margin-top-small border-bottom border-color-dark-grey",
+					class: "block padding-horizontal padding-vertical-medium margin-top-small border-bottom border-color-light-grey font-weight-normal",
 					text: item.text
-				})
+				});
 			}
 		})
 	});
@@ -76,15 +82,15 @@ Sidebar.prototype.renderHeader = function() {
 		content: anchor({
 			class: "no-decoration color-inherit",
 			href: "#/",
-			content: h3({ class: "site-title comfortaa text-align-center", text: "xememex style guide" })
+			content: h3({ class: "site-title comfortaa text-align-center font-weight-normal", text: "xememex style guide" })
 		}),
-		class: "border-bottom border-color-dark-grey padding-all background-color-white"
+		class: "border-bottom border-color-light-grey padding-all background-color-white"
 	});
 }
 
 Sidebar.prototype.render = function() {
 	return div({
-		class: "layout-sidebar background-color-light-purple border-right border-color-dark-grey box-shadow",
+		class: "layout-sidebar background-color-light-purple border-right border-color-dark-grey box-shadow padding-bottom",
 		children: [this.header,this.list]
 	});
 };
