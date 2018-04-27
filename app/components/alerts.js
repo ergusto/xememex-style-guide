@@ -15,7 +15,7 @@ function Alerts() {
 
 Alerts.prototype.intro = function() {
 	return fragment([
-		h1({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Alerts" }),
+		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Alerts" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
 			text: "Alerts are for providing contextual feedback to users. For communicating the result of an action, for example."
@@ -23,7 +23,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Default Alert" }),
+				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Default Alert" }),
 				div({
 					class: "alert",
 					text: "Example Alert!"
@@ -37,7 +37,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Green Alert" }),
+				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Green Alert" }),
 				div({
 					class: "alert alert--green",
 					text: "Example Alert!"
@@ -51,7 +51,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Blue Alert" }),
+				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Blue Alert" }),
 				div({
 					class: "alert alert--blue",
 					text: "Example Alert!"
@@ -65,7 +65,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Red Alert" }),
+				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Red Alert" }),
 				div({
 					class: "alert alert--red",
 					text: "Example Alert!"
@@ -83,7 +83,7 @@ Alerts.prototype.render = function() {
 	var intro = this.intro();
 
 	return div({
-		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-dark-grey box-shadow border-radius-all",
+		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro]
 	});
 };

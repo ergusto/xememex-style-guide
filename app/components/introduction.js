@@ -25,7 +25,7 @@ Introduction.prototype.render = function() {
 		methodology = this.methodology();
 
 	return div({
-		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-dark-grey box-shadow border-radius-all",
+		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro,principles,methodology]
 	});
 };
@@ -46,7 +46,7 @@ Introduction.prototype.principles = function() {
 
 Introduction.prototype.intro = function() {
 	return fragment([
-		h1({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Introduction" }),
+		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Introduction" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
 			text: "This is the xememex style guide and UI kit. It is the single source of truth for all CSS patterns, components and UI design."

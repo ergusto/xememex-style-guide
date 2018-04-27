@@ -22,6 +22,7 @@ var items = [
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
 	{ text: "Layout" },
 	{ text: "Widths", url: "#/widths", routeName: "widths" },
+	{ text: "Margin and padding", url: "#/margin-and-padding", routeName: "margin-and-padding" },
 	{ text: "Typography" },
 	{ text: "Font family", url: "#/font-family", routeName: "font-family" },
 	{ text: "Theming" },
@@ -29,8 +30,6 @@ var items = [
 ];
 
 function Sidebar() {
-	this.header = this.renderHeader();
-	this.list = this.renderList();
 	this.element = this.render();
 	this.addRouteListener();
 }
@@ -53,7 +52,7 @@ Sidebar.prototype.addActiveRoute = function(name) {
 	}
 };
 
-Sidebar.prototype.renderList = function() {
+Sidebar.prototype.list = function() {
 	return ul({
 		ref: { name: "sidebarList", context: this },
 		children: items.map(function(item) {
@@ -68,16 +67,19 @@ Sidebar.prototype.renderList = function() {
 					})
 				});
 			} else {
-				return h4({
-					class: "block padding-horizontal padding-vertical-medium margin-top-small border-bottom border-color-light-grey font-weight-normal",
-					text: item.text
+				return li({
+					class: "margin-top-small",
+					content: h4({
+						class: "block padding-horizontal padding-vertical-medium border-bottom border-color-light-grey font-weight-normal",
+						text: item.text
+					})
 				});
 			}
 		})
 	});
 };
 
-Sidebar.prototype.renderHeader = function() {
+Sidebar.prototype.header = function() {
 	return header({
 		content: anchor({
 			class: "no-decoration color-inherit",
@@ -89,9 +91,11 @@ Sidebar.prototype.renderHeader = function() {
 }
 
 Sidebar.prototype.render = function() {
+	var header = this.header(),
+		list = this.list();
 	return div({
-		class: "layout-sidebar background-color-light-purple border-right border-color-dark-grey box-shadow padding-bottom",
-		children: [this.header,this.list]
+		class: "layout-sidebar background-color-light-purple border-right border-color-grey box-shadow padding-bottom",
+		children: [header,list]
 	});
 };
 

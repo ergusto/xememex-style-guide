@@ -19,20 +19,23 @@ Dropdown.prototype.intro = function() {
 
 	var dropdown = new DropdownComponent({
 		trigger: trigger,
+		triggeredOnHover: true,
 		content: function() {
-			return div(h1({
-				text: "Hi there"
-			}))
+			return div({
+				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
+				content: paragraph({
+					text: "Dropdown Content"
+				})
+			})
 		}
 	});
 
 	return fragment([
-		h1({ class: "margin-bottom padding-bottom border-bottom border-color-dark-grey", text: "Dropdown" }),
+		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Dropdown" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
 			text: "A dropdown component."
 		}),
-		trigger,
 		dropdown.element
 	]);
 };
@@ -41,7 +44,7 @@ Dropdown.prototype.render = function() {
 	var intro = this.intro();
 
 	return div({
-		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-dark-grey box-shadow border-radius-all",
+		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro]
 	});
 };

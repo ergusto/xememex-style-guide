@@ -15,8 +15,8 @@ dark-green: #277527;
 darker-green: #206120;
 light-grey: #ddd;
 lighest-grey: #fcfcfc;
-grey: #777;
-dark-grey: #ccc;
+grey: #ccc;
+dark-grey: #777;
 darker-grey: #586069;
 light-purple: #f7f7f9;
 silver: #e3e7ef;
@@ -284,6 +284,25 @@ blockquote {
 	border-color: #206120;
 }
 
+/***********
+	Button Themes
+***********/
+.dropdown__container {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown__container--on-hover:hover .dropdown {
+	display: block;
+}
+
+.dropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+}
+
 /***********************
 ------------------------
 ------------------------
@@ -342,7 +361,7 @@ blockquote {
 }
 
 .color-grey {
-	color: #777 !important;
+	color: #ccc !important;
 }
 
 .color-light-grey {
@@ -354,7 +373,7 @@ blockquote {
 }
 
 .color-dark-grey {
-	color: #ccc !important;
+	color: #777 !important;
 }
 
 .color-darker-grey {
@@ -417,7 +436,7 @@ blockquote {
 }
 
 .background-color-grey {
-	background-color: #777 !important;
+	background-color: #ccc !important;
 }
 
 .background-color-light-grey {
@@ -429,7 +448,7 @@ blockquote {
 }
 
 .background-color-dark-grey {
-	background-color: #ccc !important;
+	background-color: #777 !important;
 }
 
 .background-color-darker-grey {
@@ -520,7 +539,7 @@ blockquote {
 }
 
 .border-color-grey {
-	border-color: #777;
+	border-color: #ccc;
 }
 
 .border-color-light-grey {
@@ -532,7 +551,7 @@ blockquote {
 }
 
 .border-color-dark-grey {
-	border-color: #ccc;
+	border-color: #777;
 }
 
 .border-color-darker-grey {

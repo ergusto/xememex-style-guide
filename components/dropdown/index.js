@@ -13,26 +13,25 @@ function Dropdown(props) {
 
 Dropdown.prototype.addEventListeners = function() {
 	var self = this;
-	if(this.trigger) {
-		if(this.triggeredOnHover) {
-			this.trigger.addEventListener("mouseover", function() {
-				self.body.classList.add("dropdown--open");
-			});
-			this.trigger.addEventListener("mouseout", function() {
-				self.body.classList.remove("dropdown--open");
-			});
-		}
-	}
 };
 
 Dropdown.prototype.render = function() {
-	this.body = div({
-		content: this.content
-	});
+	var className = "dropdown__container";
+
+	if(this.triggeredOnHover) {
+		className += " dropdown__container--on-hover";
+	}
 
 	return div({
-		class: "dropdown-container",
-		content: this.body
+		class: className,
+		children: [
+			this.trigger,
+			div({
+				class: "dropdown",
+				ref: { name: "dropdown", context: this },
+				content: this.content
+			})
+		]
 	});
 };
 
