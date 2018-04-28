@@ -173,6 +173,7 @@ blockquote {
 	color: inherit;
 	font-size: .85rem;
 	display: inline-block;
+	transition: 0.2s;
 }
 
 .button:active, .button:focus {
@@ -197,6 +198,13 @@ blockquote {
 .button:disabled {
 	opacity: .65;
 	cursor: not-allowed;
+}
+
+/***********
+	Button animations
+***********/
+.button--shift-on-hover:hover {
+	transform: translateY(-2px);
 }
 
 /***********
@@ -230,11 +238,11 @@ blockquote {
 }
 
 .button--outline:not(:disabled):hover {
-	box-shadow: 0 0 0 1px rgba(89, 105, 128, 0.1) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(89, 105, 128, 0.1) inset, 0 1px 4px 0 rgba(89, 105, 128, 0.1) inset, 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 .button--outline:not(:disabled):active {
-	box-shadow: 0 0 0 2px rgba(89, 105, 128, 0.2) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset;
+	box-shadow: 0 0 0 3px rgba(89, 105, 128, 0.2) inset, 0 1px 3px 0 rgba(89, 105, 128, 0.1) inset;
 }
 
 .button--blue {

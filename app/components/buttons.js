@@ -156,6 +156,14 @@ Buttons.prototype.intro = function() {
 					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button:disabled" })
 				}),
+				button({
+					class: "button button--blue button--shift-on-hover margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code", text: ".button .button--shift-on-hover" })
+				}),
 			]
 		}),
 	]);

@@ -66,7 +66,7 @@ Dropdown.prototype.onHover = function() {
 						text: ".dropdown__container"
 					}),
 					span({
-						text: " will be considered a trigger."
+						text: " will trigger the dropdown."
 					})
 				]
 			})
