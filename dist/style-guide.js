@@ -166,7 +166,7 @@ eval("var templater = __webpack_require__(/*! ../templater */ \"./app/templater/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var templater = __webpack_require__(/*! ../templater */ \"./app/templater/index.js\"),\n\tSidebar = __webpack_require__(/*! ./sidebar.js */ \"./app/components/sidebar.js\");\n\nvar div = templater.div;\n\nfunction Layout() {\n\tthis.element = this.render();\n}\n\nLayout.prototype.render = function() {\n\tvar sidebar = new Sidebar();\n\n\tdiv({\n\t\tclass: \"layout-body padding-horizontal\",\n\t\tref: { name: \"body\", context: this }\n\t});\n\n\treturn div({\n\t\tclass: \"layout\",\n\t\tchildren: [sidebar.element,this.body]\n\t});\n};\n\nmodule.exports = Layout;\n\n//# sourceURL=webpack:///./app/components/layout.js?");
+eval("var templater = __webpack_require__(/*! ../templater */ \"./app/templater/index.js\"),\n\tSidebar = __webpack_require__(/*! ./sidebar.js */ \"./app/components/sidebar.js\");\n\nvar div = templater.div;\n\nfunction Layout() {\n\tthis.element = this.render();\n}\n\nLayout.prototype.render = function() {\n\tvar sidebar = new Sidebar();\n\n\tthis.body = div({ class: \"layout-body padding-horizontal\" });\n\n\treturn div({\n\t\tclass: \"layout\",\n\t\tchildren: [sidebar.element,this.body]\n\t});\n};\n\nmodule.exports = Layout;\n\n//# sourceURL=webpack:///./app/components/layout.js?");
 
 /***/ }),
 

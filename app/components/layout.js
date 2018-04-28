@@ -10,10 +10,7 @@ function Layout() {
 Layout.prototype.render = function() {
 	var sidebar = new Sidebar();
 
-	div({
-		class: "layout-body padding-horizontal",
-		ref: { name: "body", context: this }
-	});
+	this.body = div({ class: "layout-body padding-horizontal" });
 
 	return div({
 		class: "layout",
