@@ -1,6 +1,7 @@
 var templater = require("../../app/templater");
 
-var div = templater.div;
+var div = templater.div,
+	dropdownOpenClass = "dropdown__container--open";
 
 function Dropdown(props) {
 	props = props || {};
@@ -12,7 +13,14 @@ function Dropdown(props) {
 	this.alignCenter = props.alignCenter;
 	this.content = props.content;
 	this.element = this.render();
+	this.documentClick = this.documentClick.bind(this);
 	this.addEventListeners();
+}
+
+Dropdown.prototype.documentClick = function(event) {
+	if(!this.element.contains(event.target)) {
+		this.close();
+	}
 }
 
 Dropdown.prototype.addEventListeners = function() {
@@ -21,21 +29,27 @@ Dropdown.prototype.addEventListeners = function() {
 		this.trigger.addEventListener("click",function(event) {
 			event.preventDefault();
 
-			self.open();
-
-			document.addEventListener("click",function(event) {
-				if(!self.element.contains(event.target)) self.close();
-			});
+			if(self.isOpen()) {
+				self.close();
+			} else {
+				self.open();
+				document.addEventListener("click",self.documentClick);
+			}
 		});
 	}
 };
 
+Dropdown.prototype.isOpen = function() {
+	return this.element.classList.contains(dropdownOpenClass);
+};
+
 Dropdown.prototype.open = function() {
-	this.element.classList.add("dropdown__container--open");
+	this.element.classList.add(dropdownOpenClass);
 };
 
 Dropdown.prototype.close = function() {
-	this.element.classList.remove("dropdown__container--open");
+	this.element.classList.remove(dropdownOpenClass);
+	document.removeEventListener("click",this.documentClick);
 };
 
 Dropdown.prototype.render = function() {
@@ -43,9 +57,7 @@ Dropdown.prototype.render = function() {
 
 	if(this.triggeredOnHover) {
 		className += " dropdown__container--shown-on-hover";
-	}
-
-	if(this.triggeredOnClick) {
+	} else if(this.triggeredOnClick) {
 		className += " dropdown__container--shown-on-click";
 	}
 

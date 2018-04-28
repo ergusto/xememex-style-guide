@@ -89,6 +89,7 @@ blockquote {
 	line-height: inherit;
 	font-family: monospace;
 	word-break: break-word;
+	white-space: normal;
 }
 
 .preformatted {
@@ -98,7 +99,6 @@ blockquote {
 .preformatted .code {
 	font-size: inherit;
 	color: inherit;
-	word-break: normal;
 }
 
 /***********
@@ -291,7 +291,6 @@ blockquote {
 .dropdown {
 	position: absolute;
 	top: 100%;
-	z-index: 1;
 	white-space: nowrap;
 	visibility: hidden;
 	opacity: 0;
@@ -450,7 +449,6 @@ blockquote {
 /***********
 	Fill
 ***********/
-
 .fill-white {
 	fill: white;
 }
@@ -458,7 +456,6 @@ blockquote {
 /***********
 	Borders
 ***********/
-
 .borderless {
 	border: none;
 }
@@ -708,6 +705,10 @@ blockquote {
 	font-weight: bold;
 }
 
+.bold-on-hover:hover {
+	font-weight: bold;
+}
+
 .font-weight-normal {
 	font-weight: normal;
 }
@@ -734,7 +735,15 @@ blockquote {
 	text-decoration: underline;
 }
 
+.underline-on-hover:hover {
+	text-decoration: underline;
+}
+
 .no-decoration {
+	text-decoration: none;
+}
+
+.no-decoration-on-hover:hover {
 	text-decoration: none;
 }
 

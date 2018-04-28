@@ -8,6 +8,8 @@ var div = templater.div,
 	h4 = templater.h4,
 	paragraph = templater.p,
 	fragment = templater.fragment,
+	ul = templater.ul,
+	li = templater.li,
 	pre = templater.pre,
 	code = templater.code;
 
@@ -36,12 +38,12 @@ function Colors() {
 }
 
 Colors.prototype.colors = function() {
-	return fragment(colors.map(function(color) {
-		return div({
+	return ul(colors.map(function(color) {
+		return li({
 			class: "margin-all-small inline-block",
 			children: [
 				div({
-					class: "inline-block padding-all-3 box-shadow border-radius-all background-color-" + color.name
+					class: "padding-all-3 box-shadow border-radius-all background-color-" + color.name
 				}),
 				paragraph({
 					class: "padding-vertical-medium",

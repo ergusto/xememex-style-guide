@@ -5,42 +5,42 @@ var utils = require("../utils"),
 	isDOMNode = utils.isDOMNode,
 	isString = utils.isString;
 
-function templater(config) {
+function templater(options) {
 	var prop,
 		textNode,
 		refName,
 		refContext,
-		ref = config.ref,
-		type = config.type,
-		events = config['events'],
-		content = config.content,
-		text = config.text,
-		parent = config.parent,
-		children = config.children,
-		click = config.click,
-		submit = config.submit,
-		keyup = config.keyup,
-		keydown = config.keydown,
-		focus = config.focus,
-		blur = config.blur,
-		keypress = config.keypress,
+		ref = options.ref,
+		type = options.type,
+		events = options['events'],
+		content = options.content,
+		text = options.text,
+		parent = options.parent,
+		children = options.children,
+		click = options.click,
+		submit = options.submit,
+		keyup = options.keyup,
+		keydown = options.keydown,
+		focus = options.focus,
+		blur = options.blur,
+		keypress = options.keypress,
 		element = document.createElement(type);
 
-	delete config['ref'];
-	delete config['type'];
-	delete config['events'];
-	delete config['content'];
-	delete config['text'];
-	delete config['parent'];
-	delete config['children'];
+	delete options['ref'];
+	delete options['type'];
+	delete options['events'];
+	delete options['content'];
+	delete options['text'];
+	delete options['parent'];
+	delete options['children'];
 
-	delete config['click'];
-	delete config['submit'];
-	delete config['keyup'];
-	delete config['keydown'];
-	delete config['keypress'];
-	delete config['focus'];
-	delete config['blur'];
+	delete options['click'];
+	delete options['submit'];
+	delete options['keyup'];
+	delete options['keydown'];
+	delete options['keypress'];
+	delete options['focus'];
+	delete options['blur'];
 
 	if(!isObject(events)) events = {};
 
@@ -58,9 +58,9 @@ function templater(config) {
 		}
 	}
 
-	for(prop in config) {
-		if(Object.prototype.hasOwnProperty.call(config, prop)) {
-			element.setAttribute(prop,config[prop]);
+	for(prop in options) {
+		if(Object.prototype.hasOwnProperty.call(options, prop)) {
+			element.setAttribute(prop,options[prop]);
 		}
 	}
 
@@ -154,8 +154,8 @@ function Templater(types) {
 		types = Array.prototype.slice.call(arguments);
 	}
 
-	function templater(config) {
-		return templater(config);
+	function templater(options) {
+		return templater(options);
 	}
 
 	templater.fragment = fragment;

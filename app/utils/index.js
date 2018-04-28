@@ -302,3 +302,9 @@ function extend(source,properties) {
 }
 
 module.exports.extend = extend;
+
+function scrollToDocumentTop() {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+module.exports.scrollToDocumentTop = scrollToDocumentTop;

@@ -97,8 +97,8 @@ Introduction.prototype.functional = function() {
 		ul({
 			class: "bulleted-list padding-left-2 margin-vertical",
 			children: [
-				li({ text: "Class names describe styling, rather than content." }),
-				li({ text: "Classes should generally have a single responsibility." })
+				li({ text: "Classes should generally have a single responsibility." }),
+				li({ text: "Class names describe styling, rather than content." })
 			]
 		})
 	]);

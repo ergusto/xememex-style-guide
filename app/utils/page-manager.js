@@ -2,7 +2,8 @@ var utils = require("./index.js");
 
 var removeChildren = utils.removeChildren,
 	simpleObjectComparison = utils.simpleObjectComparison,
-  removeChildren = utils.removeChildren;
+	removeChildren = utils.removeChildren,
+	scrollToDocumentTop = utils.scrollToDocumentTop;
 
 function PageManager(container,pages) {
 	this.pages = {};
@@ -43,6 +44,7 @@ PageManager.prototype.renderPage = function(pageName,params) {
 		this.currentPage = page.name;
 		this.removeChildren();
 		this.container.appendChild(template);
+		scrollToDocumentTop();
 	}
 };
 

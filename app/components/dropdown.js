@@ -39,7 +39,7 @@ Dropdown.prototype.onHover = function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
 				content: paragraph({
-					text: "Dropdown Content "
+					text: "Dropdown content"
 				})
 			})
 		}
@@ -53,7 +53,7 @@ Dropdown.prototype.onHover = function() {
 			dropdown.element,
 			pre({
 				class: "preformatted margin-vertical-medium padding-all-small",
-				content: code({ class: "code", text: ".dropdown__container.dropdown__container--shown-on-hover .dropdown" })
+				content: code({ class: "code", text: ".dropdown__container.dropdown__container--align-left.dropdown__container--shown-on-hover .dropdown" })
 			}),
 			paragraph({
 				class: "margin-vertical-medium",
@@ -88,7 +88,7 @@ Dropdown.prototype.onHoverCentered = function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
 				content: paragraph({
-					text: "Dropdown Content"
+					text: "Dropdown content centered"
 				})
 			})
 		}
@@ -122,7 +122,7 @@ Dropdown.prototype.onHoverAlignRight = function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
 				content: paragraph({
-					text: "Dropdown Content"
+					text: "Aligned right dropdown content"
 				})
 			})
 		}

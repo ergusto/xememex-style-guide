@@ -9,28 +9,24 @@
 	text-shadow: 0 1px hsla(0,0%,100%,.25);
 }
 
-.layout-sidebar {
+.layout__sidebar {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	width: 15rem;
 	overflow-y: scroll;
+	z-index: 1;
 }
 
-.layout-body {
+.layout__body {
 	margin-left: 15rem;
 }
 
 .sidebar-list-link {
 	border-left: 4px solid;
 	border-color: transparent;
-	font-weight: normal;
 	transition: font-weight .25s ease-in-out, border-color .25s ease-in-out;
-}
-
-.sidebar-list-link:hover {
-	font-weight: bold;
 }
 
 .sidebar-list-link--active {

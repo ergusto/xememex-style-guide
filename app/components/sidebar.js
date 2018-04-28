@@ -61,7 +61,7 @@ Sidebar.prototype.list = function() {
 				return li({
 					class: "block border-bottom border-color-light-grey background-color-white",
 					content: anchor({
-						class: "sidebar-list-link block no-decoration color-inherit padding-horizontal padding-vertical-medium",
+						class: "sidebar-list-link block no-decoration color-inherit padding-horizontal padding-vertical-medium bold-on-hover",
 						href: item.url,
 						"data-route-name": item.routeName,
 						text: item.text
@@ -95,7 +95,7 @@ Sidebar.prototype.render = function() {
 	var header = this.header(),
 		list = this.list();
 	return div({
-		class: "layout-sidebar background-color-light-purple border-right border-color-grey box-shadow padding-bottom",
+		class: "layout__sidebar background-color-light-purple border-right border-color-grey box-shadow padding-bottom",
 		children: [header,list]
 	});
 };
