@@ -6,7 +6,7 @@ var router = new Router({
 	"/buttons": "buttons",
 	"/colors": "colors",
 	"/dropdown": "dropdown",
-	"/form-controls": "form-controls"
+	"/form-inputs": "form-inputs"
 });
 
 module.exports = router;

@@ -9,7 +9,11 @@
 	text-shadow: 0 1px hsla(0,0%,100%,.25);
 }
 
-.layout__sidebar {
+/***********
+	Layout
+***********/
+
+.layout__site-menu {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -23,12 +27,16 @@
 	margin-left: 15rem;
 }
 
-.sidebar-list-link {
+/***********
+	Site menu
+***********/
+
+.site-menu-link {
 	border-left: 4px solid;
 	border-color: transparent;
 	transition: font-weight .25s ease-in-out, border-color .25s ease-in-out;
 }
 
-.sidebar-list-link--active {
+.site-menu-link--active {
 	border-color: #3270B9;
 }

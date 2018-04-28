@@ -1,5 +1,5 @@
 var templater = require("../templater"),
-	Sidebar = require("./sidebar.js");
+	SiteMenu = require("./site-menu.js");
 
 var div = templater.div;
 
@@ -8,13 +8,13 @@ function Layout() {
 }
 
 Layout.prototype.render = function() {
-	var sidebar = new Sidebar();
+	var siteMenu = new SiteMenu();
 
 	this.body = div({ class: "layout__body padding-horizontal" });
 
 	return div({
 		class: "layout",
-		children: [sidebar.element,this.body]
+		children: [siteMenu.element,this.body]
 	});
 };
 

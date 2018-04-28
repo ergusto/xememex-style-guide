@@ -1,7 +1,10 @@
 var Layout = require("./components/layout.js"),
 	PageManager = require("./utils/page-manager.js"),
 	pageList = require("./pages"),
-	router = require("./router.js");
+	router = require("./router.js"),
+	utils = require("./utils");
+
+var scrollToDocumentTop = utils.scrollToDocumentTop;
 
 require("typeface-assistant");
 require("typeface-comfortaa");
@@ -14,6 +17,7 @@ module.exports = function(appNode) {
 
 	appNode.appendChild(layout.element);
 
+	pageManager.register(scrollToDocumentTop);
 	router.register(pageManager.routerMiddleware());
 	router.start();
 };

@@ -10,9 +10,9 @@ var div = templater.div,
 	header = templater.header,
 	fragment = templater.fragment;
 
-var activeRouteLinkClass = "sidebar-list-link--active";
+var activeRouteLinkClass = "site-menu-link--active";
 
-var items = [
+var menuItems = [
 	{ text: "Getting started" },
 	{ text: "Introduction", url: "#/", routeName: "introduction" },
 	{ text: "Colors", url: "#/colors", routeName: "colors" },
@@ -20,7 +20,7 @@ var items = [
 	{ text: "Alerts", url: "#/alerts", routeName: "alerts" },
 	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
-	{ text: "Form controls", url: "#/form-controls", routeName: "form-controls" },
+	{ text: "Form inputs", url: "#/form-inputs", routeName: "form-inputs" },
 	{ text: "Layout" },
 	{ text: "Widths", url: "#/widths", routeName: "widths" },
 	{ text: "Margin and padding", url: "#/margin-and-padding", routeName: "margin-and-padding" },
@@ -30,21 +30,21 @@ var items = [
 	{ text: "Borders", url: "#/borders", routeName: "borders" },
 ];
 
-function Sidebar() {
+function SiteMenu() {
 	this.element = this.render();
 	this.addRouteListener();
 }
 
-Sidebar.prototype.addRouteListener = function() {
+SiteMenu.prototype.addRouteListener = function() {
 	var self = this;
 	router.register(function(name) {
 		self.addActiveRoute(name);
 	});
 };
 
-Sidebar.prototype.addActiveRoute = function(name) {
-	var activeRoute = this.sidebarList.querySelector("." + activeRouteLinkClass),
-		nextActiveRoute = this.sidebarList.querySelector('a[data-route-name="' + name + '"]');
+SiteMenu.prototype.addActiveRoute = function(name) {
+	var activeRoute = this.sitemenuList.querySelector("." + activeRouteLinkClass),
+		nextActiveRoute = this.sitemenuList.querySelector('a[data-route-name="' + name + '"]');
 	if(activeRoute) {
 		activeRoute.classList.remove(activeRouteLinkClass);
 	}
@@ -53,15 +53,15 @@ Sidebar.prototype.addActiveRoute = function(name) {
 	}
 };
 
-Sidebar.prototype.list = function() {
+SiteMenu.prototype.list = function() {
 	return ul({
-		ref: { name: "sidebarList", context: this },
-		children: items.map(function(item) {
+		ref: { name: "sitemenuList", context: this },
+		children: menuItems.map(function(item) {
 			if(item.routeName) {
 				return li({
 					class: "block border-bottom border-color-light-grey background-color-white",
 					content: anchor({
-						class: "sidebar-list-link block no-decoration color-inherit padding-horizontal padding-vertical-medium bold-on-hover",
+						class: "site-menu-link block no-decoration color-inherit padding-horizontal padding-vertical-medium bold-on-hover",
 						href: item.url,
 						"data-route-name": item.routeName,
 						text: item.text
@@ -80,7 +80,7 @@ Sidebar.prototype.list = function() {
 	});
 };
 
-Sidebar.prototype.header = function() {
+SiteMenu.prototype.header = function() {
 	return header({
 		content: anchor({
 			class: "no-decoration color-inherit",
@@ -91,13 +91,13 @@ Sidebar.prototype.header = function() {
 	});
 }
 
-Sidebar.prototype.render = function() {
+SiteMenu.prototype.render = function() {
 	var header = this.header(),
 		list = this.list();
 	return div({
-		class: "layout__sidebar background-color-light-purple border-right border-color-grey box-shadow padding-bottom",
+		class: "layout__site-menu background-color-light-purple border-right border-color-grey box-shadow padding-bottom",
 		children: [header,list]
 	});
 };
 
-module.exports = Sidebar;
+module.exports = SiteMenu;

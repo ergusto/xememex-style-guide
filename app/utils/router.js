@@ -63,8 +63,6 @@ Router.prototype.register = function(name,handler) {
 };
 
 Router.prototype.run = function(name,params) {
-	var self = this;
-
 	this.handlers.forEach(function(handler) {
 		handler(name, params);
 	});

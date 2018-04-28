@@ -3,10 +3,11 @@ var utils = require("./index.js");
 var removeChildren = utils.removeChildren,
 	simpleObjectComparison = utils.simpleObjectComparison,
 	removeChildren = utils.removeChildren,
-	scrollToDocumentTop = utils.scrollToDocumentTop;
+	isFunction = utils.isFunction;
 
 function PageManager(container,pages) {
 	this.pages = {};
+	this.handlers = [];
 	this.container = container;
 	this.currentPage = null;
 	this.currentParams = null;
@@ -44,7 +45,7 @@ PageManager.prototype.renderPage = function(pageName,params) {
 		this.currentPage = page.name;
 		this.removeChildren();
 		this.container.appendChild(template);
-		scrollToDocumentTop();
+		this.run();
 	}
 };
 
@@ -54,6 +55,18 @@ PageManager.prototype.routerMiddleware = function() {
 	return function pageManager(routeName,params) {
 		self.renderPage(routeName,params);
 	};
+};
+
+PageManager.prototype.register = function(handler) {
+	if(isFunction(handler) && this.handlers.indexOf(handler) === -1) {
+		this.handlers.push(handler);
+	}
+};
+
+PageManager.prototype.run = function() {
+	this.handlers.forEach(function(handler) {
+		handler();
+	});
 };
 
 module.exports = PageManager;
