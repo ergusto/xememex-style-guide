@@ -716,11 +716,15 @@ blockquote {
 	Font size
 ***********/
 .small {
-	font-size: 85%;
+	font-size: .85rem;
 }
 
 .medium {
-	font-size: 90%;
+	font-size: .9rem;
+}
+
+.regular {
+	font-size: 1rem;
 }
 
 /***********

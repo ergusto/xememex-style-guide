@@ -1,4 +1,4 @@
-var templater = require("../templater");
+var templater = require("../../templater");
 
 var div = templater.div;
 
