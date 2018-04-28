@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "./node_modules/.bin/webpack --watch",
-        "build.production": "./node_modules/.bin/webpack  --mode=production"
+        "build.production": "./node_modules/.bin/webpack --mode=production --config=webpack.prod.config.js"
     },
     "repository": {
         "type": "git",
@@ -18,17 +18,19 @@
     },
     "homepage": "https://github.com/ergusto/xememex-style-guide#readme",
     "dependencies": {
-        "css-loader": "^0.28.11",
-        "file-loader": "^1.1.11",
-        "style-loader": "^0.20.3",
         "typeface-assistant": "0.0.54",
-        "typeface-comfortaa": "0.0.54",
-        "url-loader": "^1.0.1",
-        "webpack": "^4.5.0"
+        "typeface-comfortaa": "0.0.54"
     },
     "devDependencies": {
+        "css-loader": "^0.28.11",
+        "file-loader": "^1.1.11",
         "pre-push": "^0.1.1",
-        "webpack-cli": "^2.0.15"
+        "style-loader": "^0.21.0",
+        "uglifyjs-webpack-plugin": "^1.2.5",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.6.0",
+        "webpack-cli": "^2.0.15",
+        "webpack-merge": "^4.1.2"
     },
     "pre-push": [
         "build.production"
