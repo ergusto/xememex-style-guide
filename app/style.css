@@ -285,22 +285,68 @@ blockquote {
 }
 
 /***********
-	Button Themes
+	Dropdown Component
 ***********/
 .dropdown__container {
 	position: relative;
 	display: inline-block;
 }
 
-.dropdown__container--on-hover:hover .dropdown {
-	display: block;
+.dropdown__container--shown-on-hover:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--open .dropdown {
+	opacity: 1;
+	visibility: visible;
+	will-change: opacity;
+}
+
+.dropdown__container--shown-on-hover.dropdown__container--align-center:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-center.dropdown__container--open .dropdown {
+	-webkit-transform: translateX(-50%) translateY(0);
+	-moz-transform: translateX(-50%) translateY(0);
+	-ms-transform: translateX(-50%) translateY(0);
+	-o-transform: translateX(-50%) translateY(0);
+	transform: translateX(-50%) translateY(0);
+}
+
+.dropdown__container--align-center .dropdown {
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-10px);
+	-moz-transform: translateX(-50%) translateY(-10px);
+	-ms-transform: translateX(-50%) translateY(-10px);
+	-o-transform: translateX(-50%) translateY(-10px);
+	transform: translateX(-50%) translateY(-10px);
+}
+
+.dropdown__container--shown-on-hover.dropdown__container--align-left:hover .dropdown, .dropdown__container--shown-on-hover.dropdown__container--align-right:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-left.dropdown__container--open .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-right.dropdown__container--open .dropdown {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.dropdown__container--align-right .dropdown, .dropdown__container--align-left .dropdown {
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	-ms-transform: translateY(-10px);
+	-o-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.dropdown__container--align-left .dropdown {
+	left: 0%;
+}
+
+.dropdown__container--align-right .dropdown {
+	right: 0%;
 }
 
 .dropdown {
 	position: absolute;
 	top: 100%;
-	left: 0;
-	display: none;
+	z-index: 1;
+	white-space: nowrap;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.333s;
 }
 
 /***********************
