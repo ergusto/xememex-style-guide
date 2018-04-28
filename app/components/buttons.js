@@ -149,7 +149,7 @@ Buttons.prototype.intro = function() {
 				}),
 				button({
 					disabled: "",
-					class: "button button--red margin-top-medium",
+					class: "button button--green margin-top-medium",
 					text: "Example button"
 				}),
 				pre({

@@ -49,7 +49,7 @@ Introduction.prototype.intro = function() {
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Introduction" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "This is the xememex style guide and UI kit. It is the single source of truth for all CSS patterns, components and UI design."
+			text: "This is the xememex style guide and UI kit."
 		})
 	]);
 };
