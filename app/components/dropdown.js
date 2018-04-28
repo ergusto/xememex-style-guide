@@ -156,7 +156,7 @@ Dropdown.prototype.javascript = function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
 				content: paragraph({
-					text: "Dropdown Content"
+					text: "Dropdown content shown on click"
 				})
 			})
 		}

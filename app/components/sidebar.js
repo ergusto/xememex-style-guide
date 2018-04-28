@@ -85,7 +85,7 @@ Sidebar.prototype.header = function() {
 		content: anchor({
 			class: "no-decoration color-inherit",
 			href: "#/",
-			content: h3({ class: "site-title comfortaa text-align-center font-weight-normal", text: "xememex style guide" })
+			content: h3({ class: "site-title comfortaa text-align-center", text: "xememex style guide" })
 		}),
 		class: "border-bottom border-color-light-grey padding-all background-color-white"
 	});

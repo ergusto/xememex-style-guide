@@ -3,15 +3,15 @@ var templater = require("../../app/templater");
 var div = templater.div,
 	dropdownOpenClass = "dropdown__container--open";
 
-function Dropdown(props) {
-	props = props || {};
-	this.trigger = props.trigger;
-	this.triggeredOnHover = props.triggeredOnHover;
-	this.triggeredOnClick = props.triggeredOnClick;
-	this.alignLeft = props.alignLeft;
-	this.alignRight = props.alignRight;
-	this.alignCenter = props.alignCenter;
-	this.content = props.content;
+function Dropdown(options) {
+	options = options || {};
+	this.trigger = options.trigger;
+	this.triggeredOnHover = options.triggeredOnHover;
+	this.triggeredOnClick = options.triggeredOnClick;
+	this.alignLeft = options.alignLeft;
+	this.alignRight = options.alignRight;
+	this.alignCenter = options.alignCenter;
+	this.content = options.content;
 	this.element = this.render();
 	this.documentClick = this.documentClick.bind(this);
 	this.addEventListeners();
