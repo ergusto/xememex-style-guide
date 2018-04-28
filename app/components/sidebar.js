@@ -15,11 +15,12 @@ var activeRouteLinkClass = "sidebar-list-link--active";
 var items = [
 	{ text: "Getting started" },
 	{ text: "Introduction", url: "#/", routeName: "introduction" },
-	{ text: "Colours", url: "#/colours", routeName: "colours" },
+	{ text: "Colors", url: "#/colors", routeName: "colors" },
 	{ text: "Components" },
 	{ text: "Alerts", url: "#/alerts", routeName: "alerts" },
 	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
+	{ text: "Form controls", url: "#/form-controls", routeName: "form-controls" },
 	{ text: "Layout" },
 	{ text: "Widths", url: "#/widths", routeName: "widths" },
 	{ text: "Margin and padding", url: "#/margin-and-padding", routeName: "margin-and-padding" },

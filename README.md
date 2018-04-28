@@ -1,3 +1,3 @@
 # xememex Style Guide
 
-test
+The style guide and UI kit for xememex.com. 

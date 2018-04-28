@@ -4,8 +4,9 @@ var router = new Router({
 	"/": "introduction",
 	"/alerts": "alerts",
 	"/buttons": "buttons",
-	"/colours": "colours",
-	"/dropdown": "dropdown"
+	"/colors": "colors",
+	"/dropdown": "dropdown",
+	"/form-controls": "form-controls"
 });
 
 module.exports = router;

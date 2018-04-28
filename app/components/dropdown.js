@@ -39,7 +39,7 @@ Dropdown.prototype.onHover = function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
 				content: paragraph({
-					text: "Dropdown Content"
+					text: "Dropdown Content "
 				})
 			})
 		}
@@ -62,6 +62,7 @@ Dropdown.prototype.onHover = function() {
 						text: "Hovering over any element contained within the "
 					}),
 					code({
+						class: "code",
 						text: ".dropdown__container"
 					}),
 					span({
@@ -167,6 +168,10 @@ Dropdown.prototype.javascript = function() {
 		children: [
 			h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Javascript triggered dropdown" }),
 			dropdown.element,
+			pre({
+				class: "preformatted margin-vertical-medium padding-all-small",
+				content: code({ class: "code", text: ".dropdown__container.dropdown__container--shown-on-click .dropdown" })
+			}),
 			paragraph({
 				class: "margin-top",
 				children: [
@@ -174,10 +179,11 @@ Dropdown.prototype.javascript = function() {
 						text: "Add and remove the "
 					}),
 					code({
+						class: "code",
 						text: ".dropdown__container--open"
 					}),
 					span({
-						text: " class to the container element."
+						text: " class to the container element with Javascript."
 					})
 				]
 			})

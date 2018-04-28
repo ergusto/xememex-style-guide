@@ -86,6 +86,7 @@ blockquote {
 
 .code {
 	font-size: 87.5%;
+	line-height: inherit;
 	font-family: monospace;
 	word-break: break-word;
 }

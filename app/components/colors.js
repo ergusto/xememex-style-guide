@@ -11,7 +11,7 @@ var div = templater.div,
 	pre = templater.pre,
 	code = templater.code;
 
-var colours = [
+var colors = [
 	{ name: "green", code: "#393" },
 	{ name: "dark-green", code: "#277527" },
 	{ name: "darker-green", code: "#206120" },
@@ -31,12 +31,12 @@ var colours = [
 	{ name: "silver", code: "#e3e7ef" }
 ];
 
-function Colours() {
+function Colors() {
 	this.element = this.render();
 }
 
-Colours.prototype.colours = function() {
-	return fragment(colours.map(function(color) {
+Colors.prototype.colors = function() {
+	return fragment(colors.map(function(color) {
 		return div({
 			class: "margin-all-small inline-block",
 			children: [
@@ -56,18 +56,18 @@ Colours.prototype.colours = function() {
 	}));
 };
 
-Colours.prototype.intro = function() {
+Colors.prototype.intro = function() {
 	return h1({
 		class: "margin-bottom padding-bottom border-bottom border-color-grey",
-		text: "Colours"
+		text: "Colors"
 	});
 };
 
-Colours.prototype.uses = function() {
+Colors.prototype.uses = function() {
 	return fragment([
 		h2({ class: "margin-vertical padding-bottom border-bottom border-color-grey", text: "Uses" }),
 		paragraph({
-			text: "These colours are used in a variety of different helper classes."
+			text: "These colors are used in a variety of different helper classes."
 		}),
 		div({
 			class: "margin-vertical",
@@ -126,15 +126,15 @@ Colours.prototype.uses = function() {
 	]);
 };
 
-Colours.prototype.render = function() {
+Colors.prototype.render = function() {
 	var intro = this.intro(),
-		colours = this.colours(),
+		colors = this.colors(),
 		uses = this.uses();
 
 	return div({
-		children: [intro,colours,uses],
+		children: [intro,colors,uses],
 		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all"
 	});
 };
 
-module.exports = Colours;
+module.exports = Colors;

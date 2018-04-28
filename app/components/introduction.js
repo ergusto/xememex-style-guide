@@ -32,7 +32,7 @@ Introduction.prototype.render = function() {
 
 Introduction.prototype.principles = function() {
 	return fragment([
-		h2({ class: "margin-bottom", text: "Guiding Principles" }),
+		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Guiding Principles" }),
 		ul({
 			class: "bulleted-list padding-left-2 margin-vertical",
 			children: [
@@ -56,7 +56,7 @@ Introduction.prototype.intro = function() {
 
 Introduction.prototype.methodology = function() {
 	return fragment([
-		h2({ class: "margin-bottom", text: "Methodolgy" }),
+		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Methodolgy" }),
 		this.functional(),
 		this.oocss()
 	]);
@@ -67,7 +67,7 @@ Introduction.prototype.functional = function() {
 		h3({ class: "margin-bottom", text: "Functional CSS" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Elements are styled from a combination of these discrete classes wherever possible. This encourages reusability and reduces redundancy, and helps to keep the codebase lean and focused. It results in a very fast iterative process. Most of these classes appear in the 'Trumps and Tools' section of the stylesheet."
+			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Elements are styled from a combination of these discrete classes wherever possible. This encourages reusability and reduces redundancy, and helps to keep the codebase lean and focused. It results in a very fast iterative process."
 		})
 	]);
 };
@@ -77,7 +77,11 @@ Introduction.prototype.oocss = function() {
 		h3({ class: "margin-bottom", text: "OOCSS" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "Components are built and designed as repeated patterns according to OOCSS principles.",
+			text: "Objects and Components are built and designed as repeated patterns according to OOCSS principles. There's a distinction between Objects and Compoents. Objects are abstract patterns, and mostly structural in nature, while Components are opinionated, styled pieces of DOM. The Media Object is an example of an Object. A comment is an example of a Component, which might use the Media Object as a base structure.",
+		}),
+		paragraph({
+			class: "margin-vertical line-height-1p5",
+			text: "Both Objects and Components are designed under influence of OOCSS principles, and follow the BEM class naming methodology."
 		}),
 		h4({
 			class: "margin-vertical",
