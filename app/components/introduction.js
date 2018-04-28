@@ -1,4 +1,5 @@
-var templater = require("../templater");
+var templater = require("../templater"),
+	infoIcon = require("./info-icon.js");
 
 var div = templater.div,
 	paragraph = templater.p,
@@ -45,11 +46,22 @@ Introduction.prototype.principles = function() {
 };
 
 Introduction.prototype.intro = function() {
+	var icon = infoIcon("color-white float-left margin-right-medium fill-white");
+
 	return fragment([
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Introduction" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
 			text: "This is the xememex style guide and UI kit."
+		}),
+		div({
+			class: "alert alert--blue box-shadow inline-block padding-vertical margin-bottom",
+			children: [
+				icon,
+				span({
+					text: "This document is a work in progress"
+				})
+			]
 		})
 	]);
 };

@@ -358,86 +358,19 @@ blockquote {
 ------------------------
 ***********************/
 
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
 /***********************
 ------------------------
 	Aesthetic
 ------------------------
 ***********************/
-
-/***********
-	Colors
-***********/
-.color-white {
-	color: white !important;
-}
-
-.color-green {
-	color: #393 !important;
-}
-
-.color-dark-green {
-	color: #277527 !important;
-}
-
-.color-darker-green {
-	color: #206120 !important;
-}
-
-.color-red {
-	color: #c73434 !important;
-}
-
-.color-dark-red {
-	color: #AB2D2D !important;
-}
-
-.color-darker-red {
-	color: #942727 !important;
-}
-
-.color-blue {
-	color: #408fec !important;
-}
-
-.color-dark-blue {
-	color: #3270B9 !important;
-}
-
-.color-darker-blue {
-	color: #234E81 !important;
-}
-
-.color-grey {
-	color: #ccc !important;
-}
-
-.color-light-grey {
-	color: #ddd !important;
-}
-
-.color-lightest-grey {
-	color: #fcfcfc !important;
-}
-
-.color-dark-grey {
-	color: #777 !important;
-}
-
-.color-darker-grey {
-	color: #586069 !important;
-}
-
-.color-light-purple {
-	color: #f7f7f9 !important;
-}
-
-.color-silver {
-	color: #e3e7ef !important;
-}
-
-.color-inherit {
-	color: inherit !important;
-}
 
 /***********
 	Backgrounds
@@ -512,6 +445,14 @@ blockquote {
 
 .background-color-inherit {
 	background: inherit !important;
+}
+
+/***********
+	Fill
+***********/
+
+.fill-white {
+	fill: white;
 }
 
 /***********
@@ -686,6 +627,81 @@ blockquote {
 ***********************/
 
 /***********
+	Color
+***********/
+.color-white {
+	color: white !important;
+}
+
+.color-green {
+	color: #393 !important;
+}
+
+.color-dark-green {
+	color: #277527 !important;
+}
+
+.color-darker-green {
+	color: #206120 !important;
+}
+
+.color-red {
+	color: #c73434 !important;
+}
+
+.color-dark-red {
+	color: #AB2D2D !important;
+}
+
+.color-darker-red {
+	color: #942727 !important;
+}
+
+.color-blue {
+	color: #408fec !important;
+}
+
+.color-dark-blue {
+	color: #3270B9 !important;
+}
+
+.color-darker-blue {
+	color: #234E81 !important;
+}
+
+.color-grey {
+	color: #ccc !important;
+}
+
+.color-light-grey {
+	color: #ddd !important;
+}
+
+.color-lightest-grey {
+	color: #fcfcfc !important;
+}
+
+.color-dark-grey {
+	color: #777 !important;
+}
+
+.color-darker-grey {
+	color: #586069 !important;
+}
+
+.color-light-purple {
+	color: #f7f7f9 !important;
+}
+
+.color-silver {
+	color: #e3e7ef !important;
+}
+
+.color-inherit {
+	color: inherit !important;
+}
+
+/***********
 	Font weight
 ***********/
 .bold {
@@ -701,6 +717,10 @@ blockquote {
 ***********/
 .small {
 	font-size: 85%;
+}
+
+.medium {
+	font-size: 90%;
 }
 
 /***********
