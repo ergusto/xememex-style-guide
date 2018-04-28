@@ -287,6 +287,16 @@ blockquote {
 /***********
 	Dropdown Component
 ***********/
+.dropdown {
+	position: absolute;
+	top: 100%;
+	z-index: 1;
+	white-space: nowrap;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.333s;
+}
+
 .dropdown__container {
 	position: relative;
 	display: inline-block;
@@ -337,16 +347,6 @@ blockquote {
 
 .dropdown__container--align-right .dropdown {
 	right: 0%;
-}
-
-.dropdown {
-	position: absolute;
-	top: 100%;
-	z-index: 1;
-	white-space: nowrap;
-	visibility: hidden;
-	opacity: 0;
-	transition: 0.333s;
 }
 
 /***********************

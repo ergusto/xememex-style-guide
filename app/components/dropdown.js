@@ -141,15 +141,60 @@ Dropdown.prototype.onHoverAlignRight = function() {
 	});
 };
 
+Dropdown.prototype.javascript = function() {
+	var trigger = button({
+		class: "button box-shadow",
+		text: "Click to show dropdown"
+	});
+
+	var dropdown = new DropdownComponent({
+		trigger: trigger,
+		triggeredOnClick: true,
+		alignLeft: true,
+		content: function() {
+			return div({
+				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
+				content: paragraph({
+					text: "Dropdown Content"
+				})
+			})
+		}
+	});
+
+
+	return div({
+		class: "margin-vertical",
+		children: [
+			h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Javascript triggered dropdown" }),
+			dropdown.element,
+			paragraph({
+				class: "margin-top",
+				children: [
+					span({
+						text: "Add and remove the "
+					}),
+					code({
+						text: ".dropdown__container--open"
+					}),
+					span({
+						text: " class to the container element."
+					})
+				]
+			})
+		]
+	});
+};
+
 Dropdown.prototype.render = function() {
 	var intro = this.intro(),
 		onHover = this.onHover(),
 		onHoverCentered = this.onHoverCentered(),
-		onHoverAlignRight = this.onHoverAlignRight();
+		onHoverAlignRight = this.onHoverAlignRight(),
+		javascript = this.javascript();
 
 	return div({
 		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
-		children: [intro,onHover,onHoverCentered,onHoverAlignRight]
+		children: [intro,onHover,onHoverCentered,onHoverAlignRight,javascript]
 	});
 };
 
