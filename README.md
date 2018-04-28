@@ -1,3 +1,3 @@
 # xememex Style Guide
 
-The style guide and UI kit for xememex.com. 
+The style guide and UI kit for xememex web. 

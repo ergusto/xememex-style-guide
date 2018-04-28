@@ -77,7 +77,7 @@ Introduction.prototype.oocss = function() {
 		h3({ class: "margin-bottom", text: "OOCSS" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "Objects and Components are built and designed as repeated patterns according to OOCSS principles. There's a distinction between Objects and Compoents. Objects are abstract patterns, and mostly structural in nature, while Components are opinionated, styled pieces of DOM. The Media Object is an example of an Object. A comment is an example of a Component, which might use the Media Object as a base structure.",
+			text: "Objects and Components are built and designed as repeated patterns according to OOCSS principles. There's a distinction between Objects and Compoents. Objects are abstract patterns, and mostly structural in nature, while Components are opinionated, styled pieces of DOM. The Media Object is an example of an Object. A Comment could be an example of a Component, which might use the Media Object as a base structure. Or you could have a base Comment Object and theme it into separate Components.",
 		}),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
