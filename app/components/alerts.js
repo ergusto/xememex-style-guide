@@ -35,10 +35,11 @@ Alerts.prototype.intro = function() {
 				}),
 			]
 		}),
+		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Styled alerts" }),
 		div({
 			class: "margin-vertical",
 			children: [
-				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Green Alert" }),
+				h3({ class: "margin-bottom", text: "Green Alert" }),
 				div({
 					class: "alert alert--green",
 					text: "Example Alert!"
@@ -52,7 +53,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Blue Alert" }),
+				h3({ class: "margin-bottom", text: "Blue Alert" }),
 				div({
 					class: "alert alert--blue",
 					text: "Example Alert!"
@@ -66,7 +67,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Red Alert" }),
+				h3({ class: "margin-bottom", text: "Red Alert" }),
 				div({
 					class: "alert alert--red",
 					text: "Example Alert!"

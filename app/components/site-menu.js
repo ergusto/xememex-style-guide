@@ -137,7 +137,7 @@ SiteMenu.prototype.header = function() {
 			button({
 				ref: { name: "siteMenuTrigger", context: this },
 				class: "inline-block no-decoration borderless float-right cursor-pointer",
-				content: menuIcon("show-site-menu-button"),
+				content: menuIcon("show-site-menu-button fill-darker-grey"),
 			}),
 			anchor({
 				class: "no-decoration color-inherit inline-block",

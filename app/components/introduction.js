@@ -97,8 +97,8 @@ Introduction.prototype.functional = function() {
 		ul({
 			class: "bulleted-list padding-left-2 margin-vertical",
 			children: [
-				li({ text: "Classes should generally have a single responsibility." }),
-				li({ text: "Class names describe styling, rather than content." })
+				li({ text: "These classes generally have a single responsibility." }),
+				li({ text: "Their class names describe styling, rather than content." })
 			]
 		})
 	]);
@@ -109,11 +109,11 @@ Introduction.prototype.oocss = function() {
 		h3({ class: "margin-bottom", text: "OOCSS" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "Objects and Components are built and designed as repeated patterns according to OOCSS principles. There's a distinction between Objects and Compoents. Objects are abstract patterns, and mostly structural in nature, while Components are opinionated, styled pieces of DOM. The Media Object is an example of an Object. A Comment could be an example of a Component, which might use the Media Object as a base structure. Or, you might have a base Comment Object and theme it into separate Components.",
+			text: "Objects and Components are built and designed as repeated patterns according to OOCSS principles. There's a distinction between Objects and Compoents. Objects are abstract patterns, and mostly structural in nature, while Components are opinionated, styled pieces of DOM. The Media Object is an example of an Object. A Comment could be an example of a Component, which might use the Media Object as a base structure. Or, there could be a base Comment Object themed into separate Components.",
 		}),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "Both Objects and Components are designed under influence of OOCSS principles, and follow the BEM class naming methodology."
+			text: "Both Objects and Components follow the BEM class naming methodology."
 		}),
 		h4({
 			class: "margin-vertical",

@@ -8,7 +8,7 @@ blue: #408fec;
 dark-blue: #3270B9;
 darker-blue: #234E81;
 red: #c73434;
-dark-red: #AB2D2D;
+dark-red: #ab2d2d;
 darker-red: #942727;
 green: #393;
 dark-green: #277527;
@@ -73,7 +73,7 @@ blockquote {
 }
 
 input, select, textarea, fieldset, label, legend, optgroup, option, output {
-	width: 15rem;
+	min-width: 15rem;
 }
 
 fieldset {
@@ -287,8 +287,8 @@ button:active, button:focus {
 }
 
 .button--red:not(:disabled):hover {
-	background-color: #AB2D2D;
-	border-color: #AB2D2D;
+	background-color: #ab2d2d;
+	border-color: #ab2d2d;
 }
 
 .button--red:not(:disabled):active {
@@ -412,7 +412,7 @@ button:active, button:focus {
 .form-label {
 	font-weight: bold;
 	margin-bottom: .5rem;
-	display: inline-block;
+	display: block;
 }
 
 /***********************
@@ -461,7 +461,7 @@ button:active, button:focus {
 }
 
 .background-color-dark-red {
-	background-color: #AB2D2D;
+	background-color: #ab2d2d;
 }
 
 .background-color-darker-red {
@@ -488,7 +488,7 @@ button:active, button:focus {
 	background-color: #ddd;
 }
 
-.background-color-lightest-grey {
+.background-color-lighter-grey {
 	background-color: #fcfcfc;
 }
 
@@ -517,6 +517,10 @@ button:active, button:focus {
 ***********/
 .fill-white {
 	fill: white;
+}
+
+.fill-darker-grey {
+	fill: #586069;
 }
 
 /***********
@@ -570,7 +574,7 @@ button:active, button:focus {
 }
 
 .border-color-dark-red {
-	border-color: #AB2D2D;
+	border-color: #ab2d2d;
 }
 
 .border-color-darker-red {
@@ -597,7 +601,7 @@ button:active, button:focus {
 	border-color: #ddd;
 }
 
-.border-color-lightest-grey {
+.border-color-lighter-grey {
 	border-color: #fcfcfc;
 }
 
@@ -713,7 +717,7 @@ button:active, button:focus {
 }
 
 .color-dark-red {
-	color: #AB2D2D;
+	color: #ab2d2d;
 }
 
 .color-darker-red {
@@ -740,7 +744,7 @@ button:active, button:focus {
 	color: #ddd;
 }
 
-.color-lightest-grey {
+.color-lighter-grey {
 	color: #fcfcfc;
 }
 
@@ -859,6 +863,10 @@ button:active, button:focus {
 ***********/
 .cursor-pointer {
 	cursor: pointer;
+}
+
+.cursor-default {
+	cursor: default;
 }
 
 /***********************

@@ -4,7 +4,11 @@ var div = templater.div,
 	fieldset = templater.fieldset,
 	label = templater.label,
 	h1 = templater.h1,
+	h2 = templater.h2,
 	paragraph = templater.p,
+	pre = templater.pre,
+	code = templater.code,
+	br = templater.br,
 	input = templater.input;
 
 function FormInputs() {
@@ -30,6 +34,19 @@ FormInputs.prototype.render = function() {
 						class: "form-input",
 						placeholder: "Example form input"
 					})
+				]
+			}),
+			h2({ class: "margin-vertical padding-bottom border-bottom border-color-grey", text: "Base HTML structure" }),
+			pre({
+				class: "preformatted margin-vertical padding-all-small",
+				children: [
+					code({ class: "code", text: '<fieldset>'}),
+					br(),
+					code({ class: "code", text: '    <label class="form-label">Example Label</label>'}),
+					br(),
+					code({ class: "code", text: '    <input class="form-input" placeholder="Example form input">'}),
+					br(),
+					code({ class: "code", text: "</fieldset>"})
 				]
 			})
 		]

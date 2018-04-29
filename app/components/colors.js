@@ -18,13 +18,13 @@ var colors = [
 	{ name: "dark-green", code: "#277527" },
 	{ name: "darker-green", code: "#206120" },
 	{ name: "red", code: "#c73434" },
-	{ name: "dark-red", code: "#AB2D2D" },
+	{ name: "dark-red", code: "#ab2d2d" },
 	{ name: "darker-red", code: "#942727" },
 	{ name: "blue", code: "#408fec" },
 	{ name: "dark-blue", code: "#3270B9" },
 	{ name: "darker-blue", code: "#234E81" },
 	{ name: "white", code: "#fff" },
-	{ name: "lightest-grey", code: "#fcfcfc" },
+	{ name: "lighter-grey", code: "#fcfcfc" },
 	{ name: "light-grey", code: "#ddd" },
 	{ name: "grey", code: "#ccc" },
 	{ name: "dark-grey", code: "#777" },
@@ -108,7 +108,7 @@ Colors.prototype.uses = function() {
 			]
 		}),
 		div({
-			class: "margin-vertical",
+			class: "margin-top",
 			children: [
 				h3({ class: "margin-vertical", text: "Border Color"}),
 				pre({

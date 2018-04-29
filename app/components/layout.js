@@ -10,7 +10,7 @@ function Layout() {
 Layout.prototype.render = function() {
 	var siteMenu = new SiteMenu();
 
-	this.body = div({ class: "layout__body padding-horizontal" });
+	this.body = div({ class: "layout__body padding-all-medium padding-horizontal-mobile" });
 
 	return div({
 		class: "layout",
