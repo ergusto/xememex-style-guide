@@ -1,16 +1,19 @@
 var templater = require("../templater"),
-	router = require("../router.js");
+	router = require("../router.js"),
+	menuIcon = require("./icons/menu.js");
 
 var div = templater.div,
 	ul = templater.ul,
 	li = templater.li,
 	h3 = templater.h3,
 	h4 = templater.h4,
+	button = templater.button,
 	anchor = templater.a,
 	header = templater.header,
 	fragment = templater.fragment;
 
-var activeRouteLinkClass = "site-menu-link--active";
+var activeRouteLinkClass = "site-menu-link--active",
+	hiddenMenuListClass = "site-menu-list--mobile-hidden";
 
 var menuItems = [
 	{ text: "Getting started" },
@@ -32,6 +35,8 @@ var menuItems = [
 
 function SiteMenu() {
 	this.element = this.render();
+	this.documentClick = this.documentClick.bind(this);
+	this.addEventListeners();
 	this.addRouteListener();
 }
 
@@ -42,9 +47,17 @@ SiteMenu.prototype.addRouteListener = function() {
 	});
 };
 
+SiteMenu.prototype.showList = function() {
+	this.siteMenuList.classList.remove(hiddenMenuListClass);
+};
+
+SiteMenu.prototype.hideList = function() {
+	this.siteMenuList.classList.add(hiddenMenuListClass);
+};
+
 SiteMenu.prototype.addActiveRoute = function(name) {
-	var activeRoute = this.sitemenuList.querySelector("." + activeRouteLinkClass),
-		nextActiveRoute = this.sitemenuList.querySelector('a[data-route-name="' + name + '"]');
+	var activeRoute = this.siteMenuList.querySelector("." + activeRouteLinkClass),
+		nextActiveRoute = this.siteMenuList.querySelector('a[data-route-name="' + name + '"]');
 	if(activeRoute) {
 		activeRoute.classList.remove(activeRouteLinkClass);
 	}
@@ -53,9 +66,44 @@ SiteMenu.prototype.addActiveRoute = function(name) {
 	}
 };
 
+SiteMenu.prototype.addEventListeners = function() {
+	var self = this;
+	this.siteMenuTrigger.addEventListener("click",function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+
+		if(self.isOpen()) {
+			self.close();
+		} else {
+			self.open();
+			document.addEventListener("click",self.documentClick);
+		}
+	});
+};
+
+SiteMenu.prototype.open = function() {
+	this.siteMenuList.classList.remove(hiddenMenuListClass);
+};
+
+SiteMenu.prototype.close = function() {
+	this.siteMenuList.classList.add(hiddenMenuListClass);
+	document.removeEventListener("click",this.documentClick);
+};
+
+SiteMenu.prototype.isOpen = function() {
+	return !this.siteMenuList.classList.contains(hiddenMenuListClass);
+};
+
+SiteMenu.prototype.documentClick = function() {
+	if(!this.siteMenuList.contains(event.target)) {
+		this.close();
+	}
+};
+
 SiteMenu.prototype.list = function() {
 	return ul({
-		ref: { name: "sitemenuList", context: this },
+		class: "site-menu-list padding-bottom " + hiddenMenuListClass,
+		ref: { name: "siteMenuList", context: this },
 		children: menuItems.map(function(item) {
 			if(item.routeName) {
 				return li({
@@ -82,12 +130,19 @@ SiteMenu.prototype.list = function() {
 
 SiteMenu.prototype.header = function() {
 	return header({
-		content: anchor({
-			class: "no-decoration color-inherit",
-			href: "#/",
-			content: h3({ class: "site-title comfortaa text-align-center", text: "xememex style guide" })
-		}),
-		class: "border-bottom border-color-light-grey padding-all background-color-white"
+		children: [
+			button({
+				ref: { name: "siteMenuTrigger", context: this },
+				class: "inline-block no-decoration borderless float-right cursor-pointer",
+				content: menuIcon("show-site-menu-button"),
+			}),
+			anchor({
+				class: "no-decoration color-inherit inline-block",
+				href: "#/",
+				content: h3({ class: "site-title comfortaa", text: "xememex style guide" })
+			}),
+		],
+		class: "site-menu-header padding-all background-color-white"
 	});
 }
 
@@ -95,7 +150,7 @@ SiteMenu.prototype.render = function() {
 	var header = this.header(),
 		list = this.list();
 	return div({
-		class: "layout__site-menu background-color-light-purple border-right border-color-grey box-shadow padding-bottom",
+		class: "layout__site-menu background-color-light-purple border-right border-color-grey box-shadow",
 		children: [header,list]
 	});
 };

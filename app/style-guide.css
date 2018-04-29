@@ -14,17 +14,57 @@
 ***********/
 
 .layout__site-menu {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 15rem;
 	overflow-y: scroll;
 	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.site-menu-list {
+	border-top: 1px solid;
+	border-top-color: #ddd;
+	transition: 1s;
+}
+
+.site-menu-list--mobile-hidden {
+	display: none;
 }
 
 .layout__body {
-	margin-left: 15rem;
+	padding-top: 3rem;
+}
+
+@media (min-width: 860px) {
+	.layout__site-menu {
+		display: block;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 15rem;
+		padding-bottom: 1rem;
+	}
+
+	.layout__body {
+		margin-left: 15rem;
+		padding-top: 0;
+	}
+
+	.show-site-menu-button {
+		display: none;
+	}
+
+	.site-menu-list {
+		display: block;
+		border-top: 0px;
+	}
+
+	.site-menu-header {
+		border-bottom: 1px solid;
+		border-bottom-color: #ddd;
+	}
 }
 
 /***********

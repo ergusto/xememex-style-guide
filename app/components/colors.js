@@ -135,7 +135,7 @@ Colors.prototype.render = function() {
 
 	return div({
 		children: [intro,colors,uses],
-		class: "max-width-5 centred padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all"
+		class: "max-width-5 centered padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all"
 	});
 };
 
