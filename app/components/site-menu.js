@@ -94,7 +94,8 @@ SiteMenu.prototype.isOpen = function() {
 	return !this.siteMenuList.classList.contains(hiddenMenuListClass);
 };
 
-SiteMenu.prototype.documentClick = function() {
+SiteMenu.prototype.documentClick = function(event) {
+	event.stopPropagation();
 	if(!this.siteMenuList.contains(event.target)) {
 		this.close();
 	}

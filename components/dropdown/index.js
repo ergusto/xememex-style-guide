@@ -18,6 +18,7 @@ function Dropdown(options) {
 }
 
 Dropdown.prototype.documentClick = function(event) {
+	event.stopPropagation();
 	if(!this.element.contains(event.target)) {
 		this.close();
 	}
@@ -28,6 +29,7 @@ Dropdown.prototype.addEventListeners = function() {
 	if(this.triggeredOnClick) {
 		this.trigger.addEventListener("click",function(event) {
 			event.preventDefault();
+			event.stopPropagation();
 
 			if(self.isOpen()) {
 				self.close();
