@@ -4,6 +4,7 @@ var fragment = templater.fragment,
 	div = templater.div,
 	button = templater.button,
 	h1 = templater.h1,
+	h2 = templater.h2,
 	h3 = templater.h3,
 	paragraph = templater.p,
 	pre = templater.pre,
@@ -23,7 +24,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Default Alert" }),
+				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Default Alert" }),
 				div({
 					class: "alert",
 					text: "Example Alert!"
@@ -37,7 +38,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Green Alert" }),
+				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Green Alert" }),
 				div({
 					class: "alert alert--green",
 					text: "Example Alert!"
@@ -51,7 +52,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Blue Alert" }),
+				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Blue Alert" }),
 				div({
 					class: "alert alert--blue",
 					text: "Example Alert!"
@@ -65,7 +66,7 @@ Alerts.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Red Alert" }),
+				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Red Alert" }),
 				div({
 					class: "alert alert--red",
 					text: "Example Alert!"

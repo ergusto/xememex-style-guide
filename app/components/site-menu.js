@@ -45,6 +45,7 @@ SiteMenu.prototype.addRouteListener = function() {
 	var self = this;
 	router.register(function(name) {
 		self.addActiveRoute(name);
+		self.hideList();
 	});
 };
 
