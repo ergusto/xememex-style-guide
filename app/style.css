@@ -218,7 +218,7 @@ button:active, button:focus {
 	transition: 0.2s;
 }
 
-.no-touch .button--shift-on-hover:hover {
+.button--shift-on-hover:hover {
 	transform: translateY(-2px);
 }
 
@@ -253,7 +253,7 @@ button:active, button:focus {
 	transition: 0.2s;
 }
 
-.no-touch .button--outline:not(:disabled):hover {
+.button--outline:not(:disabled):hover {
 	box-shadow: 0 0 0 2px rgba(89, 105, 128, 0.1) inset, 0 1px 4px 0 rgba(89, 105, 128, 0.1) inset, 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -268,7 +268,7 @@ button:active, button:focus {
 	transition: 0.2s;
 }
 
-.no-touch .button--blue:not(:disabled):hover {
+.button--blue:not(:disabled):hover {
 	background-color: #3270B9;
 	border-color: #3270B9;
 }
@@ -285,7 +285,7 @@ button:active, button:focus {
 	transition: 0.2s;
 }
 
-.no-touch .button--red:not(:disabled):hover {
+.button--red:not(:disabled):hover {
 	background-color: #AB2D2D;
 	border-color: #AB2D2D;
 }
@@ -302,7 +302,7 @@ button:active, button:focus {
 	transition: 0.2s;
 }
 
-.no-touch .button--green:not(:disabled):hover {
+.button--green:not(:disabled):hover {
 	background-color: #277527;
 	border-color: #277527;
 }
@@ -329,13 +329,13 @@ button:active, button:focus {
 	display: inline-block;
 }
 
-.no-touch .dropdown__container--shown-on-hover:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--open .dropdown {
+.dropdown__container--shown-on-hover:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--open .dropdown {
 	opacity: 1;
 	visibility: visible;
 	will-change: opacity;
 }
 
-.no-touch .dropdown__container--shown-on-hover.dropdown__container--align-center:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-center.dropdown__container--open .dropdown {
+.dropdown__container--shown-on-hover.dropdown__container--align-center:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-center.dropdown__container--open .dropdown {
 	-webkit-transform: translateX(-50%) translateY(0);
 	-moz-transform: translateX(-50%) translateY(0);
 	-ms-transform: translateX(-50%) translateY(0);
@@ -352,7 +352,7 @@ button:active, button:focus {
 	transform: translateX(-50%) translateY(-10px);
 }
 
-.no-touch .dropdown__container--shown-on-hover.dropdown__container--align-left:hover .dropdown, .no-touch .dropdown__container--shown-on-hover.dropdown__container--align-right:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-left.dropdown__container--open .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-right.dropdown__container--open .dropdown {
+.dropdown__container--shown-on-hover.dropdown__container--align-left:hover .dropdown, .dropdown__container--shown-on-hover.dropdown__container--align-right:hover .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-left.dropdown__container--open .dropdown, .dropdown__container--shown-on-click.dropdown__container--align-right.dropdown__container--open .dropdown {
 	-webkit-transform: translateY(0);
 	-moz-transform: translateY(0);
 	-ms-transform: translateY(0);
@@ -762,7 +762,7 @@ button:active, button:focus {
 	font-weight: bold;
 }
 
-.no-touch .bold-on-hover:hover {
+.bold-on-hover:hover {
 	font-weight: bold;
 }
 
@@ -792,7 +792,7 @@ button:active, button:focus {
 	text-decoration: underline;
 }
 
-.no-touch .underline-on-hover:hover {
+.underline-on-hover:hover {
 	text-decoration: underline;
 }
 
@@ -800,7 +800,7 @@ button:active, button:focus {
 	text-decoration: none;
 }
 
-.no-touch .no-decoration-on-hover:hover {
+.no-decoration-on-hover:hover {
 	text-decoration: none;
 }
 
