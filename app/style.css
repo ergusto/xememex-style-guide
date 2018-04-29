@@ -76,6 +76,10 @@ input, select, textarea, fieldset, label, legend, optgroup, option, output {
 	min-width: 15rem;
 }
 
+input, select, textarea, optgroup, option {
+	-webkit-appearance: none;
+}
+
 fieldset {
 	border: none;
 }
@@ -112,6 +116,7 @@ button:active, button:focus {
 	font-size: inherit;
 	white-space: normal;
 	white-space: pre-wrap;
+	line-height: 1.4;
 }
 
 /***********
