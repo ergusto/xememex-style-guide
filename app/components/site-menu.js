@@ -87,7 +87,6 @@ SiteMenu.prototype.open = function() {
 
 SiteMenu.prototype.close = function() {
 	this.siteMenuList.classList.add(hiddenMenuListClass);
-	document.removeEventListener("click",this.documentClick);
 };
 
 SiteMenu.prototype.isOpen = function() {
@@ -98,6 +97,7 @@ SiteMenu.prototype.documentClick = function(event) {
 	event.stopPropagation();
 	if(!this.siteMenuList.contains(event.target)) {
 		this.close();
+		document.removeEventListener("click",this.documentClick);
 	}
 };
 
