@@ -74,7 +74,7 @@ Colors.prototype.uses = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-vertical padding-bottom-medium border-bottom border-color-grey", text: "Color"}),
+				h3({ class: "margin-vertical", text: "Color"}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code color-green", text: ".color-green" })
@@ -92,7 +92,7 @@ Colors.prototype.uses = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-vertical padding-bottom-medium border-bottom border-color-grey", text: "Background Color"}),
+				h3({ class: "margin-vertical", text: "Background Color"}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-medium background-color-green",
 					content: code({ class: "code color-white", text: ".background-color-green" })
@@ -110,7 +110,7 @@ Colors.prototype.uses = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-vertical padding-bottom-medium border-bottom border-color-grey", text: "Border Color"}),
+				h3({ class: "margin-vertical", text: "Border Color"}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-medium border-all border-color-green",
 					content: code({ class: "code", text: ".border-color-green" })
@@ -135,7 +135,7 @@ Colors.prototype.render = function() {
 
 	return div({
 		children: [intro,colors,uses],
-		class: "max-width-5 centered padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all"
+		class: "max-width-5 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all"
 	});
 };
 

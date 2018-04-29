@@ -11,6 +11,7 @@ function Dropdown(options) {
 	this.alignLeft = options.alignLeft;
 	this.alignRight = options.alignRight;
 	this.alignCenter = options.alignCenter;
+	this.shiftAnimation = options.shiftAnimation;
 	this.content = options.content;
 	this.element = this.render();
 	this.documentClick = this.documentClick.bind(this);
@@ -69,6 +70,10 @@ Dropdown.prototype.render = function() {
 		className += " dropdown__container--align-right";
 	} else if(this.alignCenter) {
 		className += " dropdown__container--align-center";
+	}
+
+	if(this.shiftAnimation) {
+		className += " dropdown__container--shift-animation";
 	}
 
 	return div({

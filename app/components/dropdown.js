@@ -4,12 +4,14 @@ var templater = require("../templater"),
 var button = templater.button,
 	div = templater.div,
 	h1 = templater.h1,
+	h2 = templater.h2,
 	h3 = templater.h3,
 	pre = templater.pre,
 	code = templater.code,
 	span = templater.span,
 	paragraph = templater.p,
-	fragment = templater.fragment;
+	fragment = templater.fragment,
+	br = templater.br;
 
 function Dropdown() {
 	this.element = this.render();
@@ -20,7 +22,24 @@ Dropdown.prototype.intro = function() {
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Dropdown" }),
 		paragraph({
 			class: "margin-vertical line-height-1p5",
-			text: "A versatile dropdown component."
+			text: "A versatile dropdown. No cosmetic styling is applied to these classes."
+		}),
+		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Base HTML structure" }),
+		pre({
+			class: "preformatted margin-vertical padding-all-small",
+			children: [
+				code({ class: "code", text: '<div class="dropdown__container">'}),
+				br(),
+				code({ class: "code", text: "    <button>Trigger</button>"}),
+				br(),
+				code({ class: "code", text: '    <div class="dropdown">'}),
+				br(),
+				code({ class: "code", text: '        * Dropdown Content *'}),
+				br(),
+				code({ class: "code", text: "    </div>"}),
+				br(),
+				code({ class: "code", text: "</div>"})
+			]
 		})
 	]);
 };
@@ -34,7 +53,6 @@ Dropdown.prototype.onHover = function() {
 	var dropdown = new DropdownComponent({
 		trigger: trigger,
 		triggeredOnHover: true,
-		alignLeft: true,
 		content: function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
@@ -49,26 +67,59 @@ Dropdown.prototype.onHover = function() {
 	return div({
 		class: "margin-vertical",
 		children: [
-			h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Dropdown On Hover" }),
+			h3({ class: "margin-bottom", text: "Dropdown On Hover" }),
+			dropdown.element,
+			paragraph({
+				class: "margin-vertical", 
+				children: [
+					span({ text: "Add a " }),
+					code({ class: "code", text: ".dropdown__container--shown-on-hover" }),	
+					span({ text: " class to the "}),
+					code({ class: "code", text: ".dropdown__container" }),
+					span({ text: " element to show the dropdown on hover." }),
+				]
+			}),
+			paragraph({
+				class: "margin-vertical",
+				children: [
+					span({ text: "Hovering over any element contained within " }),
+					code({ class: "code", text: ".dropdown__container" }),
+					span({ text: " will act as a trigger."})
+				]
+			})
+		]
+	});
+};
+
+Dropdown.prototype.onHoverAlignLeft = function() {
+	var trigger = button({
+		class: "button box-shadow",
+		text: "Hover to show dropdown"
+	});
+
+	var dropdown = new DropdownComponent({
+		trigger: trigger,
+		triggeredOnHover: true,
+		alignLeft: true,
+		content: function() {
+			return div({
+				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
+				content: paragraph({
+					text: "Aligned left dropdown content"
+				})
+			})
+		}
+	});
+
+
+	return div({
+		class: "margin-vertical",
+		children: [
+			h3({ class: "margin-bottom", text: "Aligned left dropdown" }),
 			dropdown.element,
 			pre({
 				class: "preformatted margin-vertical-medium padding-all-small",
-				content: code({ class: "code", text: ".dropdown__container.dropdown__container--align-left.dropdown__container--shown-on-hover .dropdown" })
-			}),
-			paragraph({
-				class: "margin-vertical-medium",
-				children: [
-					span({
-						text: "Hovering over any element contained within the "
-					}),
-					code({
-						class: "code",
-						text: ".dropdown__container"
-					}),
-					span({
-						text: " will trigger the dropdown."
-					})
-				]
+				content: code({ class: "code", text: ".dropdown__container--align-left" })
 			})
 		]
 	});
@@ -88,7 +139,7 @@ Dropdown.prototype.onHoverCentered = function() {
 			return div({
 				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
 				content: paragraph({
-					text: "Dropdown content centered"
+					text: "Centered dropdown content"
 				})
 			})
 		}
@@ -98,11 +149,11 @@ Dropdown.prototype.onHoverCentered = function() {
 	return div({
 		class: "margin-vertical",
 		children: [
-			h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Centered dropdown" }),
+			h3({ class: "margin-bottom", text: "Centered dropdown" }),
 			dropdown.element,
 			pre({
 				class: "preformatted margin-vertical-medium padding-all-small",
-				content: code({ class: "code", text: ".dropdown__container.dropdown__container--align-center .dropdown" })
+				content: code({ class: "code", text: ".dropdown__container--align-center" })
 			})
 		]
 	});
@@ -132,11 +183,11 @@ Dropdown.prototype.onHoverAlignRight = function() {
 	return div({
 		class: "margin-vertical",
 		children: [
-			h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Aligned right dropdown" }),
+			h3({ class: "margin-bottom", text: "Aligned right dropdown" }),
 			dropdown.element,
 			pre({
 				class: "preformatted margin-vertical-medium padding-all-small",
-				content: code({ class: "code", text: ".dropdown__container.dropdown__container--align-right .dropdown" })
+				content: code({ class: "code", text: ".dropdown__container--align-right" })
 			})
 		]
 	});
@@ -166,11 +217,11 @@ Dropdown.prototype.javascript = function() {
 	return div({
 		class: "margin-vertical",
 		children: [
-			h3({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Javascript triggered dropdown" }),
+			h3({ class: "margin-bottom", text: "Javascript triggered dropdown" }),
 			dropdown.element,
 			pre({
 				class: "preformatted margin-vertical-medium padding-all-small",
-				content: code({ class: "code", text: ".dropdown__container.dropdown__container--shown-on-click .dropdown" })
+				content: code({ class: "code", text: ".dropdown__container--shown-on-click" })
 			}),
 			paragraph({
 				class: "margin-top",
@@ -191,16 +242,64 @@ Dropdown.prototype.javascript = function() {
 	});
 };
 
-Dropdown.prototype.render = function() {
-	var intro = this.intro(),
-		onHover = this.onHover(),
-		onHoverCentered = this.onHoverCentered(),
-		onHoverAlignRight = this.onHoverAlignRight(),
-		javascript = this.javascript();
+Dropdown.prototype.shiftAnimation = function() {
+	var trigger = button({
+		class: "button box-shadow",
+		text: "Hover to show dropdown"
+	});
+
+	var dropdown = new DropdownComponent({
+		trigger: trigger,
+		triggeredOnHover: true,
+		alignLeft: true,
+		shiftAnimation: true,
+		content: function() {
+			return div({
+				class: "padding-all margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
+				content: paragraph({
+					text: "Dropdown content with shift animation"
+				})
+			})
+		}
+	});
+
 
 	return div({
-		class: "max-width-5 centered padding-all-2 margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
-		children: [intro,onHover,onHoverCentered,onHoverAlignRight,javascript]
+		class: "margin-vertical",
+		children: [
+			h3({ class: "margin-bottom", text: "Dropdown shift animation" }),
+			dropdown.element,
+			pre({
+				class: "preformatted margin-vertical-medium padding-all-small",
+				content: code({ class: "code", text: ".dropdown__container--shift-animation" })
+			})
+		]
+	});
+};
+
+Dropdown.prototype.options = function() {
+	var onHover = this.onHover(),
+		onHoverAlignLeft = this.onHoverAlignLeft(),
+		onHoverCentered = this.onHoverCentered(),
+		onHoverAlignRight = this.onHoverAlignRight(),
+		javascript = this.javascript(),
+		shiftAnimation = this.shiftAnimation();
+
+	return fragment({
+		children: [
+			h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Options" }),
+			onHover,onHoverAlignLeft,onHoverCentered,onHoverAlignRight,javascript,shiftAnimation
+		]
+	});
+};
+
+Dropdown.prototype.render = function() {
+	var intro = this.intro(),
+		options = this.options();
+
+	return div({
+		class: "max-width-5 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		children: [intro,options]
 	});
 };
 
