@@ -1,5 +1,15 @@
 "use strict";
 
+function create(type,attributes) {
+	var element = document.createElement(type);
+	if(attributes) {
+		for(var prop in attributes) {
+			element.setAttribute(prop,attributes[prop])
+		}
+	}
+	return element;
+}
+
 function Collapser() {
 	this._menu = document.querySelector(".js-menu");
 	this._menuContents = this._menu.querySelector(".js-menu-contents");

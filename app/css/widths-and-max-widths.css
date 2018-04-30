@@ -39,7 +39,7 @@
 		width: 30%;
 	}
 	.width-33 {
-		width: 33%;
+		width: 33.333%;
 	}
 	.width-40 {
 		width: 40%;
@@ -111,7 +111,7 @@
 		width: 30%;
 	}
 	.width-33-mobile {
-		width: 33%;
+		width: 33.333%;
 	}
 	.width-40-mobile {
 		width: 40%;
@@ -183,7 +183,7 @@
 		width: 30%;
 	}
 	.width-33-tablet {
-		width: 33%;
+		width: 33.333%;
 	}
 	.width-40-tablet {
 		width: 40%;
@@ -255,7 +255,7 @@
 		width: 30%;
 	}
 	.width-33-desktop {
-		width: 33%;
+		width: 33.333%;
 	}
 	.width-40-desktop {
 		width: 40%;
@@ -327,7 +327,7 @@
 		max-width: 30%;
 	}
 	.max-width-33 {
-		max-width: 33%;
+		max-width: 33.333%;
 	}
 	.max-width-40 {
 		max-width: 40%;
@@ -399,7 +399,7 @@
 		max-width: 30%;
 	}
 	.max-width-33-mobile {
-		max-width: 33%;
+		max-width: 33.333%;
 	}
 	.max-width-40-mobile {
 		max-width: 40%;
@@ -471,7 +471,7 @@
 		max-width: 30%;
 	}
 	.max-width-33-tablet {
-		max-width: 33%;
+		max-width: 33.333%;
 	}
 	.max-width-40-tablet {
 		max-width: 40%;
@@ -543,7 +543,7 @@
 		max-width: 30%;
 	}
 	.max-width-33-desktop {
-		max-width: 33%;
+		max-width: 33.333%;
 	}
 	.max-width-40-desktop {
 		max-width: 40%;

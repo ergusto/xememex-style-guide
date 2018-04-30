@@ -27,11 +27,11 @@ FormInputs.prototype.render = function() {
 			fieldset({
 				children: [
 					label({
-						class: "form-label",
+						class: "field-label",
 						text: "Example label"
 					}),
 					input({
-						class: "form-input",
+						class: "field-input",
 						placeholder: "Example form input"
 					})
 				]
@@ -42,9 +42,9 @@ FormInputs.prototype.render = function() {
 				children: [
 					code({ class: "code", text: '<fieldset>'}),
 					br(),
-					code({ class: "code", text: '    <label class="form-label">Example Label</label>'}),
+					code({ class: "code", text: '    <label class="field-label">Example Label</label>'}),
 					br(),
-					code({ class: "code", text: '    <input class="form-input" placeholder="Example form input">'}),
+					code({ class: "code", text: '    <input class="field-input" placeholder="Example form input">'}),
 					br(),
 					code({ class: "code", text: "</fieldset>"})
 				]

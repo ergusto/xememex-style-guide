@@ -53,7 +53,7 @@ Introduction.prototype.intro = function() {
 		anchor({
 			target: "_blank",
 			href: "https://github.com/ergusto/xememex-style-guide",
-			class: "button button--outline line-height-normal regular margin-bottom box-shadow no-decoration",
+			class: "button button--outline line-height-copy regular margin-bottom box-shadow no-decoration",
 			children: [
 				githubIcon("color-white float-left margin-right-medium"),
 				span({ text: "View on Github" })
