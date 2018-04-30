@@ -4,11 +4,13 @@
 
 /*
     Spacing is based on base font size (16px).
-    It starts at 16px (1rem), and increments in powers of 2.
-    I.e., base spacing padding-all [=padding-all] would equal padding: 16px;
-    padding-all-small and padding-all-medium are special cases and have padding equal to .25rem (4px) and .5rem (8px) respectively.
-    Margin follows the same pattern.
-    Padding-all-0-mobile is a special case that removes padding.
+    It starts at 16px (1 spacing amount), and increments in powers of 2.
+    Classes adhere to the following format:
+        .${spacing-type}-${spacing-direction}-${spacing-amount}-${breakpoint}
+    Spacing amount 'small' and 'medium' are special cases 
+        and have spacing equal to .25rem (4px) and .5rem (8px) respectively.
+    ${spacing-type}-${spacing-direction}-0 is a special case that removes padding.
+    Spacing classes for targeting particular breakpoints have -${breakpoint} as a suffix.
 
 Breakpoints
     mobile: 35rem

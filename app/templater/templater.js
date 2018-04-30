@@ -100,6 +100,11 @@ function templater(options) {
 	if(ref && isObject(ref)) {
 		refName = ref.name;
 		refContext = ref.context;
+		
+		if(!refName || !refContext) {
+			throw new Error("Templater ref object must contain refName and refContext properties");
+		}
+
 		refContext[refName] = element;
 	}
 

@@ -268,7 +268,7 @@ module.exports.filterUsers = filterUsers;
 
 function simpleObjectComparison(object1, object2) {
 	var property;
-	if(isObject(object1) && isObject(objec2)) {
+	if(isObject(object1) && isObject(object2)) {
 		for(property in object1){
 			if(object1.hasOwnProperty(property)){
 				if(object1[property] !== object2[property]){

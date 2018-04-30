@@ -28,7 +28,7 @@ Introduction.prototype.render = function() {
 		methodology = this.methodology();
 
 	return div({
-		class: "max-width-5 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro,principles,methodology]
 	});
 };
@@ -37,7 +37,7 @@ Introduction.prototype.intro = function() {
 	return fragment([
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Introduction" }),
 		paragraph({
-			class: "margin-vertical line-height-1p5",
+			class: "margin-vertical line-height-copy",
 			text: "This is the xememex style guide and UI kit."
 		}),
 		div({
@@ -87,7 +87,7 @@ Introduction.prototype.functional = function() {
 	return fragment([
 		h3({ class: "margin-bottom", text: "Functional CSS" }),
 		paragraph({
-			class: "margin-vertical line-height-1p5",
+			class: "margin-vertical line-height-copy",
 			text: "We make heavy use of functional CSS concepts. The majority of classes are concerned with a very narrow responsibility. Elements are styled from a combination of these discrete classes wherever possible. This encourages reusability and helps to keep the codebase lean and focused. It results in a very fast iterative process."
 		}),
 		h4({
@@ -108,11 +108,11 @@ Introduction.prototype.oocss = function() {
 	return fragment([
 		h3({ class: "margin-bottom", text: "OOCSS" }),
 		paragraph({
-			class: "margin-vertical line-height-1p5",
+			class: "margin-vertical line-height-copy",
 			text: "Objects and Components are built and designed as repeated patterns according to OOCSS principles. There's a distinction between Objects and Compoents. Objects are abstract patterns, and mostly structural in nature, while Components are opinionated, styled pieces of DOM. The Media Object is an example of an Object. A Comment could be an example of a Component, which might use the Media Object as a base structure. Or, there could be a base Comment Object themed into separate Components.",
 		}),
 		paragraph({
-			class: "margin-vertical line-height-1p5",
+			class: "margin-vertical line-height-copy",
 			text: "Both Objects and Components follow the BEM class naming methodology."
 		}),
 		h4({

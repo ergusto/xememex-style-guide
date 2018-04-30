@@ -24,6 +24,10 @@ silver: #e3e7ef;
 
 ***********/
 
+
+
+
+
 /***********************
 ------------------------
 ------------------------
@@ -54,6 +58,10 @@ body {
 	font-size: 1rem;
 	font-family: -apple-system,BlinkMacSystemFont,Arial,sans-serif;
 }
+
+
+
+
 
 /***********************
 ------------------------
@@ -88,6 +96,10 @@ button:active, button:focus {
 	outline: none;
 }
 
+
+
+
+
 /***********************
 ------------------------
 ------------------------
@@ -114,7 +126,6 @@ button:active, button:focus {
 
 .preformatted .code {
 	font-size: inherit;
-	white-space: normal;
 	white-space: pre-wrap;
 	line-height: 1.4;
 }
@@ -139,6 +150,10 @@ button:active, button:focus {
 .inline-list li {
 	display: inline-block;
 }
+
+
+
+
 
 /***********************
 ------------------------
@@ -419,6 +434,10 @@ button:active, button:focus {
 	margin-bottom: .5rem;
 	display: block;
 }
+
+
+
+
 
 /***********************
 ------------------------
@@ -804,6 +823,21 @@ button:active, button:focus {
 }
 
 /***********
+	Line height
+***********/
+.line-height-copy {
+	line-height: 1.5;
+}
+
+.line-height-title {
+	line-height: 1.25;
+}
+
+.line-height-solid {
+	line-height: 1;
+}
+
+/***********
 	Text decoration
 ***********/
 .underline {
@@ -835,17 +869,6 @@ button:active, button:focus {
 
 .capitalize {
 	text-transform: capitalize;
-}
-
-/***********
-	Line height
-***********/
-.line-height-normal {
-	line-height: normal;
-}
-
-.line-height-1p5 {
-	line-height: 1.5;
 }
 
 /***********
@@ -940,56 +963,4 @@ button:active, button:focus {
 
 .invisible {
 	visibility: hidden;
-}
-
-/***********
-	Widths
-***********/
-
-.width-1 {
-	width: 4rem;
-}
-
-.width-2 {
-	width: 8rem;
-}
-
-.width-3 {
-	width: 16rem;
-}
-
-.width-4 {
-	width: 32rem;
-}
-
-.width-5 {
-	width: 64rem;
-}
-
-.width-6 {
-	width: 128rem;
-}
-
-.max-width-1 {
-	max-width: 4rem;
-}
-
-.max-width-2 {
-	max-width: 8rem;
-}
-
-.max-width-3 {
-	max-width: 16rem;
-}
-
-.max-width-4 {
-	max-width: 32rem;
-}
-
-.max-width-5 {
-	max-width: 64rem;
-}
-
-.max-width-6 {
-	max-width: 128rem;
 }

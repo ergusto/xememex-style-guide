@@ -21,12 +21,12 @@ Dropdown.prototype.intro = function() {
 	return fragment([
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Dropdown" }),
 		paragraph({
-			class: "margin-vertical line-height-1p5",
+			class: "margin-vertical line-height-copy",
 			text: "A versatile dropdown. No cosmetic styling is applied to these classes."
 		}),
 		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Base HTML structure" }),
 		pre({
-			class: "preformatted margin-vertical padding-all-small",
+			class: "preformatted margin-vertical padding-all-small line-height-copy",
 			children: [
 				code({ class: "code", text: '<div class="dropdown__container">'}),
 				br(),
@@ -68,7 +68,7 @@ Dropdown.prototype.onHover = function() {
 		h3({ class: "margin-vertical", text: "Dropdown On Hover" }),
 		dropdown.element,
 		paragraph({
-			class: "margin-vertical", 
+			class: "margin-vertical-medium line-height-copy", 
 			children: [
 				span({ text: "Add a " }),
 				code({ class: "code", text: ".dropdown__container--shown-on-hover" }),	
@@ -78,7 +78,7 @@ Dropdown.prototype.onHover = function() {
 			]
 		}),
 		paragraph({
-			class: "margin-vertical",
+			class: "margin-vertical-medium line-height-copy",
 			children: [
 				span({ text: "Hovering over any element contained within " }),
 				code({ class: "code", text: ".dropdown__container" }),
@@ -86,7 +86,7 @@ Dropdown.prototype.onHover = function() {
 			]
 		}),
 		paragraph({
-			class: "line-height-1p5 alert alert--blue padding-vertical-small padding-horizontal-medium inline-block small",
+			class: "line-height-copy alert alert--blue padding-vertical-small padding-horizontal-medium inline-block small",
 			text: "Note: hover effects may not work properly on mobile devices."
 		})
 	]);
@@ -117,7 +117,7 @@ Dropdown.prototype.onHoverAlignLeft = function() {
 		h3({ class: "margin-vertical", text: "Aligned left dropdown" }),
 		dropdown.element,
 		pre({
-			class: "preformatted margin-vertical-medium padding-all-small",
+			class: "preformatted margin-vertical-medium padding-all-small line-height-copy",
 			content: code({ class: "code", text: ".dropdown__container--align-left" })
 		})
 	]);
@@ -148,7 +148,7 @@ Dropdown.prototype.onHoverCentered = function() {
 		h3({ class: "margin-vertical", text: "Centered dropdown" }),
 		dropdown.element,
 		pre({
-			class: "preformatted margin-vertical-medium padding-all-small",
+			class: "preformatted margin-vertical-medium padding-all-small line-height-copy",
 			content: code({ class: "code", text: ".dropdown__container--align-center" })
 		})
 	]);
@@ -179,7 +179,7 @@ Dropdown.prototype.onHoverAlignRight = function() {
 		h3({ class: "margin-vertical", text: "Aligned right dropdown" }),
 		dropdown.element,
 		pre({
-			class: "preformatted margin-vertical-medium padding-all-small",
+			class: "preformatted margin-vertical-medium padding-all-small line-height-copy",
 			content: code({ class: "code", text: ".dropdown__container--align-right" })
 		})
 	]);
@@ -210,11 +210,11 @@ Dropdown.prototype.javascript = function() {
 		h3({ class: "margin-vertical", text: "Javascript triggered dropdown" }),
 		dropdown.element,
 		pre({
-			class: "preformatted margin-vertical-medium padding-all-small",
+			class: "preformatted margin-vertical-medium padding-all-small line-height-copy",
 			content: code({ class: "code", text: ".dropdown__container--shown-on-click" })
 		}),
 		paragraph({
-			class: "margin-top",
+			class: "margin-top-medium line-height-copy",
 			children: [
 				span({
 					text: "Add and remove the "
@@ -257,7 +257,7 @@ Dropdown.prototype.shiftAnimation = function() {
 		h3({ class: "margin-vertical", text: "Dropdown shift animation" }),
 		dropdown.element,
 		pre({
-			class: "preformatted margin-vertical-medium padding-all-small",
+			class: "preformatted margin-vertical-medium padding-all-small line-height-copy",
 			content: code({ class: "code", text: ".dropdown__container--shift-animation" })
 		})
 	]);
@@ -282,7 +282,7 @@ Dropdown.prototype.render = function() {
 		options = this.options();
 
 	return div({
-		class: "max-width-5 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro,options]
 	});
 };

@@ -18,7 +18,7 @@ Alerts.prototype.intro = function() {
 	return fragment([
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Alerts" }),
 		paragraph({
-			class: "margin-vertical line-height-1p5",
+			class: "margin-vertical line-height-copy",
 			text: "Alerts are for providing contextual feedback to users. For communicating the result of an action, for example."
 		}),
 		div({
@@ -42,7 +42,7 @@ Alerts.prototype.intro = function() {
 				h3({ class: "margin-bottom", text: "Green Alert" }),
 				div({
 					class: "alert alert--green",
-					text: "Example Alert!"
+					text: "Success Alert!"
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
@@ -56,7 +56,7 @@ Alerts.prototype.intro = function() {
 				h3({ class: "margin-bottom", text: "Blue Alert" }),
 				div({
 					class: "alert alert--blue",
-					text: "Example Alert!"
+					text: "Info Alert!"
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
@@ -70,7 +70,7 @@ Alerts.prototype.intro = function() {
 				h3({ class: "margin-bottom", text: "Red Alert" }),
 				div({
 					class: "alert alert--red",
-					text: "Example Alert!"
+					text: "Danger Alert!"
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
@@ -85,7 +85,7 @@ Alerts.prototype.render = function() {
 	var intro = this.intro();
 
 	return div({
-		class: "max-width-5 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro]
 	});
 };
