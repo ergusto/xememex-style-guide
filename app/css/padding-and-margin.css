@@ -13,7 +13,7 @@
     Spacing classes for targeting particular breakpoints have -${breakpoint} as a suffix.
 
 Breakpoints
-    mobile: 35rem
+    phablet: 35rem
     tablet: 55rem
     desktop: 75rem
 
@@ -299,267 +299,267 @@ Spacing names and values
 
 @media (min-width: 35rem) {
 
-.margin-all-0-mobile {
+.margin-all-0-phablet {
     margin-left: 0;
     margin-bottom: 0;
     margin-right: 0;
     margin-top: 0;
 }
 
-.margin-vertical-0-mobile {
+.margin-vertical-0-phablet {
     margin-bottom: 0;
     margin-top: 0;
 }
 
-.margin-horizontal-0-mobile {
+.margin-horizontal-0-phablet {
     margin-left: 0;
     margin-right: 0;
 }
 
-.margin-left-0-mobile {
+.margin-left-0-phablet {
     margin-left: 0;
 }
 
-.margin-bottom-0-mobile {
+.margin-bottom-0-phablet {
     margin-bottom: 0;
 }
 
-.margin-right-0-mobile {
+.margin-right-0-phablet {
     margin-right: 0;
 }
 
-.margin-top-0-mobile {
+.margin-top-0-phablet {
     margin-top: 0;
 }
 
-.margin-all-mobile {
+.margin-all-phablet {
     margin-left: 1rem;
     margin-bottom: 1rem;
     margin-right: 1rem;
     margin-top: 1rem;
 }
 
-.margin-vertical-mobile {
+.margin-vertical-phablet {
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
 
-.margin-horizontal-mobile {
+.margin-horizontal-phablet {
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-.margin-left-mobile {
+.margin-left-phablet {
     margin-left: 1rem;
 }
 
-.margin-bottom-mobile {
+.margin-bottom-phablet {
     margin-bottom: 1rem;
 }
 
-.margin-right-mobile {
+.margin-right-phablet {
     margin-right: 1rem;
 }
 
-.margin-top-mobile {
+.margin-top-phablet {
     margin-top: 1rem;
 }
 
-.margin-all-2-mobile {
+.margin-all-2-phablet {
     margin-left: 2rem;
     margin-bottom: 2rem;
     margin-right: 2rem;
     margin-top: 2rem;
 }
 
-.margin-vertical-2-mobile {
+.margin-vertical-2-phablet {
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
 
-.margin-horizontal-2-mobile {
+.margin-horizontal-2-phablet {
     margin-left: 2rem;
     margin-right: 2rem;
 }
 
-.margin-left-2-mobile {
+.margin-left-2-phablet {
     margin-left: 2rem;
 }
 
-.margin-bottom-2-mobile {
+.margin-bottom-2-phablet {
     margin-bottom: 2rem;
 }
 
-.margin-right-2-mobile {
+.margin-right-2-phablet {
     margin-right: 2rem;
 }
 
-.margin-top-2-mobile {
+.margin-top-2-phablet {
     margin-top: 2rem;
 }
 
-.margin-all-3-mobile {
+.margin-all-3-phablet {
     margin-left: 4rem;
     margin-bottom: 4rem;
     margin-right: 4rem;
     margin-top: 4rem;
 }
 
-.margin-vertical-3-mobile {
+.margin-vertical-3-phablet {
     margin-bottom: 4rem;
     margin-top: 4rem;
 }
 
-.margin-horizontal-3-mobile {
+.margin-horizontal-3-phablet {
     margin-left: 4rem;
     margin-right: 4rem;
 }
 
-.margin-left-3-mobile {
+.margin-left-3-phablet {
     margin-left: 4rem;
 }
 
-.margin-bottom-3-mobile {
+.margin-bottom-3-phablet {
     margin-bottom: 4rem;
 }
 
-.margin-right-3-mobile {
+.margin-right-3-phablet {
     margin-right: 4rem;
 }
 
-.margin-top-3-mobile {
+.margin-top-3-phablet {
     margin-top: 4rem;
 }
 
-.margin-all-4-mobile {
+.margin-all-4-phablet {
     margin-left: 8rem;
     margin-bottom: 8rem;
     margin-right: 8rem;
     margin-top: 8rem;
 }
 
-.margin-vertical-4-mobile {
+.margin-vertical-4-phablet {
     margin-bottom: 8rem;
     margin-top: 8rem;
 }
 
-.margin-horizontal-4-mobile {
+.margin-horizontal-4-phablet {
     margin-left: 8rem;
     margin-right: 8rem;
 }
 
-.margin-left-4-mobile {
+.margin-left-4-phablet {
     margin-left: 8rem;
 }
 
-.margin-bottom-4-mobile {
+.margin-bottom-4-phablet {
     margin-bottom: 8rem;
 }
 
-.margin-right-4-mobile {
+.margin-right-4-phablet {
     margin-right: 8rem;
 }
 
-.margin-top-4-mobile {
+.margin-top-4-phablet {
     margin-top: 8rem;
 }
 
-.margin-all-5-mobile {
+.margin-all-5-phablet {
     margin-left: 16rem;
     margin-bottom: 16rem;
     margin-right: 16rem;
     margin-top: 16rem;
 }
 
-.margin-vertical-5-mobile {
+.margin-vertical-5-phablet {
     margin-bottom: 16rem;
     margin-top: 16rem;
 }
 
-.margin-horizontal-5-mobile {
+.margin-horizontal-5-phablet {
     margin-left: 16rem;
     margin-right: 16rem;
 }
 
-.margin-left-5-mobile {
+.margin-left-5-phablet {
     margin-left: 16rem;
 }
 
-.margin-bottom-5-mobile {
+.margin-bottom-5-phablet {
     margin-bottom: 16rem;
 }
 
-.margin-right-5-mobile {
+.margin-right-5-phablet {
     margin-right: 16rem;
 }
 
-.margin-top-5-mobile {
+.margin-top-5-phablet {
     margin-top: 16rem;
 }
 
-.margin-all-small-mobile {
+.margin-all-small-phablet {
     margin-left: 0.25rem;
     margin-bottom: 0.25rem;
     margin-right: 0.25rem;
     margin-top: 0.25rem;
 }
 
-.margin-vertical-small-mobile {
+.margin-vertical-small-phablet {
     margin-bottom: 0.25rem;
     margin-top: 0.25rem;
 }
 
-.margin-horizontal-small-mobile {
+.margin-horizontal-small-phablet {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
 }
 
-.margin-left-small-mobile {
+.margin-left-small-phablet {
     margin-left: 0.25rem;
 }
 
-.margin-bottom-small-mobile {
+.margin-bottom-small-phablet {
     margin-bottom: 0.25rem;
 }
 
-.margin-right-small-mobile {
+.margin-right-small-phablet {
     margin-right: 0.25rem;
 }
 
-.margin-top-small-mobile {
+.margin-top-small-phablet {
     margin-top: 0.25rem;
 }
 
-.margin-all-medium-mobile {
+.margin-all-medium-phablet {
     margin-left: 0.5rem;
     margin-bottom: 0.5rem;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
 }
 
-.margin-vertical-medium-mobile {
+.margin-vertical-medium-phablet {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
 }
 
-.margin-horizontal-medium-mobile {
+.margin-horizontal-medium-phablet {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
 
-.margin-left-medium-mobile {
+.margin-left-medium-phablet {
     margin-left: 0.5rem;
 }
 
-.margin-bottom-medium-mobile {
+.margin-bottom-medium-phablet {
     margin-bottom: 0.5rem;
 }
 
-.margin-right-medium-mobile {
+.margin-right-medium-phablet {
     margin-right: 0.5rem;
 }
 
-.margin-top-medium-mobile {
+.margin-top-medium-phablet {
     margin-top: 0.5rem;
 }
 
@@ -1375,267 +1375,267 @@ Spacing names and values
 
 @media (min-width: 35rem) {
 
-.padding-all-0-mobile {
+.padding-all-0-phablet {
     padding-left: 0;
     padding-bottom: 0;
     padding-right: 0;
     padding-top: 0;
 }
 
-.padding-vertical-0-mobile {
+.padding-vertical-0-phablet {
     padding-bottom: 0;
     padding-top: 0;
 }
 
-.padding-horizontal-0-mobile {
+.padding-horizontal-0-phablet {
     padding-left: 0;
     padding-right: 0;
 }
 
-.padding-left-0-mobile {
+.padding-left-0-phablet {
     padding-left: 0;
 }
 
-.padding-bottom-0-mobile {
+.padding-bottom-0-phablet {
     padding-bottom: 0;
 }
 
-.padding-right-0-mobile {
+.padding-right-0-phablet {
     padding-right: 0;
 }
 
-.padding-top-0-mobile {
+.padding-top-0-phablet {
     padding-top: 0;
 }
 
-.padding-all-mobile {
+.padding-all-phablet {
     padding-left: 1rem;
     padding-bottom: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
 }
 
-.padding-vertical-mobile {
+.padding-vertical-phablet {
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
-.padding-horizontal-mobile {
+.padding-horizontal-phablet {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-.padding-left-mobile {
+.padding-left-phablet {
     padding-left: 1rem;
 }
 
-.padding-bottom-mobile {
+.padding-bottom-phablet {
     padding-bottom: 1rem;
 }
 
-.padding-right-mobile {
+.padding-right-phablet {
     padding-right: 1rem;
 }
 
-.padding-top-mobile {
+.padding-top-phablet {
     padding-top: 1rem;
 }
 
-.padding-all-2-mobile {
+.padding-all-2-phablet {
     padding-left: 2rem;
     padding-bottom: 2rem;
     padding-right: 2rem;
     padding-top: 2rem;
 }
 
-.padding-vertical-2-mobile {
+.padding-vertical-2-phablet {
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
 
-.padding-horizontal-2-mobile {
+.padding-horizontal-2-phablet {
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
-.padding-left-2-mobile {
+.padding-left-2-phablet {
     padding-left: 2rem;
 }
 
-.padding-bottom-2-mobile {
+.padding-bottom-2-phablet {
     padding-bottom: 2rem;
 }
 
-.padding-right-2-mobile {
+.padding-right-2-phablet {
     padding-right: 2rem;
 }
 
-.padding-top-2-mobile {
+.padding-top-2-phablet {
     padding-top: 2rem;
 }
 
-.padding-all-3-mobile {
+.padding-all-3-phablet {
     padding-left: 4rem;
     padding-bottom: 4rem;
     padding-right: 4rem;
     padding-top: 4rem;
 }
 
-.padding-vertical-3-mobile {
+.padding-vertical-3-phablet {
     padding-bottom: 4rem;
     padding-top: 4rem;
 }
 
-.padding-horizontal-3-mobile {
+.padding-horizontal-3-phablet {
     padding-left: 4rem;
     padding-right: 4rem;
 }
 
-.padding-left-3-mobile {
+.padding-left-3-phablet {
     padding-left: 4rem;
 }
 
-.padding-bottom-3-mobile {
+.padding-bottom-3-phablet {
     padding-bottom: 4rem;
 }
 
-.padding-right-3-mobile {
+.padding-right-3-phablet {
     padding-right: 4rem;
 }
 
-.padding-top-3-mobile {
+.padding-top-3-phablet {
     padding-top: 4rem;
 }
 
-.padding-all-4-mobile {
+.padding-all-4-phablet {
     padding-left: 8rem;
     padding-bottom: 8rem;
     padding-right: 8rem;
     padding-top: 8rem;
 }
 
-.padding-vertical-4-mobile {
+.padding-vertical-4-phablet {
     padding-bottom: 8rem;
     padding-top: 8rem;
 }
 
-.padding-horizontal-4-mobile {
+.padding-horizontal-4-phablet {
     padding-left: 8rem;
     padding-right: 8rem;
 }
 
-.padding-left-4-mobile {
+.padding-left-4-phablet {
     padding-left: 8rem;
 }
 
-.padding-bottom-4-mobile {
+.padding-bottom-4-phablet {
     padding-bottom: 8rem;
 }
 
-.padding-right-4-mobile {
+.padding-right-4-phablet {
     padding-right: 8rem;
 }
 
-.padding-top-4-mobile {
+.padding-top-4-phablet {
     padding-top: 8rem;
 }
 
-.padding-all-5-mobile {
+.padding-all-5-phablet {
     padding-left: 16rem;
     padding-bottom: 16rem;
     padding-right: 16rem;
     padding-top: 16rem;
 }
 
-.padding-vertical-5-mobile {
+.padding-vertical-5-phablet {
     padding-bottom: 16rem;
     padding-top: 16rem;
 }
 
-.padding-horizontal-5-mobile {
+.padding-horizontal-5-phablet {
     padding-left: 16rem;
     padding-right: 16rem;
 }
 
-.padding-left-5-mobile {
+.padding-left-5-phablet {
     padding-left: 16rem;
 }
 
-.padding-bottom-5-mobile {
+.padding-bottom-5-phablet {
     padding-bottom: 16rem;
 }
 
-.padding-right-5-mobile {
+.padding-right-5-phablet {
     padding-right: 16rem;
 }
 
-.padding-top-5-mobile {
+.padding-top-5-phablet {
     padding-top: 16rem;
 }
 
-.padding-all-small-mobile {
+.padding-all-small-phablet {
     padding-left: 0.25rem;
     padding-bottom: 0.25rem;
     padding-right: 0.25rem;
     padding-top: 0.25rem;
 }
 
-.padding-vertical-small-mobile {
+.padding-vertical-small-phablet {
     padding-bottom: 0.25rem;
     padding-top: 0.25rem;
 }
 
-.padding-horizontal-small-mobile {
+.padding-horizontal-small-phablet {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
 
-.padding-left-small-mobile {
+.padding-left-small-phablet {
     padding-left: 0.25rem;
 }
 
-.padding-bottom-small-mobile {
+.padding-bottom-small-phablet {
     padding-bottom: 0.25rem;
 }
 
-.padding-right-small-mobile {
+.padding-right-small-phablet {
     padding-right: 0.25rem;
 }
 
-.padding-top-small-mobile {
+.padding-top-small-phablet {
     padding-top: 0.25rem;
 }
 
-.padding-all-medium-mobile {
+.padding-all-medium-phablet {
     padding-left: 0.5rem;
     padding-bottom: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
 }
 
-.padding-vertical-medium-mobile {
+.padding-vertical-medium-phablet {
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
 }
 
-.padding-horizontal-medium-mobile {
+.padding-horizontal-medium-phablet {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
 
-.padding-left-medium-mobile {
+.padding-left-medium-phablet {
     padding-left: 0.5rem;
 }
 
-.padding-bottom-medium-mobile {
+.padding-bottom-medium-phablet {
     padding-bottom: 0.5rem;
 }
 
-.padding-right-medium-mobile {
+.padding-right-medium-phablet {
     padding-right: 0.5rem;
 }
 
-.padding-top-medium-mobile {
+.padding-top-medium-phablet {
     padding-top: 0.5rem;
 }
 

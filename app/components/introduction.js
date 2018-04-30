@@ -28,7 +28,7 @@ Introduction.prototype.render = function() {
 		methodology = this.methodology();
 
 	return div({
-		class: "max-width-7 centered padding-all padding-all-2-mobile margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro,principles,methodology]
 	});
 };

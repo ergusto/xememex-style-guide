@@ -71,73 +71,73 @@
 }
 
 @media (min-width: 35rem) {
-	.width-1-mobile {
+	.width-1-phablet {
 		width: 1rem;
 	}
-	.width-2-mobile {
+	.width-2-phablet {
 		width: 2rem;
 	}
-	.width-3-mobile {
+	.width-3-phablet {
 		width: 4rem;
 	}
-	.width-4-mobile {
+	.width-4-phablet {
 		width: 8rem;
 	}
-	.width-5-mobile {
+	.width-5-phablet {
 		width: 16rem;
 	}
-	.width-6-mobile {
+	.width-6-phablet {
 		width: 32rem;
 	}
-	.width-7-mobile {
+	.width-7-phablet {
 		width: 64rem;
 	}
-	.width-8-mobile {
+	.width-8-phablet {
 		width: 128rem;
 	}
-	.width-0-mobile {
+	.width-0-phablet {
 		width: 0%;
 	}
-	.width-10-mobile {
+	.width-10-phablet {
 		width: 10%;
 	}
-	.width-20-mobile {
+	.width-20-phablet {
 		width: 20%;
 	}
-	.width-25-mobile {
+	.width-25-phablet {
 		width: 25%;
 	}
-	.width-30-mobile {
+	.width-30-phablet {
 		width: 30%;
 	}
-	.width-33-mobile {
+	.width-33-phablet {
 		width: 33.333%;
 	}
-	.width-40-mobile {
+	.width-40-phablet {
 		width: 40%;
 	}
-	.width-50-mobile {
+	.width-50-phablet {
 		width: 50%;
 	}
-	.width-60-mobile {
+	.width-60-phablet {
 		width: 60%;
 	}
-	.width-66-mobile {
+	.width-66-phablet {
 		width: 66%;
 	}
-	.width-70-mobile {
+	.width-70-phablet {
 		width: 70%;
 	}
-	.width-75-mobile {
+	.width-75-phablet {
 		width: 75%;
 	}
-	.width-80-mobile {
+	.width-80-phablet {
 		width: 80%;
 	}
-	.width-90-mobile {
+	.width-90-phablet {
 		width: 90%;
 	}
-	.width-100-mobile {
+	.width-100-phablet {
 		width: 100%;
 	}
 }
@@ -359,73 +359,73 @@
 }
 
 @media (min-width: 35rem) {
-	.max-width-1-mobile {
+	.max-width-1-phablet {
 		max-width: 1rem;
 	}
-	.max-width-2-mobile {
+	.max-width-2-phablet {
 		max-width: 2rem;
 	}
-	.max-width-3-mobile {
+	.max-width-3-phablet {
 		max-width: 4rem;
 	}
-	.max-width-4-mobile {
+	.max-width-4-phablet {
 		max-width: 8rem;
 	}
-	.max-width-5-mobile {
+	.max-width-5-phablet {
 		max-width: 16rem;
 	}
-	.max-width-6-mobile {
+	.max-width-6-phablet {
 		max-width: 32rem;
 	}
-	.max-width-7-mobile {
+	.max-width-7-phablet {
 		max-width: 64rem;
 	}
-	.max-width-8-mobile {
+	.max-width-8-phablet {
 		max-width: 128rem;
 	}
-	.max-width-0-mobile {
+	.max-width-0-phablet {
 		max-width: 0%;
 	}
-	.max-width-10-mobile {
+	.max-width-10-phablet {
 		max-width: 10%;
 	}
-	.max-width-20-mobile {
+	.max-width-20-phablet {
 		max-width: 20%;
 	}
-	.max-width-25-mobile {
+	.max-width-25-phablet {
 		max-width: 25%;
 	}
-	.max-width-30-mobile {
+	.max-width-30-phablet {
 		max-width: 30%;
 	}
-	.max-width-33-mobile {
+	.max-width-33-phablet {
 		max-width: 33.333%;
 	}
-	.max-width-40-mobile {
+	.max-width-40-phablet {
 		max-width: 40%;
 	}
-	.max-width-50-mobile {
+	.max-width-50-phablet {
 		max-width: 50%;
 	}
-	.max-width-60-mobile {
+	.max-width-60-phablet {
 		max-width: 60%;
 	}
-	.max-width-66-mobile {
+	.max-width-66-phablet {
 		max-width: 66%;
 	}
-	.max-width-70-mobile {
+	.max-width-70-phablet {
 		max-width: 70%;
 	}
-	.max-width-75-mobile {
+	.max-width-75-phablet {
 		max-width: 75%;
 	}
-	.max-width-80-mobile {
+	.max-width-80-phablet {
 		max-width: 80%;
 	}
-	.max-width-90-mobile {
+	.max-width-90-phablet {
 		max-width: 90%;
 	}
-	.max-width-100-mobile {
+	.max-width-100-phablet {
 		max-width: 100%;
 	}
 }
