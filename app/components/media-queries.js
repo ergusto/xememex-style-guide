@@ -28,7 +28,7 @@ NotFound.prototype.render = function() {
 			}),
 			paragraph({
 				class: "margin-top line-height-copy",
-				text: "We use a mobile first approach to responsive design. The following breakpoints are used as a general framework, but advise that break points should be based around content and design, and not devices. Create breakpoints when it makes sense for the content: resize your window — when the layout breaks you have found a break point."
+				text: "We use a mobile first approach to responsive design. The following breakpoints are used as a general framework, but we advise that break points should be based around content and design, and not devices. Create breakpoints when it makes sense for the content: resize your window — when the layout breaks you have found a breakpoint."
 			}),
 			ul({
 				class: "margin-top line-height-copy",

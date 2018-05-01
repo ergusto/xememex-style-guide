@@ -27,12 +27,15 @@ var menuItems = [
 	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Form inputs", url: "#/form-inputs", routeName: "form-inputs" },
 	{ text: "Layout" },
-	{ text: "Widths & Max Widths", url: "#/widths", routeName: "widths" },
+	{ text: "Widths & max widths", url: "#/widths", routeName: "widths" },
 	{ text: "Margin and padding", url: "#/margin-and-padding", routeName: "margin-and-padding" },
 	{ text: "Typography" },
 	{ text: "Font family", url: "#/font-family", routeName: "font-family" },
 	{ text: "Theming" },
 	{ text: "Borders", url: "#/borders", routeName: "borders" },
+	{ text: "Border radius", url: "#/border-radius", routeName: "border-radius" },
+	{ text: "Box shadow", url: "#/box-shadow", routeName: "box-shadow" },
+	{ text: "Opacity", url: "#/opacity", routeName: "opacity" },
 ];
 
 function SiteMenu() {
