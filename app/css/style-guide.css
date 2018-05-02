@@ -25,8 +25,8 @@
 .layout__site-menu-inner {
 	height: 100%;
 	overflow-y: scroll;
-	margin-right: -50px;
-	padding-right: 50px;
+	margin-right: -50px; /* Hide scrollbar */
+	padding-bottom: 1rem;
 }
 
 .site-menu-list--mobile-hidden {
@@ -43,10 +43,6 @@
 		position: fixed;
 		bottom: 0;
 		width: 15rem;
-	}
-
-	.layout__site-menu-inner {
-		padding-bottom: 1rem;
 	}
 
 	.layout__body {
