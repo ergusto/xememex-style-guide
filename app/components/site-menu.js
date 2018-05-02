@@ -170,7 +170,10 @@ SiteMenu.prototype.render = function() {
 		list = this.list();
 	return div({
 		class: "layout__site-menu background-color-light-purple border-right border-color-grey box-shadow",
-		children: [header,list]
+		content: div({ 
+			class: "layout__site-menu-inner",
+			children: [header,list]
+		})
 	});
 };
 

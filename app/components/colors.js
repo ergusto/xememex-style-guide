@@ -67,9 +67,6 @@ Colors.prototype.intro = function() {
 
 Colors.prototype.uses = function() {
 	return fragment([
-		div({
-			class: "divider divider--dark margin-vertical"
-		}),
 		h2({ class: "margin-vertical padding-bottom border-bottom border-color-grey", text: "Uses" }),
 		paragraph({
 			text: "These colors are used in a variety of different helper classes."

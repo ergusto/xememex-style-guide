@@ -41,22 +41,23 @@ function isDOMNode(node) {
 module.exports.isDOMNode = isDOMNode;
 
 function createElement(type,attributes,text,child) {
-	var element = document.createElement(type);
+	var i, l, prop, textNode, children,
+		element = document.createElement(type);
 	if(attributes) {
-		for (var prop in attributes) {
+		for (prop in attributes) {
 			if(attributes.hasOwnProperty(prop)) {
 				element.setAttribute(prop,attributes[prop]);
 			}
 		}
 	}
 	if(text) {
-		var textNode = document.createTextNode(text);
+		textNode = document.createTextNode(text);
 		element.appendChild(textNode);
 	}
 	if(child) {
 		if(isArray(child)) {
-			var children = child;
-			for (var i = 0, l = children.length; i < l; i++) {
+			children = child;
+			for (i = 0, l = children.length; i < l; i++) {
 				child = children[i];
 				element.appendChild(child);
 			}

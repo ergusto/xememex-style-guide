@@ -14,12 +14,19 @@
 ***********/
 
 .layout__site-menu {
-	overflow-y: scroll;
+	overflow: hidden;
 	z-index: 1;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
+}
+
+.layout__site-menu-inner {
+	height: 100%;
+	overflow-y: scroll;
+	margin-right: -50px;
+	padding-right: 50px;
 }
 
 .site-menu-list--mobile-hidden {
@@ -36,6 +43,9 @@
 		position: fixed;
 		bottom: 0;
 		width: 15rem;
+	}
+
+	.layout__site-menu-inner {
 		padding-bottom: 1rem;
 	}
 

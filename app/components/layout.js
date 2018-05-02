@@ -10,11 +10,15 @@ function Layout() {
 Layout.prototype.render = function() {
 	var siteMenu = new SiteMenu();
 
-	this.body = div({ class: "layout__body padding-all-medium padding-horizontal-2-phablet" });
-
 	return div({
 		class: "layout",
-		children: [siteMenu.element,this.body]
+		children: [
+			siteMenu.element, 
+			div({
+				class: "layout__body padding-all-medium padding-horizontal-2-phablet",
+				ref: { name: "body", context: this }
+			})
+		]
 	});
 };
 

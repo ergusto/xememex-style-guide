@@ -102,7 +102,7 @@ function templater(options) {
 		refContext = ref.context;
 		
 		if(!refName || !refContext) {
-			throw new Error("Templater ref object must contain refName and refContext properties");
+			throw new Error("Templater ref object must contain name and context properties");
 		}
 
 		refContext[refName] = element;
