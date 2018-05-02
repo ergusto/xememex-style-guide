@@ -1,3 +1,7 @@
+html {
+	overflow-y: scroll;
+}
+
 .assistant {
 	font-family: "Assistant";
 }
@@ -22,13 +26,6 @@
 	right: 0;
 }
 
-.layout__site-menu-inner {
-	height: 100%;
-	overflow-y: scroll;
-	margin-right: -50px; /* Hide scrollbar */
-	padding-bottom: 1rem;
-}
-
 .site-menu-list--mobile-hidden {
 	display: none;
 }
@@ -43,6 +40,12 @@
 		position: fixed;
 		bottom: 0;
 		width: 15rem;
+	}
+
+	.layout__site-menu-inner {
+		height: 100%;
+		overflow-y: scroll;
+		margin-right: -50px; /* Hide scrollbar */
 	}
 
 	.layout__body {
@@ -88,6 +91,6 @@
 }
 
 .padding-example {
-    background-image:linear-gradient(to bottom, #ccc 0%, #ccc 100%), linear-gradient(to bottom, #777 0%, #777 100%);
+    background-image: linear-gradient(to bottom, #ccc 0%, #ccc 100%), linear-gradient(to bottom, #777 0%, #777 100%);
     background-clip: content-box, padding-box;
 }
