@@ -115,7 +115,7 @@ SiteMenu.prototype.documentClick = function(event) {
 	event.stopPropagation();
 	if(!this.siteMenuList.contains(event.target)) {
 		this.close();
-		document.removeEventListener("click",this.documentClick);
+		document.removeEventListener(clickEventType,this.documentClick);
 	}
 };
 
