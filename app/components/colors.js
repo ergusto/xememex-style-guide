@@ -95,7 +95,7 @@ Colors.prototype.uses = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-vertical", text: "Background Color"}),
+				h3({ class: "margin-vertical", text: "Background color"}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-medium background-color-green",
 					content: code({ class: "code color-white", text: ".background-color-green" })
@@ -113,7 +113,7 @@ Colors.prototype.uses = function() {
 		div({
 			class: "margin-top",
 			children: [
-				h3({ class: "margin-vertical", text: "Border Color"}),
+				h3({ class: "margin-vertical", text: "Border color"}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-medium border-all border-color-green",
 					content: code({ class: "code", text: ".border-color-green" })
@@ -138,7 +138,7 @@ Colors.prototype.render = function() {
 
 	return div({
 		children: [intro,colors,uses],
-		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all"
+		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 background-color-white border-all border-color-grey box-shadow border-radius-all"
 	});
 };
 

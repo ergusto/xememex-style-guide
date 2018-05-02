@@ -24,21 +24,21 @@ Widths.prototype.render = function() {
 		children: [
 			h1({
 				class: "margin-bottom padding-bottom border-bottom border-color-grey",
-				text: "Widths and max-widths",
+				text: "Margin and padding",
 			}),
 			paragraph({
 				class: "margin-vertical line-height-copy",
-				text: "Width and max width classes follow a simple pattern:"
+				text: "Margin and padding classes follow a simple pattern:"
 			}),
 			pre({
 				class: "preformatted margin-top-medium padding-all-small line-height-copy",
-				content: code({ class: "code", text: ".width-${width-amount}-${breakpoint}" })
+				content: code({ class: "code", text: ".margin-${direction}-${margin-amount}-${breakpoint}" })
 			}),
 			paragraph({
 				class: "margin-vertical line-height-copy",
 				children: [
-					span({ text: "Max width classes follow the same pattern, with a " }),
-					code({ text: "max-width" }),
+					span({ text: "Padding classes follow the same pattern, with a " }),
+					code({ text: "padding" }),
 					span({ text: " prefix."})
 				]
 			}),

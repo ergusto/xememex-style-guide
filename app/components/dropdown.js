@@ -46,7 +46,7 @@ Dropdown.prototype.intro = function() {
 
 Dropdown.prototype.onHover = function() {
 	var trigger = button({
-		class: "button box-shadow",
+		class: "button",
 		text: "Hover to show dropdown"
 	});
 
@@ -94,7 +94,7 @@ Dropdown.prototype.onHover = function() {
 
 Dropdown.prototype.onHoverAlignLeft = function() {
 	var trigger = button({
-		class: "button box-shadow",
+		class: "button",
 		text: "Hover to show dropdown"
 	});
 
@@ -125,7 +125,7 @@ Dropdown.prototype.onHoverAlignLeft = function() {
 
 Dropdown.prototype.onHoverCentered = function() {
 	var trigger = button({
-		class: "button box-shadow",
+		class: "button",
 		text: "Hover to show dropdown"
 	});
 
@@ -156,7 +156,7 @@ Dropdown.prototype.onHoverCentered = function() {
 
 Dropdown.prototype.onHoverAlignRight = function() {
 	var trigger = button({
-		class: "button box-shadow",
+		class: "button",
 		text: "Hover to show dropdown"
 	});
 
@@ -187,7 +187,7 @@ Dropdown.prototype.onHoverAlignRight = function() {
 
 Dropdown.prototype.javascript = function() {
 	var trigger = button({
-		class: "button box-shadow",
+		class: "button",
 		text: "Click to show dropdown"
 	});
 
@@ -233,7 +233,7 @@ Dropdown.prototype.javascript = function() {
 
 Dropdown.prototype.shiftAnimation = function() {
 	var trigger = button({
-		class: "button box-shadow",
+		class: "button",
 		text: "Hover to show dropdown"
 	});
 
@@ -282,7 +282,7 @@ Dropdown.prototype.render = function() {
 		options = this.options();
 
 	return div({
-		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro,options]
 	});
 };

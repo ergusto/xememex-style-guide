@@ -204,7 +204,8 @@ button:active, button:focus {
 	border-color: #ccc;
 	border-radius: .25rem;
 	color: inherit;
-	font-size: .85rem;
+	font-size: inherit;
+	line-height: normal;
 	display: inline-block;
 }
 
@@ -336,6 +337,26 @@ button:active, button:focus {
 /***********
 	Divider
 ***********/
+
+.collapse__container {
+	display: inline-block;
+}
+
+.collapse__container--open .collapse__content {
+	max-height: 500px;
+}
+
+.collapse__content {
+	max-height: 0;            
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+/***********
+	Divider
+***********/
 .divider{
 	display:block;
 	height:1px;
@@ -453,6 +474,28 @@ button:active, button:focus {
 	display: block;
 }
 
+/***********
+	Inline form
+***********/
+.inline-form {
+	display: inline-block;
+	border-radius: .25rem;
+}
+
+.inline-form .field-input, .inline-form .button {
+	border-radius: 0;
+}
+
+.inline-form .field-input:first-child, .inline-form .button:first-child {
+	border-top-left-radius: .25rem;
+	border-bottom-left-radius: .25rem;
+}
+
+.inline-form .field-input:last-child, .inline-form .button:last-child {
+	border-top-right-radius: .25rem;
+	border-bottom-right-radius: .25rem;
+}
+
 
 
 
@@ -478,7 +521,7 @@ button:active, button:focus {
 }
 
 .clearfix:before, .clearfix:after {
-	content: ".";
+	content: " ";
 	display: block;
 	height: 0;
 	overflow: hidden;

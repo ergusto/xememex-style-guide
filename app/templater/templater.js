@@ -12,7 +12,7 @@ function templater(options) {
 		refContext,
 		ref = options.ref,
 		type = options.type,
-		events = options['events'],
+		events = options.events,
 		content = options.content,
 		text = options.text,
 		parent = options.parent,
@@ -79,11 +79,11 @@ function templater(options) {
 	if(children && isArray(children)) {
 		children.forEach(function(child) {
 			if(child) {
-				if(isObject(child)) {
-					element.appendChild(templater(child));
-				} else if(isDOMNode(child)) {
+				if(isDOMNode(child)) {
 					element.appendChild(child);
-				}
+				} else if(isObject(child)) {
+					element.appendChild(templater(child));
+				} 
 			}
 		});
 	}
@@ -113,14 +113,14 @@ function templater(options) {
 
 function makeTemplateFunction(type) {
 	return function(template) {
+		var children;
 		if(!template) template = {};
-		if(isDOMNode(template)) {
-			var element = template;
-			template = {};
-			template.content = element;
-		}
-		if(isArray(template)) {
-			var children = template;
+		if(!isObject(template)) {
+			if(isArray(template)) {
+				children = template;
+			} else if(isDOMNode(template)) {
+				children = Array.prototype.slice.call(arguments);
+			}
 			template = {};
 			template.children = children;
 		}

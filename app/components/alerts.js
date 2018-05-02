@@ -21,10 +21,10 @@ Alerts.prototype.intro = function() {
 			class: "margin-vertical line-height-copy",
 			text: "Alerts are for providing contextual feedback to users. For communicating the result of an action, for example."
 		}),
+		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Default Alert" }),
 		div({
 			class: "margin-vertical",
 			children: [
-				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Default Alert" }),
 				div({
 					class: "alert",
 					text: "Example Alert!"
@@ -85,7 +85,7 @@ Alerts.prototype.render = function() {
 	var intro = this.intro();
 
 	return div({
-		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro]
 	});
 };

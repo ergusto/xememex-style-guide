@@ -44,15 +44,15 @@ Buttons.prototype.intro = function() {
 					children: [
 						button({
 							class: "button",
-							text: "Example button"
+							text: "Left"
 						}),
 						button({
 							class: "button",
-							text: "Example button"
+							text: "Middle"
 						}),
 						button({
 							class: "button",
-							text: "Example button"
+							text: "Right"
 						}),
 					]
 				}),		
@@ -175,7 +175,7 @@ Buttons.prototype.render = function() {
 	var intro = this.intro();
 
 	return div({
-		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [intro]
 	});
 };

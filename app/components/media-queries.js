@@ -1,6 +1,7 @@
 var templater = require("../templater");
 
 var div = templater.div,
+	button = templater.button,
 	h1 = templater.h1,
 	paragraph = templater.p,
 	span = templater.span,
@@ -11,20 +12,14 @@ function NotFound() {
 	this.element = this.render();
 }
 
-var mediaQueries = {
-	mobile: '0rem',
-    tablet: '55rem',
-    desktop: '75rem'
-};
-
 NotFound.prototype.render = function() {
 
 	return div({
-		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 border background-color-white border-all border-color-grey box-shadow border-radius-all",
+		class: "max-width-7 centered padding-all padding-all-2-phablet margin-vertical-2 background-color-white border-all border-color-grey box-shadow border-radius-all",
 		children: [
 			h1({
 				class: "margin-bottom padding-bottom border-bottom border-color-grey",
-				text: "Media Queries",
+				text: "Media queries",
 			}),
 			paragraph({
 				class: "margin-top line-height-copy",
@@ -62,7 +57,7 @@ NotFound.prototype.render = function() {
 						]
 					}),
 				]
-			}),
+			})
 		]
 	});
 };
