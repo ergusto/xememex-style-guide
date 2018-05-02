@@ -3,6 +3,8 @@ var templater = require("../../app/templater");
 var div = templater.div,
 	dropdownOpenClass = "dropdown__container--open";
 
+var clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
+
 function Dropdown(options) {
 	options = options || {};
 	this.trigger = options.trigger;
@@ -28,7 +30,7 @@ Dropdown.prototype.documentClick = function(event) {
 Dropdown.prototype.addEventListeners = function() {
 	var self = this;
 	if(this.triggeredOnClick) {
-		this.trigger.addEventListener("click",function(event) {
+		this.trigger.addEventListener(clickEventType,function(event) {
 			event.preventDefault();
 			event.stopPropagation();
 
@@ -36,7 +38,7 @@ Dropdown.prototype.addEventListeners = function() {
 				self.close();
 			} else {
 				self.open();
-				document.addEventListener("click",self.documentClick);
+				document.addEventListener(clickEventType,self.documentClick);
 			}
 		});
 	}
@@ -52,7 +54,7 @@ Dropdown.prototype.open = function() {
 
 Dropdown.prototype.close = function() {
 	this.element.classList.remove(dropdownOpenClass);
-	document.removeEventListener("click",this.documentClick);
+	document.removeEventListener(clickEventType,this.documentClick);
 };
 
 Dropdown.prototype.render = function() {

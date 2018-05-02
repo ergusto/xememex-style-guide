@@ -4,6 +4,8 @@ var div = templater.div,
 	containerClass = "collapse__container",
 	collapseOpenClass = "collapse__container--open";
 
+var clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
+
 function Collapse(options) {
 	options = options || {};
 	this.trigger = options.trigger;
@@ -15,7 +17,7 @@ function Collapse(options) {
 Collapse.prototype.addEventListeners = function() {
 	var self = this;
 
-	this.trigger.addEventListener("click",function(event) {
+	this.trigger.addEventListener(clickEventType,function(event) {
 		event.preventDefault();
 		event.stopPropagation();
 
