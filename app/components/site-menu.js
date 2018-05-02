@@ -149,6 +149,7 @@ SiteMenu.prototype.list = function() {
 
 SiteMenu.prototype.header = function() {
 	return header({
+		class: "site-menu-header padding-all background-color-white",
 		children: [
 			button({
 				ref: { name: "siteMenuTrigger", context: this },
@@ -160,8 +161,7 @@ SiteMenu.prototype.header = function() {
 				href: "#/",
 				content: h3({ class: "site-title comfortaa", text: "xememex style guide" })
 			}),
-		],
-		class: "site-menu-header padding-all background-color-white"
+		]
 	});
 }
 
