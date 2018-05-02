@@ -13,7 +13,8 @@ var div = templater.div,
 	fragment = templater.fragment;
 
 var activeRouteLinkClass = "site-menu-link--active",
-	hiddenMenuListClass = "site-menu-list--mobile-hidden";
+	hiddenMenuListClass = "site-menu-list--mobile-hidden",
+	clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
 
 var menuItems = [
 	{ text: "Getting started" },
@@ -85,7 +86,7 @@ SiteMenu.prototype.addActiveRoute = function(name) {
 
 SiteMenu.prototype.addEventListeners = function() {
 	var self = this;
-	this.siteMenuTrigger.addEventListener("click",function(event) {
+	this.siteMenuTrigger.addEventListener(clickEventType,function(event) {
 		event.preventDefault();
 		event.stopPropagation();
 
@@ -93,7 +94,7 @@ SiteMenu.prototype.addEventListeners = function() {
 			self.close();
 		} else {
 			self.open();
-			document.addEventListener("click",self.documentClick);
+			document.addEventListener(clickEventType,self.documentClick);
 		}
 	});
 };

@@ -46,154 +46,125 @@ Widths.prototype.render = function() {
 				class: "margin-vertical padding-bottom border-bottom border-color-grey",
 				text: "Examples"
 			}),
+			h3({
+				class: "margin-vertical",
+				text: "Padding"
+			}),
 			div({
-				class: "clearfix",
+				class: "margin-vertical",
 				children: [
 					div({
-						class: "width-100 width-33-tablet padding-vertical-3 background-color-grey float-left text-align-center",
-						children: [code({ text: ".width-100 .width-33-tablet", class: "code color-white regular" })]
+						class: "padding-all background-color-grey text-align-center inline-block padding-example",
+						children: [code({ text: ".padding-all", class: "code regular" })]
 					}),
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
 					div({
-						class: "width-100 width-33-tablet padding-vertical-3 background-color-dark-grey float-left text-align-center",
-						children: [code({ text: ".width-100 .width-33-tablet", class: "code color-white regular" })]
+						class: "padding-all-2 background-color-grey text-align-center inline-block padding-example",
+						children: [code({ text: ".padding-all-2", class: "code regular" })]
 					}),
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
 					div({
-						class: "width-100 width-33-tablet padding-vertical-3 background-color-darker-grey float-left text-align-center",
-						children: [code({ text: ".width-100 .width-33-tablet", class: "code color-white regular" })]
+						class: "padding-all-3 background-color-grey text-align-center inline-block padding-example",
+						children: [code({ text: ".padding-all-3", class: "code regular" })]
+					}),
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
+					div({
+						class: "padding-all-4 background-color-grey text-align-center inline-block padding-example",
+						children: [code({ text: ".padding-all-4", class: "code regular" })]
+					}),
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
+					div({
+						class: "padding-all-5 background-color-grey text-align-center inline-block padding-example",
+						children: [code({ text: ".padding-all-5", class: "code regular" })]
+					}),
+				]
+			}),
+			h3({
+				class: "margin-vertical",
+				text: "Margin"
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
+					div({
+						class: "inline-block background-color-darker-grey",
+						children: [
+							div({
+								class: "margin-all background-color-grey text-align-center",
+								children: [code({ text: ".margin-all", class: "code regular" })]
+							})
+						]
 					})
 				]
 			}),
-			h2({
-				class: "margin-vertical padding-bottom border-bottom border-color-grey",
-				text: "Classes"
-			}),
 			div({
-				class: "clearfix",
+				class: "margin-vertical",
 				children: [
 					div({
-						class: "float-left width-100 width-50-tablet inline-block",
+						class: "inline-block background-color-darker-grey",
 						children: [
-							h3({ class: "margin-bottom", text: "Percentage based widths" }),
 							div({
-								class: "float-left margin-bottom width-50 inline-block",
-								children: [
-									h4({ class: "margin-bottom-small", text: "Class" }),
-									code({ class: "code line-height-copy", text: ".width-0" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-10" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-20" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-25" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-30" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-33" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-40" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-50" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-60" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-66" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-70" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-75" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-80" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-90" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-100" }),
-									br(),
-								]
-							}),
-							div({
-								class: "float-left margin-bottom width-50 inline-block",
-								children: [
-									h4({ class: "margin-bottom-small", text: "Value" }),
-									code({ class: "code line-height-copy", text: "0%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "10%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "20%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "25%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "30%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "33%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "40%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "50%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "60%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "66%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "70%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "75%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "80%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "90%" }),
-									br(),
-									code({ class: "code line-height-copy", text: "100%" }),
-									br(),
-								]
+								class: "margin-all-2 background-color-grey text-align-center",
+								children: [code({ text: ".margin-all-2", class: "code regular" })]
 							})
 						]
-					}),
+					})
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
 					div({
-						class: "float-left width-100 width-50-tablet inline-block",
+						class: "inline-block background-color-darker-grey",
 						children: [
-							h3({ class: "margin-bottom", text: "Rem based widths" }),
 							div({
-								class: "float-left width-50 inline-block",
-								children: [
-									h4({ class: "margin-bottom-small", text: "Class" }),
-									code({ class: "code line-height-copy", text: ".width-1" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-2" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-3" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-4" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-5" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-6" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-7" }),
-									br(),
-									code({ class: "code line-height-copy", text: ".width-8" }),
-								]
-							}),
+								class: "margin-all-3 background-color-grey text-align-center",
+								children: [code({ text: ".margin-all-3", class: "code regular" })]
+							})
+						]
+					})
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
+					div({
+						class: "inline-block background-color-darker-grey",
+						children: [
 							div({
-								class: "float-left width-50 inline-block",
-								children: [
-									h4({ text: "Value" }),
-									code({ class: "code line-height-copy", text: "1 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "2 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "4 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "8 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "16 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "32 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "64 rem" }),
-									br(),
-									code({ class: "code line-height-copy", text: "128 rem" }),
-								]
-							}),
+								class: "margin-all-4 background-color-grey text-align-center",
+								children: [code({ text: ".margin-all-4", class: "code regular" })]
+							})
+						]
+					})
+				]
+			}),
+			div({
+				class: "margin-vertical",
+				children: [
+					div({
+						class: "inline-block background-color-darker-grey",
+						children: [
+							div({
+								class: "margin-all-5 background-color-grey text-align-center",
+								children: [code({ text: ".margin-all-5", class: "code regular" })]
+							})
 						]
 					})
 				]

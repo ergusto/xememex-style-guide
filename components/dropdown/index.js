@@ -1,9 +1,8 @@
 var templater = require("../../app/templater");
 
 var div = templater.div,
-	dropdownOpenClass = "dropdown__container--open";
-
-var clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
+	dropdownOpenClass = "dropdown__container--open",
+	clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
 
 function Dropdown(options) {
 	options = options || {};
@@ -84,7 +83,6 @@ Dropdown.prototype.render = function() {
 			this.trigger,
 			div({
 				class: "dropdown",
-				ref: { name: "dropdown", context: this },
 				content: this.content
 			})
 		]

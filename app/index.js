@@ -8,9 +8,7 @@ var scrollToDocumentTop = utils.scrollToDocumentTop;
 
 require("typeface-assistant");
 require("typeface-comfortaa");
-require("./css/style.css");
-require("./css/padding-and-margin.css");
-require("./css/widths-and-max-widths.css");
+require("../main.css");
 require("./css/style-guide.css");
 
 module.exports = function(appNode) {

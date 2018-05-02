@@ -2,9 +2,9 @@ var templater = require("../../app/templater");
 
 var div = templater.div,
 	containerClass = "collapse__container",
-	collapseOpenClass = "collapse__container--open";
-
-var clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
+	collapseOpenClass = "collapse__container--open",
+	contentClass = "collapse__content",
+	clickEventType = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
 
 function Collapse(options) {
 	options = options || {};
@@ -55,7 +55,7 @@ Collapse.prototype.render = function() {
 			this.trigger,
 			div({
 				ref: { name: "content", context: this },
-				class: "collapse__content",
+				class: contentClass,
 				content: this.content
 			})
 		]
