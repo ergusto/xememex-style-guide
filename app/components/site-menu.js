@@ -94,17 +94,18 @@ SiteMenu.prototype.addEventListeners = function() {
 			self.close();
 		} else {
 			self.open();
-			document.addEventListener(clickEventType,self.documentClick);
 		}
 	});
 };
 
 SiteMenu.prototype.open = function() {
 	this.siteMenuList.classList.remove(hiddenMenuListClass);
+	document.addEventListener(clickEventType,self.documentClick);
 };
 
 SiteMenu.prototype.close = function() {
 	this.siteMenuList.classList.add(hiddenMenuListClass);
+	document.removeEventListener(clickEventType,this.documentClick);
 };
 
 SiteMenu.prototype.isOpen = function() {
@@ -115,7 +116,6 @@ SiteMenu.prototype.documentClick = function(event) {
 	event.stopPropagation();
 	if(!this.siteMenuList.contains(event.target)) {
 		this.close();
-		document.removeEventListener(clickEventType,this.documentClick);
 	}
 };
 
@@ -136,9 +136,8 @@ SiteMenu.prototype.list = function() {
 				});
 			} else {
 				return li({
-					class: "margin-top-small",
 					content: h4({
-						class: "block padding-horizontal padding-vertical-medium border-bottom border-color-light-grey font-weight-normal",
+						class: "block margin-top-small padding-horizontal padding-vertical-medium border-bottom border-color-light-grey font-weight-normal",
 						text: item.text
 					})
 				});

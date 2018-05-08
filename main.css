@@ -210,7 +210,7 @@ button:active, button:focus {
 
 .button--large {
 	padding: 1rem;
-	font-size: 1rem;
+	font-size: 1.05rem;
 }
 
 .button--small {
@@ -333,14 +333,6 @@ button:active, button:focus {
 	Divider
 ***********/
 
-.collapse__container {
-	display: inline-block;
-}
-
-.collapse__container--open .collapse__content {
-	max-height: 500px;
-}
-
 .collapse__content {
 	max-height: 0;            
     overflow-y: hidden;
@@ -348,22 +340,26 @@ button:active, button:focus {
     transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
+.collapse__container--open .collapse__content {
+	max-height: 500px;
+}
+
 
 /***********
 	Divider
 ***********/
-.divider{
+.divider {
 	display:block;
 	height:1px;
 	width:100%
 }
 
-.divider--light{
+.divider--light {
 	background-image:-webkit-gradient(linear, left top, right top, from(rgba(255,255,255,0)), color-stop(30%, rgba(255,255,255,0.3)), color-stop(70%, rgba(255,255,255,0.3)), to(rgba(255,255,255,0)));
 	background-image:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0) 100%)
 }
 
-.divider--dark{
+.divider--dark {
 	background-image:-webkit-gradient(linear, left top, right top, from(transparent), color-stop(30%, rgba(0,0,0,0.1)), color-stop(70%, rgba(0,0,0,0.1)), to(transparent));
 	background-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.1) 70%, transparent 100%)
 }

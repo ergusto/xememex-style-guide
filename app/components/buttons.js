@@ -43,15 +43,15 @@ Buttons.prototype.intro = function() {
 					class: "button-group",
 					children: [
 						button({
-							class: "button",
+							class: "button button--green",
 							text: "Left"
 						}),
 						button({
-							class: "button",
+							class: "button button--green",
 							text: "Middle"
 						}),
 						button({
-							class: "button",
+							class: "button button--green",
 							text: "Right"
 						}),
 					]
@@ -73,7 +73,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--small" })
+					content: code({ class: "code", text: ".button.button--small" })
 				})
 			]
 		}),
@@ -87,7 +87,7 @@ Buttons.prototype.intro = function() {
 				}),		
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--large" })
+					content: code({ class: "code", text: ".button.button--large" })
 				})
 			]
 		}),
@@ -101,7 +101,7 @@ Buttons.prototype.intro = function() {
 				}),		
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--block" })
+					content: code({ class: "code", text: ".button.button--block" })
 				})
 			]
 		}),
@@ -115,7 +115,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--outline" })
+					content: code({ class: "code", text: ".button.button--outline" })
 				}),
 				button({
 					class: "button button--green margin-top-medium",
@@ -123,7 +123,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--green" })
+					content: code({ class: "code", text: ".button.button--green" })
 				}),
 				button({
 					class: "button button--blue margin-top-medium",
@@ -131,7 +131,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--blue" })
+					content: code({ class: "code", text: ".button.button--blue" })
 				}),
 				button({
 					class: "button button--red margin-top-medium",
@@ -139,7 +139,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--red" })
+					content: code({ class: "code", text: ".button.button--red" })
 				}),
 				button({
 					class: "button box-shadow margin-top-medium",
@@ -147,7 +147,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .box-shadow" })
+					content: code({ class: "code", text: ".button.box-shadow" })
 				}),
 				button({
 					disabled: "",
@@ -164,7 +164,7 @@ Buttons.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button .button--shift-on-hover" })
+					content: code({ class: "code", text: ".button.button--shift-on-hover" })
 				}),
 			]
 		}),

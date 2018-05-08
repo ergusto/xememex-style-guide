@@ -46,7 +46,7 @@ Alerts.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".alert .alert--green" })
+					content: code({ class: "code", text: ".alert.alert--green" })
 				}),
 			]
 		}),
@@ -60,7 +60,7 @@ Alerts.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".alert .alert--blue" })
+					content: code({ class: "code", text: ".alert.alert--blue" })
 				}),
 			]
 		}),
@@ -74,7 +74,7 @@ Alerts.prototype.intro = function() {
 				}),
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".alert .alert--red" })
+					content: code({ class: "code", text: ".alert.alert--red" })
 				}),
 			]
 		})

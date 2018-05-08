@@ -32,7 +32,7 @@ Collapse.prototype.intro = function() {
 		trigger: trigger,
 		content: function() {
 			return div({
-				class: "padding-all-4 margin-top-small background-color-white border-radius-all border-all border-color-grey inline-block box-shadow",
+				class: "padding-vertical-4 block max-width-6 width-100 text-align-center margin-top-small background-color-white border-radius-all border-all border-color-grey box-shadow",
 				content: paragraph({
 					text: "Collapse content"
 				})
@@ -45,16 +45,6 @@ Collapse.prototype.intro = function() {
 		paragraph({
 			class: "margin-vertical line-height-copy",
 			text: "A generic collapse pattern. No cosmetic styling is applied to these classes."
-		}),
-		paragraph({
-			class: "margin-vertical line-height-copy",
-			children: [
-				span({ text: "Add a " }),
-				code({ class: "code", text: ".collapse__container--open" }),	
-				span({ text: " class to the "}),
-				code({ class: "code", text: ".collapse__container" }),
-				span({ text: " element with Javascript to show the collapsed content." }),
-			]
 		}),
 		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Base HTML structure" }),
 		pre({
@@ -71,6 +61,16 @@ Collapse.prototype.intro = function() {
 				code({ class: "code", text: "    </div>"}),
 				br(),
 				code({ class: "code", text: "</div>"})
+			]
+		}),
+		paragraph({
+			class: "margin-vertical line-height-copy",
+			children: [
+				span({ text: "Add a " }),
+				code({ class: "code", text: ".collapse__container--open" }),	
+				span({ text: " class to the "}),
+				code({ class: "code", text: ".collapse__container" }),
+				span({ text: " element with Javascript to show the collapsed content." }),
 			]
 		}),
 		collapse.element

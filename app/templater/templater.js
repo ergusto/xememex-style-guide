@@ -49,7 +49,7 @@ function templater(options) {
 	if(keyup) events['keyup'] = keyup;
 	if(keydown) events['keydown'] = keydown;
 	if(keypress) events['keypress'] = keypress;
-	if(focus) events['focus'] = keydown;
+	if(focus) events['focus'] = focus;
 	if(blur) events['blur'] = blur;
 
 	for(prop in events) {
@@ -69,11 +69,11 @@ function templater(options) {
 			content = content();
 		}
 
-		if(isDOMNode(content)) {
-			element.appendChild(content);
-		} else if(isObject(content)) {
-			element.appendChild(templater(content));
+		if(isObject(content)) {
+			content = templater(content);
 		}
+
+		element.appendChild(content);
 	}
 
 	if(children && isArray(children)) {

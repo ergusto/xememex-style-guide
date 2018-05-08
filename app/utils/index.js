@@ -152,8 +152,8 @@ module.exports.removeHashListener = removeHashListener;
 function matchRouteAndGetParams(hash,route) {
 	var match = true,
 		hashPart,
-		routePart;
-	var params = {},
+		routePart,
+		params = {},
 		hashPartArray = pathToArray(hash),
 		routePartArray = pathToArray(route);
 
@@ -309,3 +309,32 @@ function scrollToDocumentTop() {
 }
 
 module.exports.scrollToDocumentTop = scrollToDocumentTop;
+
+function classes(/* arguments */) {
+	var i,
+		l,
+		arg,
+		prop,
+		shouldUse,
+		className,
+		result = null,
+		args = Array.prototype.slice.call(arguments);
+	for(i = 0, l = args.length; i < l; i++) {
+		arg = args[i];
+		if(isString(arg)) {
+			result = !!result ? arg : result + " " + arg;
+		} else if(isObject(arg)) {
+			for(prop in arg) {
+				if(Object.prototype.hasOwnProperty.call(arg,prop)) {
+					className = prop,
+					shouldUse = arg[prop];
+					if(isFunction(shouldUse)) {
+						shouldUse = shouldUse();
+					}
+					result = !!shouldUse ? result + " " + className : result;
+				}
+			}
+		}
+	}
+	return result;
+}

@@ -58,7 +58,7 @@ FormInputs.prototype.render = function() {
 					code({ class: "code", text: "</fieldset>"})
 				]
 			}),
-			h3({ class: "margin-vertical", text: "Styles" }),
+			h3({ class: "margin-vertical", text: "Styled inputs" }),
 			input({
 				class: "field-input box-shadow",
 				placeholder: ".box-shadow"
