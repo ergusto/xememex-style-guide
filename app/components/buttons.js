@@ -118,6 +118,14 @@ Buttons.prototype.intro = function() {
 					content: code({ class: "code", text: ".button.button--outline" })
 				}),
 				button({
+					class: "button button--ghost margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code", text: ".button.button--ghost" })
+				}),
+				button({
 					class: "button button--green margin-top-medium",
 					text: "Example button"
 				}),
