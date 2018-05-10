@@ -74,7 +74,7 @@ Autocomplete.prototype.intro = function() {
 				br(),
 				code({ class: "code", text: "var autocomplete = new Autocomplete({"}),
 				br(),
-				code({ class: "code", text: "	items: fruitChoices"}),
+				code({ class: "code", text: "	items: fruitChoices,"}),
 				br(),
 				code({ class: "code", text: "	filter: function(items,value) {"}),
 				br(),
