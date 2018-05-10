@@ -4,6 +4,7 @@
     Colors
 ***********
 
+light-blue: #f6f8fa;
 blue: #408fec;
 dark-blue: #3270B9;
 darker-blue: #234E81;
@@ -14,12 +15,14 @@ green: #393;
 dark-green: #277527;
 darker-green: #206120;
 light-grey: #ddd;
-lighest-grey: #fcfcfc;
+lighter-grey: #fcfcfc;
 grey: #ccc;
 dark-grey: #777;
 darker-grey: #586069;
 light-purple: #f7f7f9;
 silver: #e3e7ef;
+black: #000;
+white: #fff;
 
 ***********/
 
@@ -575,6 +578,10 @@ button:active, button:focus {
 /***********
     Backgrounds
 ***********/
+.background-color-black {
+    background-color: #000;
+}
+
 .background-color-white {
     background-color: #fff;
 }
@@ -601,6 +608,10 @@ button:active, button:focus {
 
 .background-color-darker-red {
     background-color: #942727;
+}
+
+.background-color-light-blue {
+    background-color: #f6f8fa;
 }
 
 .background-color-blue {
@@ -689,9 +700,23 @@ button:active, button:focus {
     border-top: 1px solid;
 }
 
+.border-horizontal {
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.border-vertical {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
 /***********
     Border colors
 ***********/
+.border-color-black {
+    border-color: #000;
+}
+
 .border-color-white {
     border-color: #fff;
 }
@@ -718,6 +743,10 @@ button:active, button:focus {
 
 .border-color-darker-red {
     border-color: #942727;
+}
+
+.border-color-light-blue {
+    border-color: #f6f8fa;
 }
 
 .border-color-blue {
@@ -839,6 +868,10 @@ button:active, button:focus {
 /***********
     Color
 ***********/
+.color-black {
+    color: black;
+}
+
 .color-white {
     color: white;
 }
@@ -865,6 +898,10 @@ button:active, button:focus {
 
 .color-darker-red {
     color: #942727;
+}
+
+.color-light-blue {
+    color: #f6f8fa;
 }
 
 .color-blue {

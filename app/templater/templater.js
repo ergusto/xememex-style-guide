@@ -3,7 +3,8 @@ var utils = require("../utils"),
 	isArray = utils.isArray,
 	isFunction = utils.isFunction,
 	isDOMNode = utils.isDOMNode,
-	isString = utils.isString;
+	isString = utils.isString,
+	extend = utils.extend;
 
 function templater(options) {
 	var prop,

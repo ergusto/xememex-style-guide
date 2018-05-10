@@ -95,3 +95,7 @@ html {
     background-image: linear-gradient(to bottom, #ccc 0%, #ccc 100%), linear-gradient(to bottom, #777 0%, #777 100%);
     background-clip: content-box, padding-box;
 }
+
+.autocomplete__item--selected {
+	background-color: rgba(0,0,0,0.2);
+}

@@ -338,3 +338,17 @@ function classes(/* arguments */) {
 	}
 	return result;
 }
+
+function difference(array1, array2) {
+	return array1.concat(array2).filter(function(value, index, array){
+		return array.indexOf(value) === array.lastIndexOf(value);
+	});
+}
+
+module.exports.difference = difference;
+
+function exclude(array1, array2) {
+	return array1.filter(function(value, index) {
+		return !array2.indexOf(value);
+	});
+}

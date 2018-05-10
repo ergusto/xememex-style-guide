@@ -26,6 +26,7 @@ var menuItems = [
 	{ text: "Dropdown", url: "#/dropdown", routeName: "dropdown" },
 	{ text: "Components" },
 	{ text: "Alerts", url: "#/alerts", routeName: "alerts" },
+	{ text: "Autocomplete", url: "#/autocomplete", routeName: "autocomplete" },
 	{ text: "Buttons", url: "#/buttons", routeName: "buttons" },
 	{ text: "Forms & inputs", url: "#/form-inputs", routeName: "form-inputs" },
 	{ text: "Layout" },

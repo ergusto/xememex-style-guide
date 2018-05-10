@@ -66,7 +66,6 @@ Buttons.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom", text: "Small Button" }),
 				button({
 					class: "button button--small",
 					text: "Example button"
@@ -80,7 +79,6 @@ Buttons.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom", text: "Large Button" }),
 				button({
 					class: "button button--large",
 					text: "Example button"
@@ -94,7 +92,6 @@ Buttons.prototype.intro = function() {
 		div({
 			class: "margin-vertical",
 			children: [
-				h3({ class: "margin-bottom", text: "Block Level Button" }),
 				button({
 					class: "button button--block",
 					text: "Example button"
@@ -109,6 +106,7 @@ Buttons.prototype.intro = function() {
 			class: "margin-vertical",
 			children: [
 				h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Styled buttons" }),
+				h3({ class: "margin-bottom-small", text: "Button themes" }),
 				button({
 					class: "button button--outline margin-top-medium",
 					text: "Example button"
@@ -149,6 +147,7 @@ Buttons.prototype.intro = function() {
 					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button.button--red" })
 				}),
+				h3({ class: "margin-bottom-small", text: "Button add-ons" }),
 				button({
 					class: "button box-shadow margin-top-medium",
 					text: "Example button"
@@ -158,6 +157,15 @@ Buttons.prototype.intro = function() {
 					content: code({ class: "code", text: ".button.box-shadow" })
 				}),
 				button({
+					class: "button button--blue button--shift-on-hover margin-top-medium",
+					text: "Example button"
+				}),
+				pre({
+					class: "preformatted margin-vertical-medium padding-all-small",
+					content: code({ class: "code", text: ".button.button--shift-on-hover" })
+				}),
+				h3({ class: "margin-bottom-small", text: "Button states" }),
+				button({
 					disabled: "",
 					class: "button button--green margin-top-medium",
 					text: "Example button"
@@ -165,14 +173,6 @@ Buttons.prototype.intro = function() {
 				pre({
 					class: "preformatted margin-vertical-medium padding-all-small",
 					content: code({ class: "code", text: ".button:disabled" })
-				}),
-				button({
-					class: "button button--blue button--shift-on-hover margin-top-medium",
-					text: "Example button"
-				}),
-				pre({
-					class: "preformatted margin-vertical-medium padding-all-small",
-					content: code({ class: "code", text: ".button.button--shift-on-hover" })
 				}),
 			]
 		}),

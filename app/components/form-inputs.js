@@ -7,6 +7,7 @@ var div = templater.div,
 	h1 = templater.h1,
 	h2 = templater.h2,
 	h3 = templater.h3,
+	h4 = templater.h4,
 	paragraph = templater.p,
 	pre = templater.pre,
 	code = templater.code,
@@ -63,9 +64,26 @@ FormInputs.prototype.render = function() {
 				class: "field-input box-shadow",
 				placeholder: ".box-shadow"
 			}),
-			this.inlineForm()
+			this.inlineForm(),
+			h2({ class: "margin-vertical padding-bottom border-bottom border-color-grey", text: "Field states" }),
+			this.fieldInputError(),
+			this.fieldInputSuccess()
 		]
 	});
+};
+
+FormInputs.prototype.fieldInputError = function() {
+	return fragment([
+		h3({ class: "margin-vertical", text: "Field input error" }),
+		div(input({ class: "field-input field-input--error", placeholder: ".field-input--error" })),
+	]);
+};
+
+FormInputs.prototype.fieldInputSuccess = function() {
+	return fragment([
+		h3({ class: "margin-vertical", text: "Field input success" }),
+		input({ class: "field-input field-input--success", placeholder: ".field-input--success" }),
+	]);
 };
 
 FormInputs.prototype.inlineForm = function() {

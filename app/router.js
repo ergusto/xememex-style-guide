@@ -3,6 +3,7 @@ var Router = require("./utils/router.js");
 var router = new Router({
 	"/": "introduction",
 	"/alerts": "alerts",
+	"/autocomplete": "autocomplete",
 	"/buttons": "buttons",
 	"/clearfix": "clearfix",
 	"/collapse": "collapse",

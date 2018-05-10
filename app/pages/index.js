@@ -1,4 +1,5 @@
 var AlertsPage = require("./alerts.js"),
+	AutocompletePage = require("./autocomplete.js"),
 	ButtonsPage = require("./buttons.js"),
 	ClearfixPage = require("./clearfix.js"),
 	ColapsePage = require("./collapse.js"),
@@ -12,4 +13,4 @@ var AlertsPage = require("./alerts.js"),
 	NotFoundPage = require("./not-found.js"),
 	WidthsPage = require("./widths.js");
 
-module.exports = [AlertsPage,ButtonsPage,ClearfixPage,ColapsePage,ColorsPage,DisplayPage,DropdownPage,FormInputsPage,IntroductionPage,MarginAndPaddingsPage,MediaQueriesPage,NotFoundPage,WidthsPage];
+module.exports = [AlertsPage,AutocompletePage,ButtonsPage,ClearfixPage,ColapsePage,ColorsPage,DisplayPage,DropdownPage,FormInputsPage,IntroductionPage,MarginAndPaddingsPage,MediaQueriesPage,NotFoundPage,WidthsPage];
