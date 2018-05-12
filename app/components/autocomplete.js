@@ -26,22 +26,30 @@ function Autocomplete() {
 }
 
 Autocomplete.prototype.intro = function() {
-	var self = this,
-		autocomplete = new AutocompleteComponent({
+	var self = this;
+
+	var items = [{ text: 'apples' }, { text: 'apricots' }, { text: 'avocados' }, { text: 'asparagus' }, { text: 'oranges' }, { text: 'pears' }];
+
+	var autocomplete = new AutocompleteComponent({
 		inputClass: "field-input",
 		placeholder: "Fruit",
-		listClass: "box-shadow",
-		noItemsClass: "padding-all-medium background-color-white",
-		items: ['apples', 'apricots', 'avocados','asparagus', 'oranges', 'pears'],
+		listClass: "box-shadow margin-bottom background-color-white",
+		noItemsClass: "padding-all-medium",
+		selectedItemClass: "bold background-color-light-purple",
+		items: items,
 		filter: function(items,value) {
+			var value = value.toLowerCase();
 			return items.filter(function(item) {
-				return item.startsWith(value);
+				var text = item.text.toLowerCase();
+				if(item.text) {
+					return text.startsWith(value);
+				}
 			});
 		},
 		onSelect: function(item, unselect) {
 			var item = li({
-				text: item,
-				click: function(event) {
+				text: item.text,
+				click: function() {
 					unselect();
 					self.addedFruit.removeChild(item);
 				}
@@ -50,12 +58,11 @@ Autocomplete.prototype.intro = function() {
 			self.addedFruit.appendChild(item);
 		},
 		itemTemplate: function(item,selectItem) {
-			return li({
-				class: "item padding-all-medium background-color-white cursor-pointer",
-				children: [
-					anchor({ text: item, click: selectItem })
-				]
-			})
+			return anchor({
+				class: "block padding-all-medium cursor-pointer",
+				text: item.text,
+				click: selectItem
+			});
 		}
 	});
 
@@ -65,44 +72,49 @@ Autocomplete.prototype.intro = function() {
 			class: "margin-vertical line-height-copy",
 			text: "A versatile autocomplete Javascript component."
 		}),
+		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Example" }),
+		autocomplete.element,
+		div({
+			children: [
+				h3({ class: "margin-vertical", text: "Added fruit" }),
+				ul({
+					class: "margin-vertical",
+					ref: { name: "addedFruit", context: this }
+				})
+			]
+		}),
 		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Usage" }),
 		pre({
 			class: "preformatted margin-vertical padding-all-small line-height-copy",
 			children: [
-				code({ class: "code", text: "var fruitChoices = ['apples', 'apricots', 'avocados','asparagus', 'oranges', 'pears'];" }),
+				code({ class: "code", text: "var fruitChoices = [{ text: 'apples' }, { text: 'apricots' }, ...];" }),
 				br(),
 				br(),
 				code({ class: "code", text: "var autocomplete = new Autocomplete({"}),
 				br(),
 				code({ class: "code", text: "	items: fruitChoices,"}),
 				br(),
+				code({ class: "code", text: "	placeholder: \"Fruit\","}),
+				br(),
+				code({ class: "code", text: "	inputClass: \"field-input\","}),
+				br(),
+				code({ class: "code", text: "	listClass: \"box-shadow margin-bottom background-color-white\","}),
+				br(),
+				code({ class: "code", text: "	noItemsClass: \"padding-all-medium\","}),
+				br(),
+				code({ class: "code", text: "	selectedItemClass: \"bold background-color-light-purple\","}),
+				br(),
 				code({ class: "code", text: "	filter: function(items,value) {"}),
+				br(),
+				code({ class: "code", text: "		var value = value.toLowerCase()"}),
 				br(),
 				code({ class: "code", text: "		return items.filter(function(item) {"}),
 				br(),
-				code({ class: "code", text: "			return item.startsWith(value);"}),
+				code({ class: "code", text: "			var text = item.text.toLowerCase();"}),
+				br(),
+				code({ class: "code", text: "			return text.startsWith(value);"}),
 				br(),
 				code({ class: "code", text: "		});"}),
-				br(),
-				code({ class: "code", text: "	},"}),
-				br(),
-				code({ class: "code", text: "	onSelect: function(item,unselect) {"}),
-				br(),
-				code({ class: "code", text: "		var element = document.createElement(\"li\");"}),
-				br(),
-				code({ class: "code", text: "		var text = document.createTextNode(item.text);"}),
-				br(),
-				code({ class: "code", text: "		element.appendChild(text);"}),
-				br(),
-				code({ class: "code", text: "		element.addEventListener(\"click\", function() {"}),
-				br(),
-				code({ class: "code", text: "			unselect()"}),
-				br(),
-				code({ class: "code", text: "			addedFruitList.removeChild(element)"}),
-				br(),
-				code({ class: "code", text: "		})"}),
-				br(),
-				code({ class: "code", text: "		addedFruitList.appendChild(element);"}),
 				br(),
 				code({ class: "code", text: "	},"}),
 				br(),
@@ -118,6 +130,26 @@ Autocomplete.prototype.intro = function() {
 				br(),
 				code({ class: "code", text: "		return element;"}),
 				br(),
+				code({ class: "code", text: "	},"}),
+				br(),
+				code({ class: "code", text: "	onSelect: function(item,unselect) {"}),
+				br(),
+				code({ class: "code", text: "		var element = document.createElement(\"li\");"}),
+				br(),
+				code({ class: "code", text: "		var text = document.createTextNode(item.text);"}),
+				br(),
+				code({ class: "code", text: "		element.appendChild(text);"}),
+				br(),
+				code({ class: "code", text: "		element.addEventListener(\"click\", function() {"}),
+				br(),
+				code({ class: "code", text: "			unselect();"}),
+				br(),
+				code({ class: "code", text: "			addedFruitList.removeChild(element);"}),
+				br(),
+				code({ class: "code", text: "		});"}),
+				br(),
+				code({ class: "code", text: "		addedFruitList.appendChild(element);"}),
+				br(),
 				code({ class: "code", text: "	}"}),
 				br(),
 				code({ class: "code", text: "});"}),
@@ -130,17 +162,6 @@ Autocomplete.prototype.intro = function() {
 			class: "margin-vertical line-height-copy",
 			text: "Add the autocomplete element into the DOM."
 		}),
-		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Example" }),
-		autocomplete.element,
-		div({
-			children: [
-				h3({ class: "margin-vertical", text: "Added fruit" }),
-				ul({
-					class: "margin-vertical",
-					ref: { name: "addedFruit", context: this }
-				})
-			]
-		})
 	]);
 };
 

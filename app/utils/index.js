@@ -304,6 +304,12 @@ function extend(source,properties) {
 
 module.exports.extend = extend;
 
+function clone(object) {
+	return extend({},object);
+}
+
+module.exports.clone = clone;
+
 function scrollToDocumentTop() {
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
@@ -352,3 +358,17 @@ function exclude(array1, array2) {
 		return !array2.indexOf(value);
 	});
 }
+
+function generateUUID() {
+	var d = new Date().getTime();
+	if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+		d += performance.now(); //use high-precision timer if available
+	}
+	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+		var r = (d + Math.random() * 16) % 16 | 0;
+		d = Math.floor(d / 16);
+		return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+	});
+}
+
+module.exports.generateUUID = generateUUID;

@@ -116,12 +116,14 @@ button:active, button:focus {
 
 .preformatted {
     display: block;
+    tab-size: 4;
 }
 
 .preformatted .code {
     font-size: inherit;
     white-space: pre-wrap;
     line-height: 1.4;
+    tab-size: 4;
 }
 
 /***********
@@ -469,6 +471,11 @@ button:active, button:focus {
     box-shadow: 0 0 0 0.2rem rgba(64,143,236,.2);
 }
 
+.field-input::placeholder {
+    color: #777;
+    opacity: 0.9;
+}
+
 .field-input--success {
     color: #393;
     border-color: #393;
@@ -477,6 +484,11 @@ button:active, button:focus {
 .field-input--success:focus {
     border-color: #393;
     box-shadow: 0 0 0 0.2rem rgba(51,153,51,.2);
+}
+
+.field-input--success::placeholder {
+    color: #393;
+    opacity: 0.7;
 }
 
 .field-input--error {
@@ -489,9 +501,9 @@ button:active, button:focus {
     box-shadow: 0 0 0 0.2rem rgba(199,52,52,.2);
 }
 
-.field-input::placeholder {
-    color: #777;
-    opacity: 0.9;
+.field-input--error::placeholder {
+    color: #c73434;
+    opacity: 0.7;
 }
 
 .field-label {
