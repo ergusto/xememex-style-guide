@@ -58,6 +58,18 @@ function Autocomplete(options) {
 		this.loadItems(options.items);
 	}
 
+	if(!this.filter) {
+		throw new Errro("Autocomplete component requires a filter function");
+	}
+
+	if(!this.itemTemplate) {
+		throw new Errro("Autocomplete component requires a template function");
+	}
+
+	if(!this.onSelect) {
+		throw new Errro("Autocomplete component requires a onSelect function");
+	}
+
 	this.element = this.render();
 	this.documentClick = this.documentClick.bind(this);
 	this.addEventListeners();
@@ -162,7 +174,6 @@ Autocomplete.prototype.onItemSelect = function(item,index) {
 
 	this.onSelect(cloneAndRemoveUUID(item),this.unselect.bind(this,item));
 
-	this.value = "";
 	this.input.value = "";
 	this.renderItems();
 	this.hideList();
@@ -186,7 +197,7 @@ Autocomplete.prototype.getSelectedItem = function() {
 Autocomplete.prototype.renderItems = function() {
 	var self = this,
 		itemClass = defaultItemClass,
-		selectedItemClass = defaultSelectedItemClass;
+		selectedItemClasses = defaultSelectedItemClass;
 	
 	this.removeItems();
 
@@ -203,8 +214,8 @@ Autocomplete.prototype.renderItems = function() {
 		}
 
 		if(this.selectedItemClass) {
-			selectedItemClass += " ";
-			selectedItemClass += this.selectedItemClass;
+			selectedItemClasses += " ";
+			selectedItemClasses += this.selectedItemClass;
 		}
 
 		this.activeItems.map(function(item,index) {
@@ -219,7 +230,9 @@ Autocomplete.prototype.renderItems = function() {
 			parent.appendChild(element);
 
 			if(self.selectedItemId === item[uuidProperty]) {
-				parent.classList.add(selectedItemClass);
+				selectedItemClasses.split(" ").map(function(selectedItemClass) {
+					parent.classList.add(selectedItemClass);
+				});
 			}
 
 			parent.addEventListener("mouseover",function(event) {
@@ -323,15 +336,14 @@ Autocomplete.prototype.filterItems = function(value) {
 	value = value.toLowerCase();
 	if(!value) {
 		this.filteredItems = [];
-	} else if(this.filter) {
-		this.filteredItems = this.filter(this.items,value);
 	} else {
-		this.filteredItems = this.items.filter(function(item) {
-			var proprety = item[self.itemFilterProperty];
-			return proprety.toLowerCase().startsWith(value);
-		});
+		this.filteredItems = this.filter(this.items,value);
+		this.renderItems();
 	}
-	this.renderItems();
+};
+
+Autocomplete.prototype.getChosenItems = function() {
+	return this.chosenItems.slice();
 };
 
 Autocomplete.prototype.inputKeyDownHandler = function(event) {

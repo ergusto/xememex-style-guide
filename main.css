@@ -463,6 +463,7 @@ button:active, button:focus {
     border: 1px solid;
     border-color: #ccc;
     color: inherit;
+    box-shadow: none;
 }
 
 .field-input:focus, .field-input:active {

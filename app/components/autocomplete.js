@@ -46,11 +46,11 @@ Autocomplete.prototype.intro = function() {
 				}
 			});
 		},
-		onSelect: function(item, unselect) {
+		onSelect: function(item, unselectItem) {
 			var item = li({
 				text: item.text,
 				click: function() {
-					unselect();
+					unselectItem();
 					self.addedFruit.removeChild(item);
 				}
 			});
@@ -120,11 +120,13 @@ Autocomplete.prototype.intro = function() {
 				br(),
 				code({ class: "code", text: "	itemTemplate: function(item,selectItem) {"}),
 				br(),
-				code({ class: "code", text: "		var element = document.createElement(\"li\");"}),
+				code({ class: "code", text: "		var element = document.createElement(\"a\");"}),
 				br(),
 				code({ class: "code", text: "		var text = document.createTextNode(item.text);"}),
 				br(),
 				code({ class: "code", text: "		element.appendChild(text);"}),
+				br(),
+				code({ class: "code", text: "		element.className = \"block padding-all-medium cursor-pointer\";"}),
 				br(),
 				code({ class: "code", text: "		element.addEventListener(\"click\", selectItem);"}),
 				br(),
@@ -132,7 +134,7 @@ Autocomplete.prototype.intro = function() {
 				br(),
 				code({ class: "code", text: "	},"}),
 				br(),
-				code({ class: "code", text: "	onSelect: function(item,unselect) {"}),
+				code({ class: "code", text: "	onSelect: function(item,unselectItem) {"}),
 				br(),
 				code({ class: "code", text: "		var element = document.createElement(\"li\");"}),
 				br(),
@@ -142,7 +144,7 @@ Autocomplete.prototype.intro = function() {
 				br(),
 				code({ class: "code", text: "		element.addEventListener(\"click\", function() {"}),
 				br(),
-				code({ class: "code", text: "			unselect();"}),
+				code({ class: "code", text: "			unselectItem();"}),
 				br(),
 				code({ class: "code", text: "			addedFruitList.removeChild(element);"}),
 				br(),
