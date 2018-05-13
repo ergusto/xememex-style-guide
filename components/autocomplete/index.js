@@ -11,9 +11,9 @@ var div = templater.div,
 	input = templater.input,
 	ul = templater.ul,
 	li = templater.li,
-	anchor = templater.a,
+	anchor = templater.a;
 
-	uuidProperty = "--autocomplete-uuid--",
+var uuidProperty = "--autocomplete-uuid--",
 	itemIdDataAttribute = "data-autocomplete-item-id",
 	containerClass = "autocomplete__container inline-block relative",
 	defaultInputClass = "autocomplete__input",
@@ -67,27 +67,29 @@ function Autocomplete(options) {
 	}
 
 	if(!this.onSelect) {
-		throw new Errro("Autocomplete component requires a onSelect function");
+		throw new Errro("Autocomplete component requires an onSelect function");
 	}
 
-	this.element = this.render();
+	this.mouseoutEvent = this.mouseoutEvent.bind(this);
 	this.documentClick = this.documentClick.bind(this);
+
+	this.element = this.render();
 	this.addEventListeners();
 }
 
 Autocomplete.prototype.loadItems = function(items) {
-	for(var i = 0, l = items.length; i < l; i++) {
-		var item = items[i];
+	if(isArray(items) && items.length) {
+		items.forEach(function(item) {
+			if(!isObject(item)) {
+				throw new Error("Expected autocomplete item to be an object");
+			}
 
-		if(!isObject(item)) {
-			throw new Error("Expected autocomplete item to be an object");
-		}
+			if(!item[uuidProperty]) {
+				item[uuidProperty] = generateUUID();
+			}
 
-		if(!item[uuidProperty]) {
-			item[uuidProperty] = generateUUID();
-		}
-
-		this.items.push(item);
+			this.items.push(item);
+		}, this);
 	}
 };
 
@@ -167,7 +169,7 @@ Autocomplete.prototype.getFilteredItemById = function(id) {
 	});
 };
 
-Autocomplete.prototype.onItemSelect = function(item,index) {
+Autocomplete.prototype.onItemSelect = function(item) {
 	var itemId = item[uuidProperty];
 	this.removeFilteredItemById(itemId);
 	this.addChosenItem(item);
@@ -195,17 +197,16 @@ Autocomplete.prototype.getSelectedItem = function() {
 };
 
 Autocomplete.prototype.renderItems = function() {
-	var self = this,
-		itemClass = defaultItemClass,
+	var itemClass = defaultItemClass,
 		selectedItemClasses = defaultSelectedItemClass;
 	
 	this.removeItems();
 
 	this.activeItems = this.filteredItems.filter(function(item) {
-		return !self.chosenItems.filter(function(chosenItem) {
+		return !this.chosenItems.filter(function(chosenItem) {
 			return item[uuidProperty] === chosenItem[uuidProperty];
 		}).length;
-	});
+	}, this);
 
 	if(this.activeItems.length) {
 		if(this.itemClass) {
@@ -218,38 +219,36 @@ Autocomplete.prototype.renderItems = function() {
 			selectedItemClasses += this.selectedItemClass;
 		}
 
-		this.activeItems.map(function(item,index) {
-			var itemId = item[uuidProperty];
-
-			var parent = li({
-				[itemIdDataAttribute]: itemId
-			});
-
-			var element = self.itemTemplate(item,self.onItemSelect.bind(self,item));
+		this.activeItems.forEach(function(item,index) {
+			var itemId = item[uuidProperty],
+				parent = li({
+					[itemIdDataAttribute]: itemId
+				}),
+				element = this.itemTemplate(item,this.onItemSelect.bind(this,item));
 
 			parent.appendChild(element);
 
-			if(self.selectedItemId === item[uuidProperty]) {
+			if(this.selectedItemId === item[uuidProperty]) {
 				selectedItemClasses.split(" ").map(function(selectedItemClass) {
 					parent.classList.add(selectedItemClass);
 				});
 			}
 
-			parent.addEventListener("mouseover",function(event) {
-				self.activateSelectedItem(itemId);
-			});
+			parent.addEventListener("mouseover", this.activateSelectedItem.bind(this,itemId));
 
-			parent.addEventListener("mouseout",function(event) {
-				self.clearSelectedItemId();
-			});
+			parent.addEventListener("mouseout",this.mouseoutEvent);
 
-			self.list.appendChild(parent);
-		});
+			this.list.appendChild(parent);
+		}, this);
 
 		this.showList();
 	} else {
 		this.renderNoItemsFound();
 	}
+};
+
+Autocomplete.prototype.mouseoutEvent = function() {
+	this.clearSelectedItemId();
 };
 
 Autocomplete.prototype.addSelectedItemClass = function(itemId) {
@@ -260,16 +259,14 @@ Autocomplete.prototype.addSelectedItemClass = function(itemId) {
 		selectedItemClass += this.selectedItemClass;
 	}
 
-	var selectedItemClasses = selectedItemClass.split(" ");
-
-	var item = this.list.querySelector("li[" + itemIdDataAttribute + "='" + itemId + "']");
-
-	var selector = "li[" + itemIdDataAttribute + "='" + itemId + "']";
+	var selectedItemClasses = selectedItemClass.split(" "),
+		item = this.list.querySelector("li[" + itemIdDataAttribute + "='" + itemId + "']"),
+		selector = "li[" + itemIdDataAttribute + "='" + itemId + "']";
 
 	if(item) {
-		for(var i = 0, l = selectedItemClasses.length; i < l; i++) {
-			item.classList.add(selectedItemClasses[i]);
-		}
+		selectedItemClasses.forEach(function(itemClass) {
+			item.classList.add(itemClass);
+		});
 	}
 };
 
@@ -281,14 +278,13 @@ Autocomplete.prototype.removeSelectedItemClass = function() {
 		selectedItemClass += this.selectedItemClass;
 	}
 
-	var selectedItemClasses = selectedItemClass.split(" ");
-
-	var item = this.list.querySelector("." + defaultSelectedItemClass);
+	var selectedItemClasses = selectedItemClass.split(" "),
+		item = this.list.querySelector("." + defaultSelectedItemClass);
 
 	if(item) {
-		for(var i = 0, l = selectedItemClasses.length; i < l; i++) {
-			item.classList.remove(selectedItemClasses[i]);
-		}
+		selectedItemClasses.forEach(function(itemClass) {
+			item.classList.remove(itemClass);
+		});
 	}
 };
 
@@ -332,14 +328,9 @@ Autocomplete.prototype.documentClick = function(event) {
 };
 
 Autocomplete.prototype.filterItems = function(value) {
-	var self = this;
 	value = value.toLowerCase();
-	if(!value) {
-		this.filteredItems = [];
-	} else {
-		this.filteredItems = this.filter(this.items,value);
-		this.renderItems();
-	}
+	this.filteredItems = value.length ? this.filter(this.items,value) : [];
+	this.renderItems();
 };
 
 Autocomplete.prototype.getChosenItems = function() {
@@ -384,9 +375,9 @@ Autocomplete.prototype.inputKeyupHandler = function(event) {
 	var value = event.target.value;
 
 	if(this.activeItems.length) {
-		var firstItem = this.activeItems[0];
-		var lastItem = this.activeItems[this.activeItems.length - 1];
-		var selectedItem = this.getSelectedItem();
+		var firstItem = this.activeItems[0],
+			lastItem = this.activeItems[this.activeItems.length - 1],
+			selectedItem = this.getSelectedItem();
 
 		switch(event.key) {
 			case "ArrowDown":
@@ -436,7 +427,6 @@ Autocomplete.prototype.inputFocusHandler = function(event) {
 };
 
 Autocomplete.prototype.addEventListeners = function() {
-	var self = this;
 	this.input.addEventListener("focus",this.inputFocusHandler.bind(this));
 	this.input.addEventListener("keyup",this.inputKeyupHandler.bind(this));
 	this.input.addEventListener("keydown",this.inputKeyDownHandler.bind(this));

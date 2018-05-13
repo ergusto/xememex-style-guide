@@ -70,7 +70,7 @@ Autocomplete.prototype.intro = function() {
 		h1({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Autocomplete" }),
 		paragraph({
 			class: "margin-vertical line-height-copy",
-			text: "A versatile autocomplete Javascript component."
+			text: "A generic autocomplete pattern."
 		}),
 		h2({ class: "margin-bottom padding-bottom border-bottom border-color-grey", text: "Example" }),
 		autocomplete.element,
@@ -106,7 +106,7 @@ Autocomplete.prototype.intro = function() {
 				br(),
 				code({ class: "code", text: "	filter: function(items,value) {"}),
 				br(),
-				code({ class: "code", text: "		var value = value.toLowerCase()"}),
+				code({ class: "code", text: "		var value = value.toLowerCase();"}),
 				br(),
 				code({ class: "code", text: "		return items.filter(function(item) {"}),
 				br(),
@@ -162,8 +162,8 @@ Autocomplete.prototype.intro = function() {
 		}),
 		paragraph({
 			class: "margin-vertical line-height-copy",
-			text: "Add the autocomplete element into the DOM."
-		}),
+			text: "After instantiated, add the autocomplete element into the DOM."
+		})
 	]);
 };
 
